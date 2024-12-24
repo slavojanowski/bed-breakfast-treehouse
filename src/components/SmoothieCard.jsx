@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const SmoothieCard = ({ smoothie }) => {
   return (
@@ -8,12 +9,18 @@ const SmoothieCard = ({ smoothie }) => {
       <h3>{smoothie.title}</h3>
       <p>{smoothie.method}</p>
       <div className="rating">Liczba gości: {smoothie.rating}</div>
+      <div className="buttons">
+        <Link to={"/" + smoothie.id}>
+          <i className="material-icons">edit</i>
+        </Link>
+      </div>
     </div>
   );
 };
 
 SmoothieCard.propTypes = {
   smoothie: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     checkin_date: PropTypes.string.isRequired,
     checkout_date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

@@ -1,6 +1,10 @@
+import supabase from "../../config/supabaseClient";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Create = () => {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState("");
   const [method, setMethod] = useState("");
   const [rating, setRating] = useState("");
@@ -15,7 +19,22 @@ const Create = () => {
       setFormError("Wypełnij wszystkie pola");
       return;
     }
-    console.log(title, method, rating, checkin_date, checkout_date);
+    // console.log(title, method, rating, checkin_date, checkout_date);
+    const { data, error } = await supabase
+      .from("smoothies")
+      .insert([{ title, method, rating, checkin_date, checkout_date }])
+      .select();
+
+    if (error) {
+      // console.log(error);
+      setFormError("Wypełnij wszystkie pola");
+    }
+
+    if (data) {
+      // console.log(data);
+      setFormError(null);
+      navigate("/");
+    }
   };
 
   return (

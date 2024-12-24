@@ -13,7 +13,7 @@ const Home = () => {
       if (error) {
         setFetchError("Nie można było pobrać danych");
         setSmoothies(null);
-        console.log(error);
+        // console.log(error);
       }
       if (data) {
         setSmoothies(data);
