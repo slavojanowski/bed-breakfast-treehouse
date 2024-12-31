@@ -21,7 +21,7 @@ const Create = () => {
     }
     // console.log(title, method, rating, checkin_date, checkout_date);
     const { data, error } = await supabase
-      .from("smoothies")
+      .from("bookings")
       .insert([{ title, method, rating, checkin_date, checkout_date }])
       .select();
 

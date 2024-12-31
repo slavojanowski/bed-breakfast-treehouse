@@ -1,46 +1,46 @@
 import supabase from "../../config/supabaseClient";
 import { useState, useEffect } from "react";
-import SmoothieCard from "../SmoothieCard";
+import BookingCard from "../BookingCard";
 
 const Home = () => {
   const [fetchError, setFetchError] = useState(null);
-  const [smoothies, setSmoothies] = useState(null);
+  const [bookings, setBookings] = useState(null);
 
   const handleDelete = (id) => {
-    setSmoothies((prevSmoothies) => {
-      return prevSmoothies.filter((sm) => sm.id !== id);
+    setBookings((prevBookings) => {
+      return prevBookings.filter((sm) => sm.id !== id);
     });
   };
 
   useEffect(() => {
-    const fetchSmoothies = async () => {
-      const { data, error } = await supabase.from("smoothies").select();
+    const fetchBookings = async () => {
+      const { data, error } = await supabase.from("bookings").select();
 
       if (error) {
         setFetchError("Nie można było pobrać danych");
-        setSmoothies(null);
-        // console.log(error);
+        setBookings(null);
+        console.log(error);
       }
       if (data) {
-        setSmoothies(data);
+        setBookings(data);
         setFetchError(null);
       }
     };
-    fetchSmoothies();
+    fetchBookings();
   }, []);
 
   return (
     <div className="page home">
       <h2>Home</h2>
       {fetchError && <p>{fetchError}</p>}
-      {smoothies && (
-        <div className="smoothies">
+      {bookings && (
+        <div className="bookings">
           {/* {order by buttons} */}
-          <div className="smoothie-grid">
-            {smoothies.map((smoothie) => (
-              <SmoothieCard
-                key={smoothie.id}
-                smoothie={smoothie}
+          <div className="booking-grid">
+            {bookings.map((booking) => (
+              <BookingCard
+                key={booking.id}
+                booking={booking}
                 onDelete={handleDelete}
               />
             ))}

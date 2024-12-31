@@ -27,7 +27,13 @@
   display: block;
   flex-shrink: 0;
   flex-grow: 0;
+  -webkit-transition: all 3000ms ease-in-out;
+  transition: all 3000ms ease-in-out;
 }
+
+/* ------------------------------- */
+
+/* ------------------------------- */
 
 .img-slider-btn {
   all: unset;
@@ -111,9 +117,9 @@
 }
 
 @media not (prefers-reduced-motion) {
-  .img-slider-img {
+  /* .img-slider-img {
     transition: translate 300ms ease-in-out;
-  }
+  } */
 
   .img-slider-btn:hover > *,
   .img-slider-btn:focus-visible > * {

@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import supabase from "../config/supabaseClient";
 
-const SmoothieCard = ({ smoothie, onDelete }) => {
+const BookingCard = ({ booking, onDelete }) => {
   const handleDelete = async () => {
     const { data, error } = await supabase
-      .from("smoothies")
+      .from("bookings")
       .delete()
-      .eq("id", smoothie.id)
+      .eq("id", booking.id)
       .select();
 
     if (error) {
@@ -15,19 +15,19 @@ const SmoothieCard = ({ smoothie, onDelete }) => {
     }
     if (data) {
       console.log(data);
-      onDelete(smoothie.id);
+      onDelete(booking.id);
     }
   };
 
   return (
-    <div className="smoothie-card">
-      <h5>Checkin date: {smoothie.checkin_date}</h5>
-      <h5>Checkout date: {smoothie.checkout_date}</h5>
-      <h3>{smoothie.title}</h3>
-      <p>{smoothie.method}</p>
-      <div className="rating">Liczba gości: {smoothie.rating}</div>
+    <div className="booking-card">
+      <h5>Checkin date: {booking.checkin_date}</h5>
+      <h5>Checkout date: {booking.checkout_date}</h5>
+      <h3>{booking.title}</h3>
+      <p>{booking.method}</p>
+      <div className="rating">Liczba gości: {booking.rating}</div>
       <div className="buttons">
-        <Link to={"/" + smoothie.id}>
+        <Link to={"/" + booking.id}>
           <i className="material-icons">edit</i>
         </Link>
         <i className="material-icons" onClick={handleDelete}>
@@ -38,8 +38,8 @@ const SmoothieCard = ({ smoothie, onDelete }) => {
   );
 };
 
-SmoothieCard.propTypes = {
-  smoothie: PropTypes.shape({
+BookingCard.propTypes = {
+  booking: PropTypes.shape({
     id: PropTypes.string.isRequired,
     checkin_date: PropTypes.string.isRequired,
     checkout_date: PropTypes.string.isRequired,
@@ -51,4 +51,4 @@ SmoothieCard.propTypes = {
   onDelete: PropTypes.func.isRequired,
 };
 
-export default SmoothieCard;
+export default BookingCard;

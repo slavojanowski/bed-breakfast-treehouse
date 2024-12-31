@@ -23,7 +23,7 @@ const Update = () => {
     }
 
     const { data, error } = await supabase
-      .from("smoothies")
+      .from("bookings")
       .update({ title, method, rating, checkin_date, checkout_date })
       .eq("id", id)
       .select();
@@ -42,9 +42,9 @@ const Update = () => {
   };
 
   useEffect(() => {
-    const fetchSmoothie = async () => {
+    const fetchBooking = async () => {
       const { data, error } = await supabase
-        .from("smoothies")
+        .from("bookings")
         .select()
         .eq("id", id)
         .single();
@@ -60,7 +60,7 @@ const Update = () => {
         setCheckout_date(data.checkout_date);
       }
     };
-    fetchSmoothie();
+    fetchBooking();
   }, [id, navigate]);
 
   return (
@@ -105,7 +105,7 @@ const Update = () => {
           onChange={(e) => setCheckout_date(e.target.value)}
         />
 
-        <button>Update Smoothie Recipe</button>
+        <button>Update booking</button>
 
         {formError && <p className="error">{formError}</p>}
       </form>
