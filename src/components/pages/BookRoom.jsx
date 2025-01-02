@@ -2,7 +2,7 @@ import supabase from "../../config/supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const Create = () => {
+const BookRoom = () => {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -86,4 +86,4 @@ const Create = () => {
     </div>
   );
 };
-export default Create;
+export default BookRoom;

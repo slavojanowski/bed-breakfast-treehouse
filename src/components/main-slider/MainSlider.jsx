@@ -7,7 +7,7 @@ export default function MainSlider({ imageUrls }) {
   const [imageIndex, setImageIndex] = useState(0);
 
   const showNextImage = () => {
-    if (imageIndex < imageUrls.length - 1) {
+    if (imageIndex !== imageUrls.length - 1) {
       setImageIndex(imageIndex + 1);
     } else {
       setImageIndex(0);
@@ -15,7 +15,7 @@ export default function MainSlider({ imageUrls }) {
   };
 
   const showPrevImage = () => {
-    if (imageIndex > 0) {
+    if (imageIndex) {
       setImageIndex(imageIndex - 1);
     } else {
       setImageIndex(imageUrls.length - 1);
@@ -36,7 +36,6 @@ export default function MainSlider({ imageUrls }) {
         className="img-slider-img"
         alt="Slider slide"
       />
-
       <button
         onClick={showNextImage}
         className="img-slider-btn"
