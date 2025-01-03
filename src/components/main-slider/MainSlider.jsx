@@ -1,52 +1,63 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../main-slider/css/main-slider.css";
 import { FaCircleLeft, FaCircleRight } from "react-icons/fa6";
-import PropTypes from "prop-types";
+import slidesData from "./SlidesData";
 
-export default function MainSlider({ imageUrls }) {
+function MainSlider() {
   const [imageIndex, setImageIndex] = useState(0);
+  const allSlidesData = slidesData;
 
-  const showNextImage = () => {
-    if (imageIndex !== imageUrls.length - 1) {
-      setImageIndex(imageIndex + 1);
-    } else {
+  useEffect(() => {
+    const lastIndex = slidesData.length - 1;
+    if (imageIndex < 0) {
+      setImageIndex(lastIndex);
+    }
+    if (imageIndex > lastIndex) {
       setImageIndex(0);
     }
-  };
+  }, [imageIndex, allSlidesData]);
 
-  const showPrevImage = () => {
-    if (imageIndex) {
-      setImageIndex(imageIndex - 1);
-    } else {
-      setImageIndex(imageUrls.length - 1);
-    }
-  };
+  // autoslide, clearInterval
+  useEffect(() => {
+    const mainSlider = setInterval(() => {
+      setImageIndex(imageIndex + 1);
+    }, 5000);
+    return () => clearInterval(mainSlider);
+  }, [imageIndex]);
 
   return (
-    <div className="single-slide">
-      <button
-        onClick={showPrevImage}
-        className="img-slider-btn"
-        style={{ left: 0 }}
-      >
-        <FaCircleLeft />
-      </button>
-      <img
-        src={imageUrls[imageIndex]}
-        className="img-slider-img"
-        alt="Slider slide"
+    <div className="section-center">
+      {allSlidesData.map((slide, i) => {
+        const { id, image } = slide;
+        let position = "nextSlide";
+        if (i === imageIndex) {
+          position = "activeSlide";
+        }
+        if (
+          i === imageIndex - 1 ||
+          (imageIndex === 0 && i === slidesData.length - 1)
+        ) {
+          position = "lastSlide";
+        }
+
+        return (
+          <div key={id} className={`single-slide ${position}`}>
+            <img src={image} alt="Main slider" className="img-slider-img" />
+          </div>
+        );
+      })}
+
+      <FaCircleLeft
+        className="prev"
+        onClick={() => setImageIndex(imageIndex - 1)}
       />
-      <button
-        onClick={showNextImage}
-        className="img-slider-btn"
-        style={{ right: 0 }}
-      >
-        <FaCircleRight />
-      </button>
+
+      <FaCircleRight
+        className="next"
+        onClick={() => setImageIndex(imageIndex + 1)}
+      />
     </div>
   );
 }
 
-MainSlider.propTypes = {
-  imageUrls: PropTypes.arrayOf(PropTypes.string),
-};
+export default MainSlider;
