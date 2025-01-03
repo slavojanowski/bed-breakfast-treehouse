@@ -1,19 +1,26 @@
 import supabase from "../../config/supabaseClient";
 import { useState, useEffect } from "react";
 import BookingCard from "../bookings/BookingCard";
-// import MainSlider from "../main-slider/MainSlider";
 import PropTypes from "prop-types";
 
 import MainSlider from "../main-slider/MainSlider";
 
 // SLIDER
-import slideImg1 from "../main-slider/images/car-1.jpg";
-import slideImg2 from "../main-slider/images/car-2.jpg";
-import slideImg3 from "../main-slider/images/car-3.jpg";
-import slideImg4 from "../main-slider/images/car-4.jpg";
-import slideImg5 from "../main-slider/images/car-5.jpg";
+import slideImg2 from "../main-slider/images/luksusowy-pokoj-dwuosobowy-cover.jpg";
+import slideImg3 from "../main-slider/images/nowoczesny-pokoj-dwuosobowy-cover.jpg";
+import slideImg5 from "../main-slider/images/sloneczny-pokoj-jednoosobowy-cover.jpg";
+import slideImg6 from "../main-slider/images/stylowy-pokoj-dwuosobowy-cover.jpg";
+import slideImg4 from "../main-slider/images/profesjonalny-pokoj-jednoosobowy-cover.jpg";
+import slideImg1 from "../main-slider/images/klasyczny-pokoj-dwuosobowy-cover.jpg";
 
-const images = [slideImg1, slideImg2, slideImg3, slideImg4, slideImg5];
+const sliderImages = [
+  slideImg1,
+  slideImg2,
+  slideImg3,
+  slideImg4,
+  slideImg5,
+  slideImg6,
+];
 
 const Home = () => {
   const [fetchError, setFetchError] = useState(null);
@@ -45,7 +52,7 @@ const Home = () => {
   return (
     <>
       <div className="slider-container">
-        <MainSlider imageUrls={images} />
+        <MainSlider imageUrls={sliderImages} />
       </div>
       <div className="page home">
         {fetchError && <p>{fetchError}</p>}

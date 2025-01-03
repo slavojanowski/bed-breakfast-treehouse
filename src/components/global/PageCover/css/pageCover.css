@@ -1,6 +1,6 @@
 .our-rooms-page-cover {
-  min-height: 400px;
-  background: url("../../main-slider/images/car-2.jpg");
+  min-height: 500px;
+  background: url("../images/single-page-cover-bg-cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,7 +11,8 @@
 
 .page-banner {
   padding: 50px;
-  background-color: #ffffff;
+  background-color: #ffffffd6;
   color: #000;
   text-align: center;
+  max-width: 70%;
 }

@@ -1,4 +1,4 @@
-import "../../global/PageCover/pageCover.css";
+import "../../global/PageCover/css/pageCover.css";
 import PropTypes from "prop-types";
 
 const PageCover = ({ children, coverClass }) => {
