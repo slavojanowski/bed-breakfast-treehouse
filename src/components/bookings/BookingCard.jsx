@@ -21,7 +21,7 @@ const BookingCard = ({ booking, onDelete }) => {
 
   return (
     <div className="booking-card">
-      <h4>Data złożenia rezerwacji{booking.created_at}</h4>
+      <h4>Data złożenia rezerwacji: {booking.created_at}</h4>
       <h5>Początek pobytu: {booking.checkin_date}</h5>
       <h5>koniec pobytu {booking.checkout_date}</h5>
       <h3>{booking.title}</h3>

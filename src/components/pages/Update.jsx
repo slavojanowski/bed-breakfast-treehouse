@@ -105,7 +105,7 @@ const Update = () => {
           onChange={(e) => setCheckout_date(e.target.value)}
         />
 
-        <button>Update booking</button>
+        <button>Zaktualizuj rezerwacje</button>
 
         {formError && <p className="error">{formError}</p>}
       </form>

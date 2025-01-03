@@ -1,0 +1,17 @@
+.our-rooms-page-cover {
+  min-height: 400px;
+  background: url("../../main-slider/images/car-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-banner {
+  padding: 50px;
+  background-color: #ffffff;
+  color: #000;
+  text-align: center;
+}
