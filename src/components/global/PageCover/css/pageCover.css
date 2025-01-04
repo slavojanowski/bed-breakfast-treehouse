@@ -9,6 +9,10 @@
   justify-content: center;
 }
 
+.our-rooms-page-cover::after {
+  background-color: #06060624;
+}
+
 .page-banner {
   padding: 50px;
   background-color: #ffffffd6;

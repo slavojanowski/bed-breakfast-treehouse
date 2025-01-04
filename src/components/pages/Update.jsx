@@ -65,7 +65,7 @@ const Update = () => {
 
   return (
     <div className="page update">
-      <form onSubmit={handleSubmit}>
+      <form className="book-room-form" onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input
           type="text"

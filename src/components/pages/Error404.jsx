@@ -1,6 +1,5 @@
 import PageCover from "../global/PageCover/PageCover";
 import PageBanner from "../global/PageCover/PageBanner";
-import { Link } from "react-router-dom";
 import ButtonLarge from "../global/ButtonLarge";
 
 const Error404 = () => {

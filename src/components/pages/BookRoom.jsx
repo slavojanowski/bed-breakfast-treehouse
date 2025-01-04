@@ -99,10 +99,6 @@ const BookRoom = () => {
 
           {formError && <p className="error">{formError}</p>}
         </form>
-
-        <div className="rooms-showcase">
-          <h1>Tutaj będą kafelki pokoi</h1>
-        </div>
       </div>
     </>
   );

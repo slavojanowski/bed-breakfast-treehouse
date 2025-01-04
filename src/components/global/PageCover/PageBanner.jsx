@@ -11,7 +11,7 @@ const PageBanner = ({ children, title, subtitle }) => {
 };
 
 PageBanner.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node,
   subtitle: PropTypes.string,
   children: PropTypes.node,
 };
