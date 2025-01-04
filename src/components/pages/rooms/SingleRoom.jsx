@@ -3,25 +3,58 @@ import PageCover from "../../global/PageCover/PageCover";
 import ButtonLarge from "../../global/ButtonLarge";
 import roomsData from "../rooms/RoomsData";
 import { useParams } from "react-router-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const SingleRoom = () => {
-  // const { id, image, title, subtitle, slug } = room;
-
   const { slug } = useParams();
   const allRoomsData = roomsData.filter((room) => room.slug === slug);
 
+  // const currentRoom = roomsData.find(
+  //   (room) => room.slug === "nowoczesny-pokoj-dwuosobowy"
+  // );
+
+  // const allRoomsData = roomsData;
+
   return (
-    <div className="cccc">
-      {allRoomsData.map(({ id, image, title, subtitle }) => (
-        <div key={id}>
+    // <>
+    //   <PageCover
+    //     coverStyle={{
+    //       backgroundImage: `url(${currentRoom.image})`,
+    //     }}
+    //     coverClass={"our-rooms-page-cover"}
+    //   >
+    //     <PageBanner title={currentRoom.title} subtitle={currentRoom.subtitle}>
+    //       <ButtonLarge
+    //         buttonText="Zobacz wszystkie pokoje "
+    //         buttonLink={"/pokoje"}
+    //       />
+    //     </PageBanner>
+    //   </PageCover>
+
+    //   {allRoomsData.map((oneRoom) => {
+    //     return (
+    //       <div key={oneRoom.id} className="page our-rooms">
+    //         <h1>Welcome to {oneRoom.title}</h1>
+    //         <img src={oneRoom.cover_image} alt={oneRoom.subtitle} />
+    //       </div>
+    //     );
+    //   })}
+
+    //   <div className="page our-rooms">
+    //     <h1>Welcome to {currentRoom.title}</h1>
+    //   </div>
+    // </>
+
+    <>
+      {allRoomsData.map((room) => (
+        <div key={room.id}>
           <PageCover
             coverStyle={{
-              backgroundImage: `url("${image}")`,
+              backgroundImage: `url(${room.image})`,
             }}
             coverClass={"our-rooms-page-cover"}
           >
-            <PageBanner title={title} subtitle={subtitle}>
+            <PageBanner title={room.title} subtitle={room.subtitle}>
               <ButtonLarge
                 buttonText="Zobacz wszystkie pokoje "
                 buttonLink={"/pokoje"}
@@ -34,12 +67,12 @@ const SingleRoom = () => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
-SingleRoom.propTypes = {
-  slug: PropTypes.string.isRequired,
-};
+// SingleRoom.propTypes = {
+//   slug: PropTypes.string.isRequired,
+// };
 
 export default SingleRoom;

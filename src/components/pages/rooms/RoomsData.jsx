@@ -10,10 +10,8 @@ const roomsData = [
     subtitle:
       "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
     image:
-      "./src/components/main-slider/images/luksusowy-pokoj-dwuosobowy-cover.jpg",
+      "/src/components/main-slider/images/luksusowy-pokoj-dwuosobowy-cover.jpg",
     price: 299,
-    cover_image:
-      "../../pages/images/rooms/room-cover/sloneczny-pokoj-jednoosobowy-cover.jpg",
   },
   {
     id: 2,
@@ -26,10 +24,8 @@ const roomsData = [
     subtitle:
       "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
     image:
-      "./src/components/main-slider/images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
+      "/src/components/main-slider/images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
-    cover_image:
-      "../../pages/images/rooms/room-cover/sloneczny-pokoj-jednoosobowy-cover.jpg",
   },
   {
     id: 3,
@@ -42,10 +38,8 @@ const roomsData = [
     subtitle:
       "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
     image:
-      "./src/components/main-slider/images/sloneczny-pokoj-jednoosobowy-cover.jpg",
+      "/src/components/main-slider/images/sloneczny-pokoj-jednoosobowy-cover.jpg",
     price: 259,
-    cover_image:
-      "../../pages/images/rooms/room-cover/sloneczny-pokoj-jednoosobowy-cover.jpg",
   },
   {
     id: 4,
@@ -58,10 +52,8 @@ const roomsData = [
     subtitle:
       "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
     image:
-      "./src/components/main-slider/images/stylowy-pokoj-dwuosobowy-cover.jpg",
+      "/src/components/main-slider/images/stylowy-pokoj-dwuosobowy-cover.jpg",
     price: 349,
-    cover_image:
-      "../../pages/images/rooms/room-cover/sloneczny-pokoj-jednoosobowy-cover.jpg",
   },
   {
     id: 5,
@@ -74,10 +66,8 @@ const roomsData = [
     subtitle:
       "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
     image:
-      "./src/components/main-slider/images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
+      "/src/components/main-slider/images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
     price: 299,
-    cover_image:
-      "../../pages/images/rooms/room-cover/sloneczny-pokoj-jednoosobowy-cover.jpg",
   },
   {
     id: 6,
@@ -90,10 +80,8 @@ const roomsData = [
     subtitle:
       "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
     image:
-      "./src/components/main-slider/images/klasyczny-pokoj-dwuosobowy-cover.jpg",
+      "/src/components/main-slider/images/klasyczny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
-    cover_image:
-      "./src/components/main-slider/images/klasyczny-pokoj-dwuosobowy-cover.jpg",
   },
 ];
 
