@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import PageCover from "../global/PageCover/PageCover";
 import PageBanner from "../global/PageCover/PageBanner";
+import SinglePageCover from "../global/PageCover/images/single-page-cover-bg-cover.jpg";
 
 const BookRoom = () => {
   const navigate = useNavigate();
@@ -41,15 +42,20 @@ const BookRoom = () => {
 
   return (
     <>
-      <PageCover coverClass={"our-rooms-page-cover"}>
+      <PageCover
+        coverStyle={{
+          backgroundImage: `url(${SinglePageCover})`,
+        }}
+        coverClass={"our-rooms-page-cover"}
+      >
         <PageBanner
-          title="aaa luxurious rooms"
-          subtitle="bbbb deluxe rooms starting at $299"
+          title="Zarezerwuj swój pobyt w naszym hotelu"
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
         ></PageBanner>
       </PageCover>
 
       <div className="page our-rooms">
-        <form onSubmit={handleSubmit}>
+        <form className="book-room-form" onSubmit={handleSubmit}>
           <label htmlFor="title">Title:</label>
           <input
             type="text"
@@ -93,6 +99,10 @@ const BookRoom = () => {
 
           {formError && <p className="error">{formError}</p>}
         </form>
+
+        <div className="rooms-showcase">
+          <h1>Tutaj będą kafelki pokoi</h1>
+        </div>
       </div>
     </>
   );

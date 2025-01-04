@@ -1,91 +1,77 @@
+/* ----- App.css ----- */
 :root {
-  --primary: #12bca2;
-  --secondary: #6d15df;
-}
-h1,
-h2,
-h3 {
-  margin: 0;
+  --primary: orangered;
+  --secondary: #f34201;
+  --font-color-dark: #000;
+  --font-color-light: #fff;
 }
 
 body {
   margin: 0;
-  color: #333;
+  min-height: 100vh;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--font-color-dark);
   font-family: "Poppins", serif;
   background: #f2f2f2;
 }
 
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--secondary);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 1rem 0;
+}
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 1.15;
+}
+
+button,
+.button-large {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: var(--primary);
+  color: var(--font-color-light);
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+button:hover,
+.button-large:hover {
+  background-color: var(--secondary);
+  color: var(--font-color-light);
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
+/* ----------- elementy strukturalne -------------- */
 .page {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
 }
 
-.booking-grid {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.booking-card {
-  width: 100%;
-  padding: 25px;
-  background: #fff;
-  box-sizing: border-box;
-  border-radius: 6px;
-  position: relative;
-}
-
-.booking-card .rating {
-  background: var(--secondary);
-  color: #fff;
-  border-radius: 6px;
-  width: auto;
-  display: inline-block;
-  padding: 20px;
-  line-height: 0px;
-}
-
-/* Form elements */
-form {
-  background: #fff;
-  padding: 20px;
-  max-width: 480px;
-  margin: 0 auto;
-  border-radius: 6px;
-}
-
-form input,
-form textarea {
-  display: block;
-  width: 100%;
-  padding: 6px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  margin: 10px 0 20px 0;
-}
-
-form button {
-  background: var(--primary);
-  color: #fff;
-  border: 0;
-  border-radius: 6px;
-  padding: 6px 8px;
-  font-family: "Poppins";
-  cursor: pointer;
-}
-
-.booking-card .buttons {
-  text-align: right;
-}
-
-.booking-card i {
-  color: #bbb;
-  margin-left: 10px;
-  font-size: 1.2em;
-  padding: 6px;
-  background: #eee;
-  border-radius: 50%;
-  cursor: pointer;
+.error-page {
+  min-height: calc(100vh - 116px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

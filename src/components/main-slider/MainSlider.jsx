@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "../main-slider/css/main-slider.css";
 import { FaCircleLeft, FaCircleRight } from "react-icons/fa6";
 import slidesData from "./SlidesData";
+import ButtonLarge from "../global/ButtonLarge";
+import PageBanner from "../global/PageCover/PageBanner";
 
 function MainSlider() {
   const [imageIndex, setImageIndex] = useState(0);
@@ -26,9 +28,9 @@ function MainSlider() {
   }, [imageIndex]);
 
   return (
-    <div className="section-center">
+    <div className="section-main">
       {allSlidesData.map((slide, i) => {
-        const { id, image } = slide;
+        const { id, slug, title, subtitle, image } = slide;
         let position = "nextSlide";
         if (i === imageIndex) {
           position = "activeSlide";
@@ -41,9 +43,15 @@ function MainSlider() {
         }
 
         return (
-          <div key={id} className={`single-slide ${position}`}>
-            <img src={image} alt="Main slider" className="img-slider-img" />
-          </div>
+          <>
+            <div key={id} className={`single-slide ${position}`}>
+              <img src={image} alt="Main slider" className="img-slider-img" />
+
+              <PageBanner title={title} subtitle={subtitle}>
+                <ButtonLarge buttonText="Przejdź do pokoju" buttonLink={slug} />
+              </PageBanner>
+            </div>
+          </>
         );
       })}
 

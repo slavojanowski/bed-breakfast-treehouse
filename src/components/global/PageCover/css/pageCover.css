@@ -1,6 +1,6 @@
 .our-rooms-page-cover {
+  width: 100%;
   min-height: 500px;
-  background: url("../images/single-page-cover-bg-cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,5 +14,5 @@
   background-color: #ffffffd6;
   color: #000;
   text-align: center;
-  max-width: 70%;
+  max-width: 55%;
 }

@@ -41,7 +41,6 @@ const BookingCard = ({ booking, onDelete }) => {
 
 BookingCard.propTypes = {
   booking: PropTypes.shape({
-    // id: PropTypes.string.isRequired,
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     created_at: PropTypes.string.isRequired,
     checkin_date: PropTypes.string.isRequired,
