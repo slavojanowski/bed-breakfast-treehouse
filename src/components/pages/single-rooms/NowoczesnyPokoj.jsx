@@ -9,7 +9,12 @@ const NowoczesnyPokoj = () => {
 
   return (
     <>
-      <PageCover coverClass={"our-rooms-page-cover"}>
+      <PageCover
+        coverStyle={{
+          backgroundImage: `url(${currentSlide.image})`,
+        }}
+        coverClass={"our-rooms-page-cover"}
+      >
         <PageBanner
           title={currentSlide.title}
           subtitle={currentSlide.subtitle}
