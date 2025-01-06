@@ -8,7 +8,7 @@ const slidesData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Luksusowe wnętrze i wszystkie udogodnienia, których potrzebujesz",
     image:
       "./src/components/main-slider/images/luksusowy-pokoj-dwuosobowy-cover.jpg",
   },
@@ -21,7 +21,7 @@ const slidesData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Nowoczesne wnętrze i wszystkie udogodnienia, których potrzebujesz",
     image:
       "./src/components/main-slider/images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
   },
@@ -34,7 +34,7 @@ const slidesData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Słoneczne wnętrze i wszystkie udogodnienia, których potrzebujesz",
     image:
       "./src/components/main-slider/images/sloneczny-pokoj-jednoosobowy-cover.jpg",
   },
@@ -46,8 +46,7 @@ const slidesData = [
         Stylowy pokój <br /> 2-osobowy
       </>
     ),
-    subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+    subtitle: "Stylowe wnętrze i wszystkie udogodnienia, których potrzebujesz",
     image:
       "./src/components/main-slider/images/stylowy-pokoj-dwuosobowy-cover.jpg",
   },
@@ -60,7 +59,7 @@ const slidesData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Profesjonalne wnętrze i wszystkie udogodnienia, których potrzebujesz",
     image:
       "./src/components/main-slider/images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
   },
@@ -73,7 +72,7 @@ const slidesData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Klasyczne wnętrze i wszystkie udogodnienia, których potrzebujesz",
     image:
       "./src/components/main-slider/images/klasyczny-pokoj-dwuosobowy-cover.jpg",
   },

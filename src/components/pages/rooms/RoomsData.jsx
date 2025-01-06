@@ -9,7 +9,7 @@ const roomsData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Luksusowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image:
       "/src/components/main-slider/images/luksusowy-pokoj-dwuosobowy-cover.jpg",
     price: 299,
@@ -30,7 +30,7 @@ const roomsData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Nowoczesne wnętrze, wygodne łóżka i wszystkie udogodnienia, których potrzebujesz",
     image:
       "/src/components/main-slider/images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
@@ -51,7 +51,7 @@ const roomsData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Słoneczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image:
       "/src/components/main-slider/images/sloneczny-pokoj-jednoosobowy-cover.jpg",
     price: 259,
@@ -72,7 +72,7 @@ const roomsData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Stylowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image:
       "/src/components/main-slider/images/stylowy-pokoj-dwuosobowy-cover.jpg",
     price: 349,
@@ -93,7 +93,7 @@ const roomsData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Profesjonalne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image:
       "/src/components/main-slider/images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
     price: 299,
@@ -114,7 +114,7 @@ const roomsData = [
       </>
     ),
     subtitle:
-      "Lorem lipsum lorrem lipsum lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+      "Klasyczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image:
       "/src/components/main-slider/images/klasyczny-pokoj-dwuosobowy-cover.jpg",
     price: 399,

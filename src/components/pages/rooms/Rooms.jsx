@@ -17,7 +17,7 @@ const Rooms = () => {
   };
 
   useEffect(() => {
-    console.log("Filtered rooms updated:", filteredRooms);
+    console.log("Zaktualizwany stan filtrowania:", filteredRooms);
   }, [filteredRooms]);
 
   return (
@@ -30,7 +30,7 @@ const Rooms = () => {
       >
         <PageBanner
           title="Zarezerwuj swój pobyt w naszym hotelu"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+          subtitle="Doświadcz czegoś wyjątkowego"
         ></PageBanner>
       </PageCover>
 

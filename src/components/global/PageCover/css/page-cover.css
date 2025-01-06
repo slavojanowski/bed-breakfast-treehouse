@@ -1,4 +1,5 @@
 .our-rooms-page-cover {
+  background-color: #f2f2f2;
   width: 100%;
   min-height: 560px;
   background-repeat: no-repeat;
@@ -17,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
@@ -26,7 +27,12 @@
 }
 
 .page-banner {
-  padding: calc(1rem + 1vw);
+  /* padding: calc(1rem + 1vw); */
+  padding-top: calc(1rem + 1vw);
+  padding-right: calc(2rem + 1vw);
+  padding-bottom: calc(1rem + 1vw);
+  padding-left: calc(2rem + 1vw);
+
   background-color: #ffffffbf;
   color: #000;
   text-align: center;
