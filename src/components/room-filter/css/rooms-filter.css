@@ -1,0 +1,136 @@
+/* ----- Rooms Filter ----- */
+
+.filter-container {
+  padding: 3rem 0 5rem;
+}
+
+.filter-form {
+  width: 60vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 40px;
+  background: #ffffffd0;
+  padding: 2rem 2.5rem;
+}
+
+.form-group {
+  text-transform: capitalize;
+}
+
+.form-checkboxes-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.custom-checkbox label {
+  margin: 0 0 0 0.5rem;
+}
+
+.form-group label {
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  margin-top: 0.5rem;
+  background: transparent;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #bcbcbc;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(204, 204, 204, 0.25);
+}
+
+.single-extra label {
+  display: inline-block;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+
+.no-results-message {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 75px;
+}
+
+/* ----- Room price range iput custom styling ----- */
+.room-price-range:focus {
+  box-shadow: none;
+  background: #c5c5c5;
+  border-color: #c5c5c5;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 1px 0;
+  cursor: pointer;
+  outline: none;
+  height: 2px;
+  background: #c5c5c5;
+  margin-top: 1.5rem;
+  border: 0;
+  border-radius: 0;
+}
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #f50;
+  border-radius: 50%;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  background-color: #f50;
+  border-radius: 50%;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+
+/* Hover, active & focus Thumb: Webkit */
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 10px rgba(255, 85, 0, 0.1);
+}
+input[type="range"]:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+/* ------------------------------------------------------------------------------ */
+
+@media screen and (min-width: 776px) {
+  .filter-form {
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .filter-form {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+/* end of rooms fitler*/

@@ -29,29 +29,30 @@ function MainSlider() {
 
   return (
     <div className="section-main">
-      {allSlidesData.map((slide, i) => {
+      {allSlidesData.map((slide, index) => {
         const { id, slug, title, subtitle, image } = slide;
         let position = "nextSlide";
-        if (i === imageIndex) {
+        if (index === imageIndex) {
           position = "activeSlide";
         }
         if (
-          i === imageIndex - 1 ||
-          (imageIndex === 0 && i === slidesData.length - 1)
+          index === imageIndex - 1 ||
+          (imageIndex === 0 && index === slidesData.length - 1)
         ) {
           position = "lastSlide";
         }
 
         return (
-          <>
-            <div key={id} className={`single-slide ${position}`}>
-              <img src={image} alt="Main slider" className="img-slider-img" />
+          <div key={id} className={`single-slide ${position}`}>
+            <img src={image} alt="Main slider" className="img-slider-img" />
 
-              <PageBanner title={title} subtitle={subtitle}>
-                <ButtonLarge buttonText="Przejdź do pokoju" buttonLink={slug} />
-              </PageBanner>
-            </div>
-          </>
+            <PageBanner title={title} subtitle={subtitle}>
+              <ButtonLarge
+                buttonText="Przejdź do pokoju"
+                buttonLink={`/pokoje/${slug}`}
+              />
+            </PageBanner>
+          </div>
         );
       })}
 

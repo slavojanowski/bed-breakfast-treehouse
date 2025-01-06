@@ -4,14 +4,14 @@ const PageBanner = ({ children, title, subtitle }) => {
   return (
     <div className="page-banner">
       <h1>{title}</h1>
-      <p>{subtitle}</p>
+      <h3>{subtitle}</h3>
       {children}
     </div>
   );
 };
 
 PageBanner.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node,
   subtitle: PropTypes.string,
   children: PropTypes.node,
 };

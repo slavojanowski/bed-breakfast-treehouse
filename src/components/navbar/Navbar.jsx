@@ -4,11 +4,11 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 
 export const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Funkcja do zamykania menu po kliknięciu w menu item
-  const handleMenuClose = () => {
-    setMenuOpen(false);
+  // Funkcja do zamykania mbile menu po kliknięciu w menu list item
+  const handleMobileMenuClose = () => {
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -18,25 +18,33 @@ export const Navbar = () => {
           <Link to="/">
             <img src={Logo} alt="Logo" className="navbar-logo" />
           </Link>
-          <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+          <div
+            className="menu"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
             <span></span>
             <span></span>
             <span></span>
           </div>
         </div>
-        <ul className={menuOpen ? "open" : ""}>
+        <ul className={mobileMenuOpen ? "open" : ""}>
           <li>
-            <NavLink to="/" onClick={handleMenuClose}>
+            <NavLink to="/" onClick={handleMobileMenuClose}>
               HOME
             </NavLink>
           </li>
           <li>
-            <NavLink to="/rezerwacja" onClick={handleMenuClose}>
+            <NavLink to="/pokoje" onClick={handleMobileMenuClose}>
+              NASZE POKOJE
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/rezerwacja" onClick={handleMobileMenuClose}>
               ZAREZERWUJ POKÓJ
             </NavLink>
           </li>
           <li>
-            <NavLink to="/kontakt" onClick={handleMenuClose}>
+            <NavLink to="/kontakt" onClick={handleMobileMenuClose}>
               KONTAKT
             </NavLink>
           </li>

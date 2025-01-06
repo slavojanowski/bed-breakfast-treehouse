@@ -1,4 +1,4 @@
-import "../../global/PageCover/css/pageCover.css";
+import "../../global/PageCover/css/page-cover.css";
 import PropTypes from "prop-types";
 
 const PageCover = ({ children, coverStyle, coverClass }) => {
@@ -10,8 +10,8 @@ const PageCover = ({ children, coverStyle, coverClass }) => {
 };
 
 PageCover.propTypes = {
-  coverClass: PropTypes.arrayOf(PropTypes.string),
-  coverStyle: PropTypes.arrayOf(PropTypes.string),
+  coverClass: PropTypes.string.isRequired,
+  coverStyle: PropTypes.object,
   children: PropTypes.node,
 };
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import PageCover from "../global/PageCover/PageCover";
 import PageBanner from "../global/PageCover/PageBanner";
-import SinglePageCover from "../global/PageCover/images/single-page-cover-bg-cover.jpg";
+import SinglePageCover from "/src/images/single-page-cover-bg-cover.jpg";
 
 const BookRoom = () => {
   const navigate = useNavigate();
@@ -99,10 +99,6 @@ const BookRoom = () => {
 
           {formError && <p className="error">{formError}</p>}
         </form>
-
-        <div className="rooms-showcase">
-          <h1>Tutaj będą kafelki pokoi</h1>
-        </div>
       </div>
     </>
   );

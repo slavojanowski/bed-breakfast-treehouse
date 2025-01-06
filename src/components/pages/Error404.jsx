@@ -1,11 +1,16 @@
 import PageCover from "../global/PageCover/PageCover";
 import PageBanner from "../global/PageCover/PageBanner";
-import { Link } from "react-router-dom";
 import ButtonLarge from "../global/ButtonLarge";
+import SinglePageCover from "/src/images/single-page-cover-bg-cover.jpg";
 
 const Error404 = () => {
   return (
-    <PageCover coverClass={"error-page"}>
+    <PageCover
+      coverStyle={{
+        backgroundImage: `url(${SinglePageCover})`,
+      }}
+      coverClass={"error-page"}
+    >
       <PageBanner
         title="Ups... Błąd 404"
         subtitle="Przykro nam, ale strona, której szukasz nie istnieje."

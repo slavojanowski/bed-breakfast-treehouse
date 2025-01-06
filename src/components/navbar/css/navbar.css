@@ -1,6 +1,12 @@
+/* --- Navnar CSS --- */
+
 .active {
   background-color: orangered;
   color: #ffffff;
+}
+
+.active:hover {
+  background-color: #f34201;
 }
 
 nav {
@@ -11,6 +17,7 @@ nav {
   color: rgb(0, 0, 0);
   position: sticky;
   top: 0;
+  z-index: 999999;
 }
 nav .container {
   max-width: 1200px;
