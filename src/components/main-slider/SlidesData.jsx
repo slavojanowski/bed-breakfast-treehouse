@@ -9,7 +9,7 @@ const slidesData = [
     ),
     subtitle:
       "Luksusowe wnętrze i wszystkie udogodnienia, których potrzebujesz",
-    image: "/public/images/slider-images/luksusowy-pokoj-dwuosobowy-cover.jpg",
+    image: "/slider-images/luksusowy-pokoj-dwuosobowy-cover.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const slidesData = [
     ),
     subtitle:
       "Nowoczesne wnętrze i wszystkie udogodnienia, których potrzebujesz",
-    image: "/public/images/slider-images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
+    image: "/slider-images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
   },
   {
     id: 3,
@@ -33,8 +33,7 @@ const slidesData = [
     ),
     subtitle:
       "Słoneczne wnętrze i wszystkie udogodnienia, których potrzebujesz",
-    image:
-      "/public/images/slider-images/sloneczny-pokoj-jednoosobowy-cover.jpg",
+    image: "/slider-images/sloneczny-pokoj-jednoosobowy-cover.jpg",
   },
   {
     id: 4,
@@ -45,8 +44,7 @@ const slidesData = [
       </>
     ),
     subtitle: "Stylowe wnętrze i wszystkie udogodnienia, których potrzebujesz",
-    image:
-      "/public/images/slider-images/images/stylowy-pokoj-dwuosobowy-cover.jpg",
+    image: "/slider-images/images/stylowy-pokoj-dwuosobowy-cover.jpg",
   },
   {
     id: 5,
@@ -58,8 +56,7 @@ const slidesData = [
     ),
     subtitle:
       "Profesjonalne wnętrze i wszystkie udogodnienia, których potrzebujesz",
-    image:
-      "/public/images/slider-images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
+    image: "/slider-images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
   },
   {
     id: 6,
@@ -71,7 +68,7 @@ const slidesData = [
     ),
     subtitle:
       "Klasyczne wnętrze i wszystkie udogodnienia, których potrzebujesz",
-    image: "/public/images/slider-images/klasyczny-pokoj-dwuosobowy-cover.jpg",
+    image: "/slider-images/klasyczny-pokoj-dwuosobowy-cover.jpg",
   },
 ];
 
