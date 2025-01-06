@@ -10,8 +10,7 @@ const roomsData = [
     ),
     subtitle:
       "Luksusowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
-    image:
-      "/src/components/main-slider/images/luksusowy-pokoj-dwuosobowy-cover.jpg",
+    image: "/public/images/slider-images/luksusowy-pokoj-dwuosobowy-cover.jpg",
     price: 299,
     beds_number: 1,
     beds_size: "1 podwójne",
@@ -31,8 +30,7 @@ const roomsData = [
     ),
     subtitle:
       "Nowoczesne wnętrze, wygodne łóżka i wszystkie udogodnienia, których potrzebujesz",
-    image:
-      "/src/components/main-slider/images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
+    image: "/public/images/slider-images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
     beds_number: 2,
     beds_size: "2 pojedyncze",
@@ -53,7 +51,7 @@ const roomsData = [
     subtitle:
       "Słoneczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image:
-      "/src/components/main-slider/images/sloneczny-pokoj-jednoosobowy-cover.jpg",
+      "/public/images/slider-images/sloneczny-pokoj-jednoosobowy-cover.jpg",
     price: 259,
     beds_number: 1,
     beds_size: "1 pojedyncze",
@@ -73,8 +71,7 @@ const roomsData = [
     ),
     subtitle:
       "Stylowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
-    image:
-      "/src/components/main-slider/images/stylowy-pokoj-dwuosobowy-cover.jpg",
+    image: "/public/images/slider-images/stylowy-pokoj-dwuosobowy-cover.jpg",
     price: 349,
     beds_number: 1,
     beds_size: "1 podwójne",
@@ -95,7 +92,7 @@ const roomsData = [
     subtitle:
       "Profesjonalne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image:
-      "/src/components/main-slider/images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
+      "/public/images/slider-images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
     price: 299,
     beds_number: 1,
     beds_size: "1 podwójne",
@@ -115,8 +112,7 @@ const roomsData = [
     ),
     subtitle:
       "Klasyczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
-    image:
-      "/src/components/main-slider/images/klasyczny-pokoj-dwuosobowy-cover.jpg",
+    image: "/public/images/slider-images/klasyczny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
     beds_number: 1,
     beds_size: "1 podwójne",
