@@ -4,7 +4,7 @@ import roomsData from "./RoomsData";
 import "./css/room-tile.css";
 import PageCover from "../../global/PageCover/PageCover";
 import PageBanner from "../../global/PageCover/PageBanner";
-import SinglePageCover from "/public/single-page-cover-bg-cover.jpg";
+import SinglePageCover from "/various-images/single-page-cover-bg-cover.jpg";
 import RoomsFilter from "../../room-filter/RoomsFilter";
 
 const Rooms = () => {
