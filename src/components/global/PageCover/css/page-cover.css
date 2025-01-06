@@ -22,18 +22,13 @@
   z-index: 1;
 }
 
-.our-rooms-page-cover::after {
-  background-color: #06060624;
-}
-
 .page-banner {
-  /* padding: calc(1rem + 1vw); */
   padding-top: calc(1rem + 1vw);
   padding-right: calc(2rem + 1vw);
   padding-bottom: calc(1rem + 1vw);
   padding-left: calc(2rem + 1vw);
 
-  background-color: #ffffffbf;
+  background-color: #ffffffde;
   color: #000;
   text-align: center;
   max-width: 55%;
