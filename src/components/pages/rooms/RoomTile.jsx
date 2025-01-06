@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./css/roomTile.css";
+import "./css/room-tile.css";
 import PropTypes from "prop-types";
 
 export default function RoomTile({ room }) {

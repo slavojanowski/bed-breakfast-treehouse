@@ -90,7 +90,7 @@
   flex-wrap: wrap;
   row-gap: 35px;
   column-gap: 4%;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 @media screen and (min-width: 540px) {

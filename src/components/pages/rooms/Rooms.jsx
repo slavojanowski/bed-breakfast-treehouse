@@ -1,12 +1,24 @@
+import { useState, useEffect } from "react";
 import RoomTile from "./RoomTile";
 import roomsData from "./RoomsData";
-import "./css/roomTile.css";
+import "./css/room-tile.css";
 import PageCover from "../../global/PageCover/PageCover";
 import PageBanner from "../../global/PageCover/PageBanner";
-import SinglePageCover from "../../global/PageCover/images/single-page-cover-bg-cover.jpg";
+import SinglePageCover from "/src/images/single-page-cover-bg-cover.jpg";
+import RoomsFilter from "../../room-filter/RoomsFilter";
 
 const Rooms = () => {
-  const allRoomsData = roomsData;
+  const [filteredRooms, setFilteredRooms] = useState(roomsData);
+
+  const handleFilterChange = (filteredData) => {
+    if (JSON.stringify(filteredRooms) !== JSON.stringify(filteredData)) {
+      setFilteredRooms(filteredData);
+    }
+  };
+
+  useEffect(() => {
+    console.log("Filtered rooms updated:", filteredRooms);
+  }, [filteredRooms]);
 
   return (
     <>
@@ -23,9 +35,11 @@ const Rooms = () => {
       </PageCover>
 
       <div className="page home">
+        <RoomsFilter onFilterChange={handleFilterChange} />
+
         <section className="roomslist">
           <div className="roomslist-center">
-            {allRoomsData.map((roomData) => {
+            {filteredRooms.map((roomData) => {
               return (
                 <RoomTile
                   key={roomData.id}

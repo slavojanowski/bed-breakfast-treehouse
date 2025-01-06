@@ -1,6 +1,7 @@
 const roomsData = [
   {
     id: 1,
+    room_type: "2-osobowy",
     slug: "luksusowy-pokoj-dwuosobowy",
     title: (
       <>
@@ -12,9 +13,16 @@ const roomsData = [
     image:
       "/src/components/main-slider/images/luksusowy-pokoj-dwuosobowy-cover.jpg",
     price: 299,
+    beds_number: 1,
+    beds_size: "1 podwójne",
+    wifi_access: true,
+    tv_access: true,
+    pets_allowed: false,
+    free_parking: true,
   },
   {
     id: 2,
+    room_type: "2-osobowy",
     slug: "nowoczesny-pokoj-dwuosobowy",
     title: (
       <>
@@ -26,9 +34,16 @@ const roomsData = [
     image:
       "/src/components/main-slider/images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
+    beds_number: 2,
+    beds_size: "2 pojedyncze",
+    wifi_access: true,
+    tv_access: true,
+    pets_allowed: true,
+    free_parking: true,
   },
   {
     id: 3,
+    room_type: "1-osobowy",
     slug: "sloneczny-pokoj-jednoosobowy",
     title: (
       <>
@@ -40,9 +55,16 @@ const roomsData = [
     image:
       "/src/components/main-slider/images/sloneczny-pokoj-jednoosobowy-cover.jpg",
     price: 259,
+    beds_number: 1,
+    beds_size: "1 pojedyncze",
+    wifi_access: true,
+    tv_access: true,
+    pets_allowed: true,
+    free_parking: false,
   },
   {
     id: 4,
+    room_type: "2-osobowy",
     slug: "stylowy-pokoj-dwuosobowy",
     title: (
       <>
@@ -54,9 +76,16 @@ const roomsData = [
     image:
       "/src/components/main-slider/images/stylowy-pokoj-dwuosobowy-cover.jpg",
     price: 349,
+    beds_number: 1,
+    beds_size: "1 podwójne",
+    wifi_access: true,
+    tv_access: true,
+    pets_allowed: false,
+    free_parking: true,
   },
   {
     id: 5,
+    room_type: "1-osobowy",
     slug: "profesjonalny-pokoj-jednoosobowy",
     title: (
       <>
@@ -68,9 +97,16 @@ const roomsData = [
     image:
       "/src/components/main-slider/images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
     price: 299,
+    beds_number: 1,
+    beds_size: "1 podwójne",
+    wifi_access: true,
+    tv_access: true,
+    pets_allowed: false,
+    free_parking: true,
   },
   {
     id: 6,
+    room_type: "2-osobowy",
     slug: "klasyczny-pokoj-dwuosobowy",
     title: (
       <>
@@ -82,6 +118,12 @@ const roomsData = [
     image:
       "/src/components/main-slider/images/klasyczny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
+    beds_number: 1,
+    beds_size: "1 podwójne",
+    wifi_access: true,
+    tv_access: true,
+    pets_allowed: true,
+    free_parking: true,
   },
 ];
 
