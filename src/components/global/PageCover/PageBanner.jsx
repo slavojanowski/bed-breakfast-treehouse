@@ -4,7 +4,7 @@ const PageBanner = ({ children, title, subtitle }) => {
   return (
     <div className="page-banner">
       <h1>{title}</h1>
-      <h3>{subtitle}</h3>
+      <h4>{subtitle}</h4>
       {children}
     </div>
   );
