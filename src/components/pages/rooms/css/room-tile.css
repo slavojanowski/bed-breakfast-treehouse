@@ -1,4 +1,4 @@
-/* Room single tile display CSS */
+/* Room single tile display CSS & Rooms list CSS */
 
 .room {
   transition: all 0.3s linear;
@@ -6,7 +6,6 @@
 }
 
 .room:hover .room-info h5 {
-  /* color: #7e942f; */
   color: #555555;
 }
 
@@ -44,11 +43,11 @@
   transition: all 0.3s linear;
 }
 
-.img-container:hover {
+.room:hover .img-container {
   background: rgba(0, 0, 0, 0.75);
 }
 
-.img-container:hover img {
+.room:hover .img-container img {
   opacity: 0.3;
 }
 
@@ -60,14 +59,14 @@
   opacity: 0;
 }
 
-.img-container:hover .room-link {
+.room:hover .room-link {
   transform: translate(-50%, -50%) scale(1);
   padding: 0.5rem 1rem;
   background: #000000;
   color: #fff;
 }
 
-.img-container:hover .room-link:hover {
+.room:hover .room-link:hover {
   background: orangered;
   color: #fff;
 }
@@ -83,11 +82,9 @@
 .room-info h5 {
   color: #000;
 }
-/* end of room single tile display  */
 
-/* roomlist */
 .roomslist {
-  padding: 5rem 0;
+  padding: 2rem 0 5rem;
 }
 
 .roomslist-center {

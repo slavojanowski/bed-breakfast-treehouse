@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { ImCheckboxUnchecked, ImCheckboxChecked } from "react-icons/im";
 import roomsData from "../pages/rooms/RoomsData";
 import "../room-filter/css/rooms-filter.css";
+// import { FaAngleDown } from "react-icons/fa6";
 import PropTypes from "prop-types";
+import { FaAngleDown } from "react-icons/fa6";
 
 const RoomsFilter = ({ onFilterChange }) => {
   const allRoomsData = roomsData;
@@ -92,24 +94,27 @@ const RoomsFilter = ({ onFilterChange }) => {
         {/* --- Typ pokoju --- */}
         <div className="form-group">
           <label htmlFor="type">Typ pokoju</label>
-          <select
-            name="room-type"
-            onChange={handleChange}
-            className="form-control"
-            value={selectedRoomType}
-          >
-            <option value="">Wszystkie</option>
-            {uniqueRoomTypes.map((uniqueType, index) => (
-              <option key={index} value={uniqueType}>
-                {uniqueType}
-              </option>
-            ))}
-          </select>
+          <div className="select-container">
+            <select
+              name="room-type"
+              onChange={handleChange}
+              className="form-control"
+              value={selectedRoomType}
+            >
+              <option value="">Wszystkie</option>
+              {uniqueRoomTypes.map((uniqueType, index) => (
+                <option key={index} value={uniqueType}>
+                  {uniqueType}
+                </option>
+              ))}
+            </select>
+            <FaAngleDown className="select-icon" />
+          </div>
         </div>
         {/* --- Konfiguracja łóżek --- */}
         <div className="form-group">
           <label htmlFor="beds">Konfiguracja łóżek </label>
-          <div className="size-inputs">
+          <div className="select-container">
             <select
               name="beds-config"
               onChange={handleChange}
@@ -123,6 +128,7 @@ const RoomsFilter = ({ onFilterChange }) => {
                 </option>
               ))}
             </select>
+            <FaAngleDown className="select-icon" />
           </div>
         </div>
 
