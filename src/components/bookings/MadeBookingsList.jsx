@@ -8,7 +8,7 @@ const MadeBookingsList = () => {
 
   const handleDelete = (id) => {
     setBookings((prevBookings) => {
-      return prevBookings.filter((sm) => sm.id !== id);
+      return prevBookings.filter((book) => book.id !== id);
     });
   };
 

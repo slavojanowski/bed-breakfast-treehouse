@@ -11,22 +11,27 @@ const RoomAvailabilityForm = () => {
 
   const uniqueRoomTypes = [
     ...new Set(allRoomsData.map((room) => room.room_type)),
-  ];
+  ].sort();
+
+  const uniqueBedsSizes = [
+    ...new Set(allRoomsData.map((room) => room.beds_size)),
+  ].sort();
 
   // const [title, setTitle] = useState("");
   // const [method, setMethod] = useState("");
-  const [guests_number, setguests_number] = useState("");
-  const [checkin_date, setCheckin_date] = useState("");
-  const [checkout_date, setCheckout_date] = useState("");
+  //   const [guestsNumber, setGuestsNumber] = useState("");
+  const [checkinDate, setCheckinDate] = useState("");
+  const [checkoutDate, setCheckoutDate] = useState("");
   const [formError, setFormError] = useState(null);
   const [roomType, setRoomType] = useState("");
+  const [selectedBedConfig, setSelectedBedConfig] = useState("");
 
   // Fetch room types when component mounts
   useEffect(() => {
     const fetchRoomTypes = async () => {
       const { data, error } = await supabase
         .from("bookings")
-        .select("room_type_supa");
+        .select("room_type_supa, bed_size_config");
 
       if (error) {
         console.log(error);
@@ -35,6 +40,7 @@ const RoomAvailabilityForm = () => {
       }
 
       setRoomType(data);
+      setSelectedBedConfig(data);
     };
 
     fetchRoomTypes();
@@ -43,31 +49,39 @@ const RoomAvailabilityForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (
-      !guests_number ||
-      !checkin_date ||
-      !checkout_date ||
-      roomType === "all"
-    ) {
-      setFormError("Wypełnij wszystkie pola");
-      return;
-    }
+    // if (
+    //   !checkinDate ||
+    //   !checkoutDate ||
+    //   roomType === "all" ||
+    //   selectedBedConfig === "all"
+    // ) {
+    //   setFormError("aaaWypełnij wszystkie pola");
+    //   return;
+    // }
     // console.log(guests_number, checkin_date, checkout_date);
     const { data, error } = await supabase
       .from("bookings")
       .insert([
         {
-          guests_number,
-          checkin_date,
-          checkout_date,
+          //   guests_number: guestsNumber,
+          checkin_date: checkinDate,
+          checkout_date: checkoutDate,
           room_type_supa: roomType,
+          bed_size_config: selectedBedConfig,
         },
       ])
       .select();
 
-    if (error) {
+    if (
+      error ||
+      !checkinDate ||
+      !checkoutDate ||
+      roomType === "all" ||
+      selectedBedConfig === "all"
+    ) {
       console.log(error);
       setFormError("Wypełnij wszystkie pola");
+      return;
     }
 
     if (data) {
@@ -82,40 +96,40 @@ const RoomAvailabilityForm = () => {
       <form className="av-search-form" onSubmit={handleSubmit}>
         <div className="av-form-all-groups">
           <div className="av-form-group">
-            <label htmlFor="checkin_date">Checkin date:</label>
+            <label htmlFor="checkin_date">Data zameldowania</label>
             <input
               className="form-control"
               type="date"
               id="checkin_date"
-              value={checkin_date}
-              onChange={(e) => setCheckin_date(e.target.value)}
+              value={checkinDate}
+              onChange={(e) => setCheckinDate(e.target.value)}
             />
           </div>
 
           <div className="av-form-group">
-            <label htmlFor="checkout_date">Checkout date:</label>
+            <label htmlFor="checkout_date">Data wymeldowania</label>
             <input
               className="form-control"
               type="date"
               id="checkout_date"
-              value={checkout_date}
-              onChange={(e) => setCheckout_date(e.target.value)}
+              value={checkoutDate}
+              onChange={(e) => setCheckoutDate(e.target.value)}
             />
           </div>
 
-          <div className="av-form-group">
+          {/* <div className="av-form-group">
             <label htmlFor="guests_number"> Liczba gości:</label>
             <input
               className="form-control"
               type="number"
               id="guests_number"
-              value={guests_number}
-              onChange={(e) => setguests_number(e.target.value)}
+              value={guestsNumber}
+              onChange={(e) => setGuestsNumber(e.target.value)}
             />
-          </div>
+          </div> */}
 
           <div className="av-form-group">
-            <label htmlFor="room_type">Typ pokoju:</label>
+            <label htmlFor="room_type">Typ pokoju | Liczba gości</label>
             <div className="av-select-container">
               <select
                 className="form-control"
@@ -127,6 +141,28 @@ const RoomAvailabilityForm = () => {
                 {uniqueRoomTypes.map((uniqueType, index) => (
                   <option key={index} value={uniqueType}>
                     {uniqueType}
+                  </option>
+                ))}
+              </select>
+              <FaAngleDown className="av-select-icon" />
+            </div>
+          </div>
+
+          {/* ---------------------------------- */}
+
+          <div className="av-form-group">
+            <label htmlFor="bed_size_config">Konfiguracja łóżek</label>
+            <div className="av-select-container">
+              <select
+                className="form-control"
+                id="bed_size_config"
+                value={selectedBedConfig}
+                onChange={(e) => setSelectedBedConfig(e.target.value)}
+              >
+                <option value="all">Wszystkie</option>
+                {uniqueBedsSizes.map((uniqueSize, index) => (
+                  <option key={index} value={uniqueSize}>
+                    {uniqueSize}
                   </option>
                 ))}
               </select>

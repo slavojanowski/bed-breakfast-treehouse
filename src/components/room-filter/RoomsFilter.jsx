@@ -8,12 +8,6 @@ import { FaAngleDown } from "react-icons/fa6";
 const RoomsFilter = ({ onFilterChange }) => {
   const allRoomsData = roomsData;
 
-  // --- Obliczanie minimalnej i maksymalnej ceny pokoju według wartości klucza: price
-  const minPrice = Math.min(...allRoomsData.map((room) => room.price));
-  const maxPrice = Math.max(...allRoomsData.map((room) => room.price));
-
-  const [roomPrice, setRoomPrice] = useState(maxPrice);
-
   // --- ten zapis ponizej eliminuje powtarzanie w elemencie html select tych samych wartości danego klucza obiektu
   const uniqueRoomTypes = [
     ...new Set(allRoomsData.map((room) => room.room_type)),
@@ -22,6 +16,11 @@ const RoomsFilter = ({ onFilterChange }) => {
     ...new Set(allRoomsData.map((room) => room.beds_size)),
   ];
 
+  // --- Obliczanie minimalnej i maksymalnej ceny pokoju według wartości klucza: price
+  const minPrice = Math.min(...allRoomsData.map((room) => room.price));
+  const maxPrice = Math.max(...allRoomsData.map((room) => room.price));
+
+  const [roomPrice, setRoomPrice] = useState(maxPrice);
   const [selectedRoomType, setSelectedRoomType] = useState("");
   const [selectedBedConfig, setSelectedBedConfig] = useState("");
   const [petsAllowed, setPetsAllowed] = useState(false);
@@ -84,7 +83,7 @@ const RoomsFilter = ({ onFilterChange }) => {
     setPetsAllowed(false);
     setFreeParking(false);
     setRoomPrice(maxPrice);
-    onFilterChange(allRoomsData); // Resetuje również filtrowane pokoje
+    // onFilterChange(allRoomsData); // Resetuje również filtrowane pokoje
   };
 
   return (
