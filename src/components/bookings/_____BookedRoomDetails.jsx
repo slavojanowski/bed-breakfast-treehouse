@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import supabase from "../../config/supabaseClient";
 
-const BookingCard = ({ booking, onDelete }) => {
+const BookedRoomDetails = ({ booking, onDelete }) => {
   if (!booking) {
     return <div>Brak danych rezerwacji</div>;
   }
@@ -25,14 +25,12 @@ const BookingCard = ({ booking, onDelete }) => {
 
   return (
     <div className="booking-card">
-      <p>Data złożenia rezerwacji: {booking.created_at}</p>
+      <h4>Data złożenia rezerwacji: {booking.created_at}</h4>
       <h5>Początek pobytu: {booking.checkin_date}</h5>
       <h5>koniec pobytu {booking.checkout_date}</h5>
-      <h4>{booking.title}</h4>
+      <h3>{booking.title}</h3>
       <p>{booking.method}</p>
-      <div className="guests-number">Liczba gości: {booking.guests_number}</div>
-      <div className="room-type">Typ pokoju: {booking.room_type_supa}</div>
-
+      <div className="rating">Liczba gości: {booking.rating}</div>
       <div className="buttons">
         <Link to={"/" + booking.id}>
           <i className="material-icons">edit</i>
@@ -45,7 +43,7 @@ const BookingCard = ({ booking, onDelete }) => {
   );
 };
 
-BookingCard.propTypes = {
+BookedRoomDetails.propTypes = {
   booking: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     created_at: PropTypes.string.isRequired,
@@ -53,11 +51,10 @@ BookingCard.propTypes = {
     checkout_date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     method: PropTypes.string.isRequired,
-    room_type_supa: PropTypes.string.isRequired,
-    guests_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
       .isRequired,
-  }).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  }),
+  onDelete: PropTypes.func,
 };
 
-export default BookingCard;
+export default BookedRoomDetails;

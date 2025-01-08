@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../navbar/css/navbar.css";
 import { Link, NavLink } from "react-router-dom";
+import { FaRegCircleUser } from "react-icons/fa6";
 import Logo from "/logo.png";
 
 export const Navbar = () => {
@@ -39,13 +40,13 @@ export const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/rezerwacja" onClick={handleMobileMenuClose}>
-              ZAREZERWUJ POKÓJ
-            </NavLink>
-          </li>
-          <li>
             <NavLink to="/kontakt" onClick={handleMobileMenuClose}>
               KONTAKT
+            </NavLink>
+          </li>
+          <li className="menu-user-icon">
+            <NavLink to="/konto-uzytkownika" onClick={handleMobileMenuClose}>
+              <FaRegCircleUser />
             </NavLink>
           </li>
         </ul>

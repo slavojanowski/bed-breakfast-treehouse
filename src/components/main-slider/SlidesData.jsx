@@ -44,7 +44,7 @@ const slidesData = [
       </>
     ),
     subtitle: "Stylowe wnętrze i wszystkie udogodnienia, których potrzebujesz",
-    image: "/slider-images/images/stylowy-pokoj-dwuosobowy-cover.jpg",
+    image: "/slider-images/stylowy-pokoj-dwuosobowy-cover.jpg",
   },
   {
     id: 5,

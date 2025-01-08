@@ -67,6 +67,20 @@
   margin-top: 75px;
 }
 
+/* ----- Select icon styling ----- */
+/* Dodaj do pliku CSS */
+.select-container {
+  position: relative;
+}
+
+.select-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 /* ----- Room price range iput custom styling ----- */
 .room-price-range:focus {
   box-shadow: none;
@@ -83,7 +97,7 @@ input[type="range"] {
   outline: none;
   height: 2px;
   background: #c5c5c5;
-  margin-top: 1.5rem;
+  margin-top: 1.6rem;
   border: 0;
   border-radius: 0;
 }

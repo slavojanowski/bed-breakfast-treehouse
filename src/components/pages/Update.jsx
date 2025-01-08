@@ -37,7 +37,7 @@ const Update = () => {
     if (data) {
       console.log(data);
       setFormError(null);
-      navigate("/");
+      navigate("/konto-uzytkownika");
     }
   };
 
