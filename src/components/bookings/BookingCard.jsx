@@ -30,7 +30,9 @@ const BookingCard = ({ booking, onDelete }) => {
       <h5>koniec pobytu {booking.checkout_date}</h5>
       <h4>{booking.title}</h4>
       <p>{booking.method}</p>
-      <div className="rating">Liczba gości: {booking.rating}</div>
+      <div className="guests-number">Liczba gości: {booking.guests_number}</div>
+      <div className="room-type">Typ pokoju: {booking.room_type}</div>
+
       <div className="buttons">
         <Link to={"/" + booking.id}>
           <i className="material-icons">edit</i>
@@ -51,7 +53,8 @@ BookingCard.propTypes = {
     checkout_date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     method: PropTypes.string.isRequired,
-    rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    room_type: PropTypes.string.isRequired,
+    guests_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
       .isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,

@@ -1,28 +1,63 @@
 import supabase from "../../config/supabaseClient";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import roomsData from "../pages/rooms/RoomsData";
+import "./css/room-availability-form.css";
+import { FaAngleDown } from "react-icons/fa6";
 
 const RoomAvailabilityForm = () => {
   const navigate = useNavigate();
+  const allRoomsData = roomsData;
 
-  const [title, setTitle] = useState("");
-  const [method, setMethod] = useState("");
-  const [rating, setRating] = useState("");
+  const uniqueRoomTypes = [
+    ...new Set(allRoomsData.map((room) => room.room_type)),
+  ];
+
+  // const [title, setTitle] = useState("");
+  // const [method, setMethod] = useState("");
+  const [guests_number, setguests_number] = useState("");
   const [checkin_date, setCheckin_date] = useState("");
   const [checkout_date, setCheckout_date] = useState("");
   const [formError, setFormError] = useState(null);
+  const [roomType, setRoomType] = useState("");
+
+  // Fetch room types when component mounts
+  useEffect(() => {
+    const fetchRoomTypes = async () => {
+      const { data, error } = await supabase
+        .from("bookings")
+        .select("room_type");
+
+      if (error) {
+        console.log(error);
+        setFormError("Wystąpił błąd podczas pobierania danych o typach pokoi");
+        return;
+      }
+
+      setRoomType(data);
+    };
+
+    fetchRoomTypes();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !method || !rating || !checkin_date || !checkout_date) {
+    if (
+      !guests_number ||
+      !checkin_date ||
+      !checkout_date ||
+      roomType !== uniqueRoomTypes
+    ) {
       setFormError("Wypełnij wszystkie pola");
       return;
     }
-    console.log(title, method, rating, checkin_date, checkout_date);
+    // console.log(guests_number, checkin_date, checkout_date);
     const { data, error } = await supabase
       .from("bookings")
-      .insert([{ title, method, rating, checkin_date, checkout_date }])
+      .insert([
+        { guests_number, checkin_date, checkout_date, room_type: roomType },
+      ])
       .select();
 
     if (error) {
@@ -38,50 +73,68 @@ const RoomAvailabilityForm = () => {
   };
 
   return (
-    <form className="book-room-form" onSubmit={handleSubmit}>
-      <label htmlFor="title">Title:</label>
-      <input
-        type="text"
-        id="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+    <section className="av-filter-container">
+      <form className="av-search-form" onSubmit={handleSubmit}>
+        <div className="av-form-all-groups">
+          <div className="av-form-group">
+            <label htmlFor="checkin_date">Checkin date:</label>
+            <input
+              className="form-control"
+              type="date"
+              id="checkin_date"
+              value={checkin_date}
+              onChange={(e) => setCheckin_date(e.target.value)}
+            />
+          </div>
 
-      <label htmlFor="method">Method:</label>
-      <textarea
-        id="method"
-        value={method}
-        onChange={(e) => setMethod(e.target.value)}
-      />
+          <div className="av-form-group">
+            <label htmlFor="checkout_date">Checkout date:</label>
+            <input
+              className="form-control"
+              type="date"
+              id="checkout_date"
+              value={checkout_date}
+              onChange={(e) => setCheckout_date(e.target.value)}
+            />
+          </div>
 
-      <label htmlFor="rating"> Liczba gości:</label>
-      <input
-        type="number"
-        id="rating"
-        value={rating}
-        onChange={(e) => setRating(e.target.value)}
-      />
+          <div className="av-form-group">
+            <label htmlFor="guests_number"> Liczba gości:</label>
+            <input
+              className="form-control"
+              type="number"
+              id="guests_number"
+              value={guests_number}
+              onChange={(e) => setguests_number(e.target.value)}
+            />
+          </div>
 
-      <label htmlFor="checkin_date">Checkin date:</label>
-      <input
-        type="date"
-        id="checkin_date"
-        value={checkin_date}
-        onChange={(e) => setCheckin_date(e.target.value)}
-      />
+          <div className="av-form-group">
+            <label htmlFor="room_type">Typ pokoju:</label>
+            <div className="av-select-container">
+              <select
+                className="form-control"
+                id="room_type"
+                value={roomType}
+                onChange={(e) => setRoomType(e.target.value)}
+              >
+                <option value="all">Wszystkie</option>
+                {uniqueRoomTypes.map((uniqueType, index) => (
+                  <option key={index} value={uniqueType}>
+                    {uniqueType}
+                  </option>
+                ))}
+              </select>
+              <FaAngleDown className="av-select-icon" />
+            </div>
+          </div>
+        </div>
 
-      <label htmlFor="checkout_date">Checkout date:</label>
-      <input
-        type="date"
-        id="checkout_date"
-        value={checkout_date}
-        onChange={(e) => setCheckout_date(e.target.value)}
-      />
+        <button className="av-search-button">WYSZUKAJ</button>
 
-      <button>Zarezerwuj</button>
-
-      {formError && <p className="error">{formError}</p>}
-    </form>
+        {formError && <p className="error">{formError}</p>}
+      </form>
+    </section>
   );
 };
 export default RoomAvailabilityForm;

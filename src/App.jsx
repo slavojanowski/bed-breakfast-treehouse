@@ -23,7 +23,6 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-
           <Route path="/pokoje" element={<Rooms />} />
           <Route path="/pokoje/:slug" element={<SingleRoom />} />
           <Route path="/konto-uzytkownika" element={<UserAccount />} />

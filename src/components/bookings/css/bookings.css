@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.booking-card .rating {
+.booking-card .guests-number {
   background: var(--secondary);
   color: #fff;
   border-radius: 6px;
@@ -30,13 +30,14 @@
 .book-room-form {
   background: #fff;
   padding: 20px;
-  max-width: 480px;
+  /* max-width: 480px; */
   margin: 0 auto;
   border-radius: 6px;
 }
 
 .book-room-form input,
-.book-room-form textarea {
+.book-room-form textarea,
+.book-room-form select {
   display: block;
   width: 100%;
   padding: 6px;

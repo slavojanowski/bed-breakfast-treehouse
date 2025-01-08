@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ImCheckboxUnchecked, ImCheckboxChecked } from "react-icons/im";
 import roomsData from "../pages/rooms/RoomsData";
 import "../room-filter/css/rooms-filter.css";
-// import { FaAngleDown } from "react-icons/fa6";
 import PropTypes from "prop-types";
 import { FaAngleDown } from "react-icons/fa6";
 
@@ -111,6 +110,7 @@ const RoomsFilter = ({ onFilterChange }) => {
             <FaAngleDown className="select-icon" />
           </div>
         </div>
+
         {/* --- Konfiguracja łóżek --- */}
         <div className="form-group">
           <label htmlFor="beds">Konfiguracja łóżek </label>
