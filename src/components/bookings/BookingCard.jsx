@@ -32,6 +32,9 @@ const BookingCard = ({ booking, onDelete }) => {
       <p>{booking.method}</p>
       <div className="guests-number">Liczba gości: {booking.guests_number}</div>
       <div className="room-type">Typ pokoju: {booking.room_type_supa}</div>
+      <div className="beds-config">
+        Konfiguracja łóżek: {booking.bed_size_config}
+      </div>
 
       <div className="buttons">
         <Link to={"/" + booking.id}>
@@ -54,6 +57,7 @@ BookingCard.propTypes = {
     title: PropTypes.string.isRequired,
     method: PropTypes.string.isRequired,
     room_type_supa: PropTypes.string.isRequired,
+    bed_size_config: PropTypes.string.isRequired,
     guests_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
       .isRequired,
   }).isRequired,

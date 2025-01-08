@@ -7,7 +7,7 @@ import { Navbar } from "./components/navbar/Navbar";
 
 // --- Main pages
 import Home from "./components/pages/Home";
-import Update from "./components/pages/Update";
+import UpdateBooking from "./components/pages/UpdateBooking";
 import Error404 from "./components/pages/Error404";
 
 // --- Rooms related pages
@@ -26,7 +26,7 @@ function App() {
           <Route path="/pokoje" element={<Rooms />} />
           <Route path="/pokoje/:slug" element={<SingleRoom />} />
           <Route path="/konto-uzytkownika" element={<UserAccount />} />
-          <Route path="/:id" element={<Update />} />
+          <Route path="/:id" element={<UpdateBooking />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

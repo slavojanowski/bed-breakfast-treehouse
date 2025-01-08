@@ -10,6 +10,7 @@ import RoomsFilter from "../../room-filter/RoomsFilter";
 const Rooms = () => {
   const [filteredRooms, setFilteredRooms] = useState(roomsData);
 
+  // ----- Sprawdzam, czy zestaw danych filteredRooms różni się od nowo dostarczonego zestawu filteredData
   const handleFilterChange = (filteredData) => {
     if (JSON.stringify(filteredRooms) !== JSON.stringify(filteredData)) {
       setFilteredRooms(filteredData);
