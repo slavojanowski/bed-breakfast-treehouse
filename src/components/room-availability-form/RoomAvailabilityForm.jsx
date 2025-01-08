@@ -26,7 +26,7 @@ const RoomAvailabilityForm = () => {
     const fetchRoomTypes = async () => {
       const { data, error } = await supabase
         .from("bookings")
-        .select("room_type");
+        .select("room_type_supa");
 
       if (error) {
         console.log(error);
@@ -47,7 +47,7 @@ const RoomAvailabilityForm = () => {
       !guests_number ||
       !checkin_date ||
       !checkout_date ||
-      roomType !== uniqueRoomTypes
+      roomType === "all"
     ) {
       setFormError("Wypełnij wszystkie pola");
       return;
@@ -56,7 +56,12 @@ const RoomAvailabilityForm = () => {
     const { data, error } = await supabase
       .from("bookings")
       .insert([
-        { guests_number, checkin_date, checkout_date, room_type: roomType },
+        {
+          guests_number,
+          checkin_date,
+          checkout_date,
+          room_type_supa: roomType,
+        },
       ])
       .select();
 
@@ -114,7 +119,7 @@ const RoomAvailabilityForm = () => {
             <div className="av-select-container">
               <select
                 className="form-control"
-                id="room_type"
+                id="room_type_supa"
                 value={roomType}
                 onChange={(e) => setRoomType(e.target.value)}
               >
