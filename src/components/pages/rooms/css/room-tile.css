@@ -2,7 +2,7 @@
 
 .room {
   transition: all 0.3s linear;
-  width: 90%;
+  /* width: 90%; */
 }
 
 .room:hover .room-info h5 {

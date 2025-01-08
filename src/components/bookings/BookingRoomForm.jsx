@@ -5,7 +5,7 @@ import roomsData from "../pages/rooms/RoomsData";
 import "./css/room-availability-form.css";
 import { FaAngleDown } from "react-icons/fa6";
 
-const RoomAvailabilityForm = () => {
+const BookingRoomForm = () => {
   const navigate = useNavigate();
   const allRoomsData = roomsData;
 
@@ -129,7 +129,7 @@ const RoomAvailabilityForm = () => {
           </div> */}
 
           <div className="av-form-group">
-            <label htmlFor="room_type">Typ pokoju | Liczba gości</label>
+            <label htmlFor="room_type_supa">Typ pokoju | Liczba gości</label>
             <div className="av-select-container">
               <select
                 className="form-control"
@@ -147,8 +147,6 @@ const RoomAvailabilityForm = () => {
               <FaAngleDown className="av-select-icon" />
             </div>
           </div>
-
-          {/* ---------------------------------- */}
 
           <div className="av-form-group">
             <label htmlFor="bed_size_config">Konfiguracja łóżek</label>
@@ -171,11 +169,11 @@ const RoomAvailabilityForm = () => {
           </div>
         </div>
 
-        <button className="av-search-button">WYSZUKAJ</button>
+        <button className="av-search-button">ZAREZERWUJ POKÓJ</button>
 
         {formError && <p className="error">{formError}</p>}
       </form>
     </section>
   );
 };
-export default RoomAvailabilityForm;
+export default BookingRoomForm;

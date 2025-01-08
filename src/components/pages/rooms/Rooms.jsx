@@ -35,7 +35,7 @@ const Rooms = () => {
         ></PageBanner>
       </PageCover>
 
-      <div className="page home">
+      <div className="page rooms">
         <RoomsFilter onFilterChange={handleFilterChange} />
 
         <section className="roomslist">

@@ -2,9 +2,6 @@
 
 .av-filter-container {
   padding: 0 0 3rem 0;
-  margin-top: -110px;
-  position: relative;
-  z-index: 9999;
 }
 
 .av-search-form {
