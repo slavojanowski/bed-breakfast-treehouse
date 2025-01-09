@@ -8,6 +8,10 @@ const HomeRoomsFilter = () => {
   const [filteredRooms, setFilteredRooms] = useState(roomsData);
 
   // ----- Sprawdzam, czy zestaw danych filteredRooms różni się od nowo dostarczonego zestawu filteredData
+  // const handleFilterChange = (filteredData) => {
+  //   setFilteredRooms(filteredData);
+  // }; ten kod powoduje nieustanne renderowanie komponentu
+
   const handleFilterChange = (filteredData) => {
     if (JSON.stringify(filteredRooms) !== JSON.stringify(filteredData)) {
       setFilteredRooms(filteredData);
@@ -15,14 +19,18 @@ const HomeRoomsFilter = () => {
   };
 
   useEffect(() => {
-    console.log("Zaktualizwany stan filtrowania:", filteredRooms);
+    console.log("bbbb Zaktualizwany stan filtrowania:", filteredRooms);
   }, [filteredRooms]);
 
   return (
     <>
       <RoomsFilter onFilterChange={handleFilterChange} />
 
-      <section className="roomslist">
+      <section
+        className={`roomslist ${
+          filteredRooms.length === 0 ? "reset-padding" : ""
+        }`}
+      >
         <div className="roomslist-center">
           {filteredRooms.map((roomData) => {
             return (

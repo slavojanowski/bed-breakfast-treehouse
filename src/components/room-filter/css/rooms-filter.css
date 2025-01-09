@@ -4,6 +4,10 @@
   padding: 3rem 0 2rem;
 }
 
+.reset-padding {
+  padding: 0;
+}
+
 .data-fields-group {
   /* width: 60vw; */
   margin: 0 auto;

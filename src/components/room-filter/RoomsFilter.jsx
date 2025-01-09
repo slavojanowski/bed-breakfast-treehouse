@@ -27,6 +27,10 @@ const RoomsFilter = ({ onFilterChange }) => {
   const [freeParking, setFreeParking] = useState(false);
   const [filteredRooms, setFilteredRooms] = useState([]);
 
+  useEffect(() => {
+    console.log("aaaaZaktualizwany stan filtrowania:", filteredRooms);
+  }, [filteredRooms]);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 

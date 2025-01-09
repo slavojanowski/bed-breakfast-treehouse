@@ -5,6 +5,7 @@ import SinglePageCover from "/various-images/mountains.jpg";
 import PageCover from "../global/PageCover/PageCover";
 import PageBanner from "../global/PageCover/PageBanner";
 import ButtonLarge from "../global/ButtonLarge";
+import "../bookings/css/booked-room-details-tile.css";
 
 const UserAccount = () => {
   const [fetchError, setFetchError] = useState(null);

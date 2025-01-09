@@ -29,8 +29,7 @@ const SingleRoom = () => {
           </PageCover>
 
           <div className="page our-rooms">
-            <h1>single room</h1>
-            <BookingRoomForm />
+            <BookingRoomForm roomData={room} />
           </div>
         </div>
       ))}
