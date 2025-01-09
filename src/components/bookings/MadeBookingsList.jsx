@@ -33,8 +33,8 @@ const MadeBookingsList = () => {
     <div>
       {fetchError && <p>{fetchError}</p>}
       {bookings && (
-        <div className="bookings">
-          <div className="booking-grid">
+        <div className="__bookings">
+          <div className="__booking-grid">
             {bookings.map((booking) => (
               <BookedRoomDetails
                 key={booking.id}

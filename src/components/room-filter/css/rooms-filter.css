@@ -1,10 +1,30 @@
 /* ----- Rooms Filter ----- */
 
 .filter-container {
-  padding: 3rem 0 5rem;
+  padding: 3rem 0 2rem;
+}
+
+.reset-padding {
+  padding: 0;
+}
+
+.data-fields-group {
+  /* width: 60vw; */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 40px;
+  background: #fff;
+  /* padding: 2rem 2.5rem; */
 }
 
 .filter-form {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+/* .filter-form {
   width: 60vw;
   margin: 0 auto;
   display: grid;
@@ -13,7 +33,7 @@
   grid-column-gap: 40px;
   background: #ffffffd0;
   padding: 2rem 2.5rem;
-}
+} */
 
 .form-group {
   text-transform: capitalize;
@@ -136,15 +156,9 @@ input[type="range"]:focus::-webkit-slider-thumb {
 }
 /* ------------------------------------------------------------------------------ */
 
-@media screen and (min-width: 776px) {
-  .filter-form {
-    width: 70vw;
-  }
+/* @media screen and (min-width: 776px) {
+
 }
 @media screen and (min-width: 992px) {
-  .filter-form {
-    width: 95vw;
-    max-width: 1170px;
-  }
-}
-/* end of rooms fitler*/
+
+} */

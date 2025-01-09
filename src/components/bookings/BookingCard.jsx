@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import supabase from "../../config/supabaseClient";
+// import roomsData from "../pages/rooms/RoomsData";
 
 const BookingCard = ({ booking, onDelete }) => {
   if (!booking) {
@@ -23,27 +24,172 @@ const BookingCard = ({ booking, onDelete }) => {
     }
   };
 
-  return (
-    <div className="booking-card">
-      <p>Data złożenia rezerwacji: {booking.created_at}</p>
-      <h5>Początek pobytu: {booking.checkin_date}</h5>
-      <h5>koniec pobytu {booking.checkout_date}</h5>
-      <h4>{booking.title}</h4>
-      <p>{booking.method}</p>
-      <div className="guests-number">Liczba gości: {booking.guests_number}</div>
-      <div className="room-type">Typ pokoju: {booking.room_type_supa}</div>
-      <div className="beds-config">
-        Konfiguracja łóżek: {booking.bed_size_config}
-      </div>
+  const currentDateTime = new Date().toLocaleString("pl-PL", {
+    timeZone: "Europe/Warsaw",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
 
-      <div className="buttons">
-        <Link to={"/" + booking.id}>
-          <i className="material-icons">edit</i>
-        </Link>
-        <i className="material-icons" onClick={handleDelete}>
-          delete
-        </i>
-      </div>
+  const currentDate = new Date();
+
+  const currentDay = currentDate.toLocaleString("pl-PL", {
+    timeZone: "Europe/Warsaw",
+    day: "2-digit",
+  });
+
+  const currentMonth = currentDate.toLocaleString("pl-PL", {
+    timeZone: "Europe/Warsaw",
+    month: "2-digit",
+  });
+
+  const currentYear = currentDate.toLocaleString("pl-PL", {
+    timeZone: "Europe/Warsaw",
+    year: "numeric",
+  });
+
+  console.log(currentDateTime.year);
+
+  return (
+    <div className="booked-room-details">
+      <section className="sr-filter-container">
+        <div className="sr-form">
+          <div className="sr-form-head">
+            <h5>
+              <strong>Data dokonania rezerwacji:</strong> {booking.created_at}
+            </h5>
+            <h5>
+              <strong>Numer rezerwacji:</strong> {currentDay}/{currentMonth}/
+              {currentYear}/#{booking.id}
+            </h5>
+            <h5>
+              <strong>Zarezerwowany pokój:</strong> {booking.booked_room_name}
+            </h5>
+          </div>
+          <div className="sr-form-all-groups">
+            <div className="sr-column">
+              <div className="sr-form-group">
+                <h6>
+                  <span>Imię:</span>
+                  <br /> {booking.first_name}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Nazwisko:</span>
+                  <br /> {booking.last_name}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Adres e-mail:</span>
+                  <br /> {booking.email_address}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Numer telefonu:</span>
+                  <br /> {booking.phone_number}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Adres pierwszy wiersz:</span>
+                  <br /> {booking.street_address}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Adress drugi wiersz:</span>
+                  <br /> {booking.address_extra_line}
+                </h6>
+              </div>
+              {/* </div> */}
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Nazwa miasta:</span>
+                  <br /> {booking.city_name}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Kod pocztowy:</span>
+                  <br /> {booking.zip_code}
+                </h6>
+              </div>
+            </div>
+
+            <div className="sr-column">
+              <div className="sr-form-group">
+                <h6>
+                  <span>Data zameldowania:</span>
+                  <br /> {booking.checkin_date}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Data wymeldowania:</span>
+                  <br /> {booking.checkout_date}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Liczba dorosłych:</span>
+                  <br /> {booking.adults_number}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Liczba dzieci:</span>
+                  <br /> {booking.kids_number}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Typ pokoju:</span>
+                  <br /> {booking.room_type_supa}
+                </h6>
+              </div>
+
+              <div className="sr-form-group">
+                <h6>
+                  <span>Konfiguracja łóżek:</span>
+                  <br /> {booking.bed_size_config}
+                </h6>
+              </div>
+
+              <div className="sr-form-group sr-special">
+                <h6>
+                  <span>Uwagi do rezerwacji:</span>
+                  <br /> {booking.book_message}
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div className="booking-details-buttons">
+            <Link to={"/konto-uzytkownika/" + booking.id}>
+              <i className="material-icons edit-booking">edit</i>
+            </Link>
+            <i className="material-icons delete-booking" onClick={handleDelete}>
+              delete
+            </i>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
@@ -54,11 +200,23 @@ BookingCard.propTypes = {
     created_at: PropTypes.string.isRequired,
     checkin_date: PropTypes.string.isRequired,
     checkout_date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    method: PropTypes.string.isRequired,
+    booked_room_name: PropTypes.node.isRequired,
+    adults_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
+    kids_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
     room_type_supa: PropTypes.string.isRequired,
     bed_size_config: PropTypes.string.isRequired,
-    guests_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    book_message: PropTypes.string.isRequired,
+    first_name: PropTypes.string.isRequired,
+    last_name: PropTypes.string.isRequired,
+    email_address: PropTypes.string.isRequired,
+    phone_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
+    street_address: PropTypes.string.isRequired,
+    address_extra_line: PropTypes.string.isRequired,
+    city_name: PropTypes.string.isRequired,
+    zip_code: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
       .isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,

@@ -4,6 +4,7 @@ import ButtonLarge from "../../global/ButtonLarge";
 import "../rooms/css/single-room.css";
 import roomsData from "../rooms/RoomsData";
 import { useParams } from "react-router-dom";
+import BookingRoomForm from "../../bookings/BookingRoomForm";
 
 const SingleRoom = () => {
   const { slug } = useParams();
@@ -28,7 +29,7 @@ const SingleRoom = () => {
           </PageCover>
 
           <div className="page our-rooms">
-            <h1>single room</h1>
+            <BookingRoomForm roomData={room} />
           </div>
         </div>
       ))}

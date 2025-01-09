@@ -3,11 +3,16 @@ const roomsData = [
     id: 1,
     room_type: "2-osobowy",
     slug: "luksusowy-pokoj-dwuosobowy",
-    title: "Luksusowy pokój 2-osobowy",
+    title: (
+      <>
+        Luksusowy pokój <br /> 2-osobowy
+      </>
+    ),
     subtitle:
       "Luksusowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image: "/slider-images/luksusowy-pokoj-dwuosobowy-cover.jpg",
     price: 299,
+    beds_number: 1,
     beds_size: "1 podwójne",
     wifi_access: true,
     tv_access: true,
@@ -16,14 +21,19 @@ const roomsData = [
   },
   {
     id: 2,
-    room_type: "3-osobowy",
-    slug: "nowoczesny-pokoj-trzyosobowy",
-    title: "Nowoczesny pokój 3-osobowy",
+    room_type: "2-osobowy",
+    slug: "nowoczesny-pokoj-dwuosobowy",
+    title: (
+      <>
+        Nowoczesny pokój <br /> 2-osobowy
+      </>
+    ),
     subtitle:
       "Nowoczesne wnętrze, wygodne łóżka i wszystkie udogodnienia, których potrzebujesz",
     image: "/slider-images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
-    beds_size: "1 podwójne + 1 pojedyncze",
+    beds_number: 2,
+    beds_size: "2 pojedyncze",
     wifi_access: true,
     tv_access: true,
     pets_allowed: true,
@@ -31,14 +41,19 @@ const roomsData = [
   },
   {
     id: 3,
-    room_type: "4-osobowy",
-    slug: "sloneczny-pokoj-czteroosobowy",
-    title: "Słoneczny pokój 4-osobowy",
+    room_type: "1-osobowy",
+    slug: "sloneczny-pokoj-jednoosobowy",
+    title: (
+      <>
+        Słoneczny pokój <br /> 1-osobowy
+      </>
+    ),
     subtitle:
       "Słoneczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image: "/slider-images/sloneczny-pokoj-jednoosobowy-cover.jpg",
     price: 259,
-    beds_size: "1 podwójne + 2 pojedyncze",
+    beds_number: 1,
+    beds_size: "1 pojedyncze",
     wifi_access: true,
     tv_access: true,
     pets_allowed: true,
@@ -48,12 +63,17 @@ const roomsData = [
     id: 4,
     room_type: "2-osobowy",
     slug: "stylowy-pokoj-dwuosobowy",
-    title: "Stylowy pokój 2-osobowy",
+    title: (
+      <>
+        Stylowy pokój <br /> 2-osobowy
+      </>
+    ),
     subtitle:
       "Stylowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image: "/slider-images/stylowy-pokoj-dwuosobowy-cover.jpg",
     price: 349,
-    beds_size: "2 pojedyncze",
+    beds_number: 1,
+    beds_size: "1 podwójne",
     wifi_access: true,
     tv_access: true,
     pets_allowed: false,
@@ -63,11 +83,16 @@ const roomsData = [
     id: 5,
     room_type: "1-osobowy",
     slug: "profesjonalny-pokoj-jednoosobowy",
-    title: "Profesjonalny pokój 1-osobowy",
+    title: (
+      <>
+        Profesjonalny pokój <br /> 1-osobowy
+      </>
+    ),
     subtitle:
       "Profesjonalne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image: "/slider-images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
     price: 299,
+    beds_number: 1,
     beds_size: "1 podwójne",
     wifi_access: true,
     tv_access: true,
@@ -78,11 +103,16 @@ const roomsData = [
     id: 6,
     room_type: "2-osobowy",
     slug: "klasyczny-pokoj-dwuosobowy",
-    title: "Klasyczny pokój 2-osobowy",
+    title: (
+      <>
+        Klasyczny pokój <br /> 2-osobowy
+      </>
+    ),
     subtitle:
       "Klasyczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     image: "/slider-images/klasyczny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
+    beds_number: 1,
     beds_size: "1 podwójne",
     wifi_access: true,
     tv_access: true,

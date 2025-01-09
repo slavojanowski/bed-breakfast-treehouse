@@ -1,0 +1,37 @@
+/* --- bookings CSS ---*/
+
+.booked-room-details .sr-form-group h6 span {
+  font-weight: 600;
+}
+
+.booked-room-details .sr-column {
+  grid-row-gap: 1rem;
+}
+
+.booked-room-details .sr-form-group {
+  text-transform: none;
+}
+
+.booked-room-details .sr-form-head {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.booking-details-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.material-icons.edit-booking {
+  color: green;
+}
+
+.material-icons.delete-booking {
+  color: red;
+  cursor: pointer;
+}
+
+.booked-room-details .room-title-remove-br {
+  display: none;
+}

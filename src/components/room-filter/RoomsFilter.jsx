@@ -27,6 +27,10 @@ const RoomsFilter = ({ onFilterChange }) => {
   const [freeParking, setFreeParking] = useState(false);
   const [filteredRooms, setFilteredRooms] = useState([]);
 
+  useEffect(() => {
+    console.log("aaaaZaktualizwany stan filtrowania:", filteredRooms);
+  }, [filteredRooms]);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -89,84 +93,86 @@ const RoomsFilter = ({ onFilterChange }) => {
   return (
     <section className="filter-container">
       <form className="filter-form">
-        {/* --- Typ pokoju --- */}
-        <div className="form-group">
-          <label htmlFor="type">Typ pokoju</label>
-          <div className="select-container">
-            <select
-              name="room-type"
-              onChange={handleChange}
-              className="form-control"
-              value={selectedRoomType}
-            >
-              <option value="">Wszystkie</option>
-              {uniqueRoomTypes.map((uniqueType, index) => (
-                <option key={index} value={uniqueType}>
-                  {uniqueType}
-                </option>
-              ))}
-            </select>
-            <FaAngleDown className="select-icon" />
-          </div>
-        </div>
-
-        {/* --- Konfiguracja łóżek --- */}
-        <div className="form-group">
-          <label htmlFor="beds">Konfiguracja łóżek </label>
-          <div className="select-container">
-            <select
-              name="beds-config"
-              onChange={handleChange}
-              className="form-control"
-              value={selectedBedConfig}
-            >
-              <option value="">Wszystkie</option>
-              {uniqueBedsSizes.map((size, index) => (
-                <option key={index} value={size}>
-                  {size}
-                </option>
-              ))}
-            </select>
-            <FaAngleDown className="select-icon" />
-          </div>
-        </div>
-
-        {/* --- Suwak cen pokoju --- */}
-        <div className="form-group">
-          <label htmlFor="room-price">
-            Cena pokoju: <b>{roomPrice}</b> PLN
-          </label>
-          <input
-            type="range"
-            name="room-price"
-            min={minPrice}
-            max={maxPrice}
-            // id="price"
-            value={roomPrice}
-            onChange={handleChange}
-            className="form-control room-price-range"
-          />
-        </div>
-
-        <div className="form-checkboxes-group">
-          {/* --- Zwierzęta domowe - typ boolean - Tak/Nie --- */}
+        <div className="data-fields-group">
+          {/* --- Typ pokoju --- */}
           <div className="form-group">
-            <div
-              className="single-extra custom-checkbox"
-              onClick={() => setPetsAllowed(!petsAllowed)}
-            >
-              {petsAllowed ? <ImCheckboxChecked /> : <ImCheckboxUnchecked />}
-              <label htmlFor="pets">Zwierzęta domowe</label>
+            <label htmlFor="type">Typ pokoju | Liczba gości</label>
+            <div className="select-container">
+              <select
+                name="room-type"
+                onChange={handleChange}
+                className="form-control"
+                value={selectedRoomType}
+              >
+                <option value="">Wszystkie</option>
+                {uniqueRoomTypes.map((uniqueType, index) => (
+                  <option key={index} value={uniqueType}>
+                    {uniqueType}
+                  </option>
+                ))}
+              </select>
+              <FaAngleDown className="select-icon" />
             </div>
           </div>
-          {/* --- Bezpłatny parking - typ boolean - Tak/Nie --- */}
+
+          {/* --- Konfiguracja łóżek --- */}
           <div className="form-group">
-            <div
-              className="single-extra custom-checkbox"
-              onClick={() => setFreeParking(!freeParking)}
-            >
-              {freeParking ? <ImCheckboxChecked /> : <ImCheckboxUnchecked />}
-              <label htmlFor="parking">Bezpłatny parking</label>
+            <label htmlFor="beds">Konfiguracja łóżek </label>
+            <div className="select-container">
+              <select
+                name="beds-config"
+                onChange={handleChange}
+                className="form-control"
+                value={selectedBedConfig}
+              >
+                <option value="">Wszystkie</option>
+                {uniqueBedsSizes.map((size, index) => (
+                  <option key={index} value={size}>
+                    {size}
+                  </option>
+                ))}
+              </select>
+              <FaAngleDown className="select-icon" />
+            </div>
+          </div>
+
+          {/* --- Suwak cen pokoju --- */}
+          <div className="form-group">
+            <label htmlFor="room-price">
+              Cena pokoju: <b>{roomPrice}</b> PLN
+            </label>
+            <input
+              type="range"
+              name="room-price"
+              min={minPrice}
+              max={maxPrice}
+              // id="price"
+              value={roomPrice}
+              onChange={handleChange}
+              className="form-control room-price-range"
+            />
+          </div>
+
+          <div className="form-checkboxes-group">
+            {/* --- Zwierzęta domowe - typ boolean - Tak/Nie --- */}
+            <div className="form-group">
+              <div
+                className="single-extra custom-checkbox"
+                onClick={() => setPetsAllowed(!petsAllowed)}
+              >
+                {petsAllowed ? <ImCheckboxChecked /> : <ImCheckboxUnchecked />}
+                <label htmlFor="pets">Zwierzęta domowe</label>
+              </div>
+            </div>
+            {/* --- Bezpłatny parking - typ boolean - Tak/Nie --- */}
+            <div className="form-group">
+              <div
+                className="single-extra custom-checkbox"
+                onClick={() => setFreeParking(!freeParking)}
+              >
+                {freeParking ? <ImCheckboxChecked /> : <ImCheckboxUnchecked />}
+                <label htmlFor="parking">Bezpłatny parking</label>
+              </div>
             </div>
           </div>
         </div>
