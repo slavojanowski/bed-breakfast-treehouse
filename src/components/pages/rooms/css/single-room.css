@@ -1,7 +1,7 @@
 /* single room*/
 
-.single-room {
-  padding: 5rem 0 0 0;
+.page.single-room {
+  margin-top: 5rem;
 }
 
 .single-room-images {

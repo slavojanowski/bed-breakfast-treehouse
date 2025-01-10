@@ -1,20 +1,22 @@
-/* ----- Room Availability CSS ----- */
+/* ----- Booking Room Form CSS ----- */
 
 .sr-filter-container {
-  padding: 0 0 3rem 0;
-}
-
-.sr-form {
-  margin: 0 auto;
+  margin-bottom: 3rem;
   background: #fff;
-  padding: 2rem 2.5rem;
-  box-shadow: 0px 1px 19px 1px rgba(0, 0, 0, 0.15);
 }
 
 .sr-form-head {
-  background-color: #0000000c;
+  background-color: #000000dd;
   margin-bottom: 1.8rem;
   padding: 1rem 2rem 0.5rem;
+}
+
+.sr-form-head h5 {
+  color: #fff;
+}
+
+.sr-all-groups-button {
+  padding: 2rem;
 }
 
 .sr-form-all-groups {
@@ -32,7 +34,7 @@
 }
 
 .sr-form-group {
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .sr-special {
@@ -49,7 +51,6 @@
 .sr-select-container {
   position: relative;
   display: flex;
-  /* align-items: center; */
 }
 
 .sr-select-icon {
