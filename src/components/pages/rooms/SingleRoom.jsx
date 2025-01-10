@@ -28,7 +28,7 @@ const SingleRoom = () => {
             </PageBanner>
           </PageCover>
 
-          <div className="page our-rooms">
+          <div className="page single-room">
             <BookingRoomForm roomData={room} />
           </div>
         </div>

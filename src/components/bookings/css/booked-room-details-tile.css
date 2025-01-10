@@ -1,4 +1,4 @@
-/* --- bookings CSS ---*/
+/* --- booked-room-details-tile CSS ---*/
 
 .booked-room-details .sr-form-group h6 span {
   font-weight: 600;
@@ -15,12 +15,13 @@
 .booked-room-details .sr-form-head {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .booking-details-buttons {
   display: flex;
   justify-content: flex-end;
+  padding: 0 2rem 1rem;
 }
 
 .material-icons.edit-booking {

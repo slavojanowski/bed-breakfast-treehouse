@@ -69,114 +69,116 @@ const BookingCard = ({ booking, onDelete }) => {
               <strong>Zarezerwowany pokój:</strong> {booking.booked_room_name}
             </h5>
           </div>
-          <div className="sr-form-all-groups">
-            <div className="sr-column">
-              <div className="sr-form-group">
-                <h6>
-                  <span>Imię:</span>
-                  <br /> {booking.first_name}
-                </h6>
+          <div className="sr-all-groups-button">
+            <div className="sr-form-all-groups">
+              <div className="sr-column">
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Imię:</span>
+                    <br /> {booking.first_name}
+                  </h6>
+                </div>
+
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Nazwisko:</span>
+                    <br /> {booking.last_name}
+                  </h6>
+                </div>
+
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Adres e-mail:</span>
+                    <br /> {booking.email_address}
+                  </h6>
+                </div>
+
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Numer telefonu:</span>
+                    <br /> {booking.phone_number}
+                  </h6>
+                </div>
+
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Adres pierwszy wiersz:</span>
+                    <br /> {booking.street_address}
+                  </h6>
+                </div>
+
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Adress drugi wiersz:</span>
+                    <br /> {booking.address_extra_line}
+                  </h6>
+                </div>
+                {/* </div> */}
+
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Nazwa miasta:</span>
+                    <br /> {booking.city_name}
+                  </h6>
+                </div>
+
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Kod pocztowy:</span>
+                    <br /> {booking.zip_code}
+                  </h6>
+                </div>
               </div>
 
-              <div className="sr-form-group">
-                <h6>
-                  <span>Nazwisko:</span>
-                  <br /> {booking.last_name}
-                </h6>
-              </div>
+              <div className="sr-column">
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Data zameldowania:</span>
+                    <br /> {booking.checkin_date}
+                  </h6>
+                </div>
 
-              <div className="sr-form-group">
-                <h6>
-                  <span>Adres e-mail:</span>
-                  <br /> {booking.email_address}
-                </h6>
-              </div>
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Data wymeldowania:</span>
+                    <br /> {booking.checkout_date}
+                  </h6>
+                </div>
 
-              <div className="sr-form-group">
-                <h6>
-                  <span>Numer telefonu:</span>
-                  <br /> {booking.phone_number}
-                </h6>
-              </div>
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Liczba dorosłych:</span>
+                    <br /> {booking.adults_number}
+                  </h6>
+                </div>
 
-              <div className="sr-form-group">
-                <h6>
-                  <span>Adres pierwszy wiersz:</span>
-                  <br /> {booking.street_address}
-                </h6>
-              </div>
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Liczba dzieci:</span>
+                    <br /> {booking.kids_number}
+                  </h6>
+                </div>
 
-              <div className="sr-form-group">
-                <h6>
-                  <span>Adress drugi wiersz:</span>
-                  <br /> {booking.address_extra_line}
-                </h6>
-              </div>
-              {/* </div> */}
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Typ pokoju:</span>
+                    <br /> {booking.room_type_supa}
+                  </h6>
+                </div>
 
-              <div className="sr-form-group">
-                <h6>
-                  <span>Nazwa miasta:</span>
-                  <br /> {booking.city_name}
-                </h6>
-              </div>
+                <div className="sr-form-group">
+                  <h6>
+                    <span>Konfiguracja łóżek:</span>
+                    <br /> {booking.bed_size_config}
+                  </h6>
+                </div>
 
-              <div className="sr-form-group">
-                <h6>
-                  <span>Kod pocztowy:</span>
-                  <br /> {booking.zip_code}
-                </h6>
-              </div>
-            </div>
-
-            <div className="sr-column">
-              <div className="sr-form-group">
-                <h6>
-                  <span>Data zameldowania:</span>
-                  <br /> {booking.checkin_date}
-                </h6>
-              </div>
-
-              <div className="sr-form-group">
-                <h6>
-                  <span>Data wymeldowania:</span>
-                  <br /> {booking.checkout_date}
-                </h6>
-              </div>
-
-              <div className="sr-form-group">
-                <h6>
-                  <span>Liczba dorosłych:</span>
-                  <br /> {booking.adults_number}
-                </h6>
-              </div>
-
-              <div className="sr-form-group">
-                <h6>
-                  <span>Liczba dzieci:</span>
-                  <br /> {booking.kids_number}
-                </h6>
-              </div>
-
-              <div className="sr-form-group">
-                <h6>
-                  <span>Typ pokoju:</span>
-                  <br /> {booking.room_type_supa}
-                </h6>
-              </div>
-
-              <div className="sr-form-group">
-                <h6>
-                  <span>Konfiguracja łóżek:</span>
-                  <br /> {booking.bed_size_config}
-                </h6>
-              </div>
-
-              <div className="sr-form-group sr-special">
-                <h6>
-                  <span>Uwagi do rezerwacji:</span>
-                  <br /> {booking.book_message}
-                </h6>
+                <div className="sr-form-group sr-special">
+                  <h6>
+                    <span>Uwagi do rezerwacji:</span>
+                    <br /> {booking.book_message}
+                  </h6>
+                </div>
               </div>
             </div>
           </div>

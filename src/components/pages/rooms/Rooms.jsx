@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import RoomTile from "./RoomTile";
 import roomsData from "./RoomsData";
 import "./css/room-tile.css";
+import "./css/all-rooms-page.css";
 import PageCover from "../../global/PageCover/PageCover";
 import PageBanner from "../../global/PageCover/PageBanner";
 import SinglePageCover from "/various-images/single-page-cover-bg-cover.jpg";

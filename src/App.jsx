@@ -10,7 +10,7 @@ import UpdateBooking from "./components/bookings/UpdateBooking";
 // --- Rooms related pages
 import Rooms from "./components/pages/rooms/Rooms";
 import SingleRoom from "./components/pages/rooms/SingleRoom";
-import UserAccount from "./components/pages/UserAccount";
+import UserAccount from "./components/pages/user-account-page/UserAccount";
 import Error404 from "./components/pages/Error404";
 
 function App() {
