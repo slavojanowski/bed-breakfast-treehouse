@@ -10,7 +10,10 @@ import UpdateBooking from "./components/bookings/UpdateBooking";
 // --- Rooms related pages
 import Rooms from "./components/pages/rooms/Rooms";
 import SingleRoom from "./components/pages/rooms/SingleRoom";
+import SessionController from "./components/login-signup/SessionController";
 import UserAccount from "./components/pages/user-account-page/UserAccount";
+import Signup from "./components/login-signup/Signup";
+import Login from "./components/login-signup/Login";
 import Error404 from "./components/pages/Error404";
 
 function App() {
@@ -23,7 +26,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pokoje" element={<Rooms />} />
           <Route path="/pokoje/:slug" element={<SingleRoom />} />
-          <Route path="/konto-uzytkownika" element={<UserAccount />} />
+          <Route
+            path="/konto-uzytkownika"
+            element={
+              <SessionController>
+                <UserAccount />
+              </SessionController>
+            }
+          />
+          <Route path="/rejestracja" element={<Signup />} />
+          <Route path="/logowanie" element={<Login />} />
           <Route path="/konto-uzytkownika/:id" element={<UpdateBooking />} />
           <Route path="*" element={<Error404 />} />
         </Routes>

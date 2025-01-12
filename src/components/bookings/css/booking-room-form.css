@@ -5,18 +5,44 @@
   background: #fff;
 }
 
+.sr-form .show-hide {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.sr-form.active-form .show-hide {
+  opacity: 1;
+  max-height: 2000px;
+  transition: all 1s ease-in-out;
+}
+
+.sr-all-groups-button {
+  padding: 2rem;
+}
+
 .sr-form-head {
   background-color: #000000dd;
-  margin-bottom: 1.8rem;
-  padding: 1rem 2rem 0.5rem;
+  /* margin-bottom: 1.8rem; */
+  padding: 1rem 4rem 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .sr-form-head h5 {
   color: #fff;
 }
 
-.sr-all-groups-button {
-  padding: 2rem;
+.sr-form-head svg {
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+}
+
+.sr-form-head svg:hover {
+  color: orangered;
 }
 
 .sr-form-all-groups {

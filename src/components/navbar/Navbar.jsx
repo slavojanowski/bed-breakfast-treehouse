@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../navbar/css/navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import { FaRegCircleUser } from "react-icons/fa6";
+// import { RiLoginCircleLine } from "react-icons/ri";
 import Logo from "/logo.png";
 
 export const Navbar = () => {
@@ -49,6 +50,16 @@ export const Navbar = () => {
               <FaRegCircleUser />
             </NavLink>
           </li>
+          {/* <li className="menu-register">
+            <NavLink to="/rejestracja" onClick={handleMobileMenuClose}>
+              Utwórz konto
+            </NavLink>
+          </li>
+          <li className="menu-login">
+            <NavLink to="/logowanie" onClick={handleMobileMenuClose}>
+              Zaloguj się <RiLoginCircleLine />
+            </NavLink>
+          </li> */}
         </ul>
       </div>
     </nav>

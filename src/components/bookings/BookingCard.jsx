@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import supabase from "../../config/supabaseClient";
+import getCurrentDate from "./getCurrentDate";
 // import roomsData from "../pages/rooms/RoomsData";
 
 const BookingCard = ({ booking, onDelete }) => {
@@ -24,34 +25,7 @@ const BookingCard = ({ booking, onDelete }) => {
     }
   };
 
-  const currentDateTime = new Date().toLocaleString("pl-PL", {
-    timeZone: "Europe/Warsaw",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
-
-  const currentDate = new Date();
-
-  const currentDay = currentDate.toLocaleString("pl-PL", {
-    timeZone: "Europe/Warsaw",
-    day: "2-digit",
-  });
-
-  const currentMonth = currentDate.toLocaleString("pl-PL", {
-    timeZone: "Europe/Warsaw",
-    month: "2-digit",
-  });
-
-  const currentYear = currentDate.toLocaleString("pl-PL", {
-    timeZone: "Europe/Warsaw",
-    year: "numeric",
-  });
-
-  console.log(currentDateTime.year);
+  const { currentDay, currentMonth, currentYear } = getCurrentDate();
 
   return (
     <div className="booked-room-details">
