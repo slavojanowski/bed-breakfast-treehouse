@@ -12,6 +12,7 @@ import { useNavigate } from "react-router";
 const UserAccount = () => {
   const [fetchError, setFetchError] = useState(null);
   const [bookings, setBookings] = useState(null);
+  const [userName, setUserName] = useState(null);
   const navigate = useNavigate();
 
   const handleDelete = (id) => {
@@ -20,6 +21,17 @@ const UserAccount = () => {
     });
   };
 
+  useEffect(() => {
+    const getUserName = async () => {
+      const { data } = await supabase.auth.getUser();
+      const displayName = data.user.user_metadata.display_name;
+      setUserName(displayName);
+    };
+
+    getUserName();
+  }, []);
+
+  // Pobieranie dokonanych rezerwacji
   useEffect(() => {
     const fetchBookings = async () => {
       const { data, error } = await supabase
@@ -66,10 +78,12 @@ const UserAccount = () => {
       </PageCover>
 
       <div className="page user-account-page">
-        <h3>Hello, you are logged in</h3>
-        <button onClick={signOut}>Wyloguj się</button>
+        <section className="heading">
+          <h4>Witaj {userName ? userName : "User"}, jesteś zalogowany.</h4>
+          <button onClick={signOut}>Wyloguj się</button>
+        </section>
 
-        {/* --------------------------- */}
+        {/* ------ właściwy kontent widoczny po zalogowaniu--------------------- */}
         {fetchError && <p>{fetchError}</p>}
         {bookings && (
           <div className="bookings">

@@ -22,7 +22,7 @@ const SessionController = ({ children }) => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Pobieranie informacji...</div>;
   } else {
     if (authenticated) {
       return <div>{children}</div>;

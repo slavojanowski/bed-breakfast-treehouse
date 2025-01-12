@@ -23,7 +23,7 @@
 }
 
 .sr-form-head {
-  background-color: #000000dd;
+  background-color: #000000f1;
   /* margin-bottom: 1.8rem; */
   padding: 1rem 4rem 0.5rem 2rem;
   display: flex;
@@ -39,6 +39,7 @@
   color: #fff;
   width: 2rem;
   height: 2rem;
+  margin-left: 0.5rem;
 }
 
 .sr-form-head svg:hover {
@@ -112,4 +113,13 @@
   .sr-form-group textarea.form-control {
     min-height: 5.5rem;
   }
+}
+
+/* ----- Update booking page ----- */
+.update-booking-page {
+  margin-top: 5rem;
+}
+
+.update-booking-page .sr-all-groups-button {
+  background: #fff;
 }

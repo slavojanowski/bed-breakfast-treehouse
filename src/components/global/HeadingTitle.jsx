@@ -7,7 +7,7 @@ const HeadingTitle = ({
 }) => {
   return (
     <div className={headingTitleStyle}>
-      <h3>{headingTitle}</h3>
+      <h2>{headingTitle}</h2>
       <h4>{headingTagline}</h4>
     </div>
   );
