@@ -15,6 +15,7 @@ import UserAccount from "./components/pages/user-account-page/UserAccount";
 import Signup from "./components/login-signup/Signup";
 import Login from "./components/login-signup/Login";
 import Error404 from "./components/pages/Error404";
+import LoginAfterSignup from "./components/login-signup/LoginAfterSignup";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             }
           />
           <Route path="/rejestracja" element={<Signup />} />
+          <Route path="/zaloguj-sie" element={<LoginAfterSignup />} />
           <Route path="/logowanie" element={<Login />} />
           <Route path="/konto-uzytkownika/:id" element={<UpdateBooking />} />
           <Route path="*" element={<Error404 />} />

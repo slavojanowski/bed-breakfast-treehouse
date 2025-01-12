@@ -8,6 +8,10 @@
   padding: 4rem;
   background: #fff;
 }
+.login-signup-page .error-message h6 {
+  margin-bottom: 1.5rem;
+  color: red;
+}
 
 .login-signup-page .heading {
   text-align: center;

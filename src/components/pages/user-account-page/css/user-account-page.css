@@ -1,5 +1,17 @@
 /* ----- user-account-page.css ----- */
 
-.page.user-account-page {
-  margin-top: 5rem;
+.user-account-page {
+  margin-top: 3rem;
+}
+
+.user-account-page .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-bottom: 2rem;
+  align-items: end;
+}
+
+.user-account-page .heading button {
+  margin-top: 0.5rem;
 }

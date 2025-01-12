@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import supabase from "../../config/supabaseClient";
-import getCurrentDate from "./getCurrentDate";
+// import getCurrentDate from "./getCurrentDate";
 // import roomsData from "../pages/rooms/RoomsData";
 
 const BookingCard = ({ booking, onDelete }) => {
@@ -25,7 +25,7 @@ const BookingCard = ({ booking, onDelete }) => {
     }
   };
 
-  const { currentDay, currentMonth, currentYear } = getCurrentDate();
+  // const { currentDay, currentMonth, currentYear } = getCurrentDate();
 
   return (
     <div className="booked-room-details">
@@ -36,8 +36,7 @@ const BookingCard = ({ booking, onDelete }) => {
               <strong>Data dokonania rezerwacji:</strong> {booking.created_at}
             </h5>
             <h5>
-              <strong>Numer rezerwacji:</strong> {currentDay}/{currentMonth}/
-              {currentYear}/#{booking.id}
+              <strong>Numer rezerwacji:</strong> #{booking.id}
             </h5>
             <h5>
               <strong>Zarezerwowany pokój:</strong> {booking.booked_room_name}

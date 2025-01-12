@@ -40,7 +40,7 @@ const BookingRoomForm = ({ roomData }) => {
   const [selectedBedConfig, setSelectedBedConfig] = useState("");
   const [formError, setFormError] = useState(null);
 
-  // Fetching room types when component mounts
+  // Fetching dropdown fields data when component mounts
   useEffect(() => {
     const fetchDropdownData = async () => {
       const { data, error } = await supabase
@@ -135,7 +135,7 @@ const BookingRoomForm = ({ roomData }) => {
             <b>Formularz rezerwacji dla:</b> {roomData.title}
           </h5>
           <h5>
-            <FaCircleArrowDown />
+            Zarezerwuj pokój <FaCircleArrowDown />
           </h5>
         </div>
 
@@ -152,7 +152,6 @@ const BookingRoomForm = ({ roomData }) => {
                     placeholder="Wpisz swoje imię"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    // required
                   />
                 </div>
 

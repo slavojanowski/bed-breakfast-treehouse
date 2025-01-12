@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import "../main-slider/css/main-slider.css";
 import { FaCircleLeft, FaCircleRight } from "react-icons/fa6";
-import slidesData from "./SlidesData";
+// import slidesData from "./SlidesData";
 import ButtonLarge from "../global/ButtonLarge";
 import PageBanner from "../global/PageCover/PageBanner";
+import roomsData from "../../components/pages/rooms/RoomsData";
 
 function MainSlider() {
   const [imageIndex, setImageIndex] = useState(0);
-  const allSlidesData = slidesData;
+  const allSlidesData = roomsData;
 
   useEffect(() => {
-    const lastIndex = slidesData.length - 1;
+    const lastIndex = roomsData.length - 1;
     if (imageIndex < 0) {
       setImageIndex(lastIndex);
     }
@@ -37,7 +38,7 @@ function MainSlider() {
         }
         if (
           index === imageIndex - 1 ||
-          (imageIndex === 0 && index === slidesData.length - 1)
+          (imageIndex === 0 && index === roomsData.length - 1)
         ) {
           position = "lastSlide";
         }

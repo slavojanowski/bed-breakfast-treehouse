@@ -1,7 +1,7 @@
 /* ----- App.css ----- */
 :root {
   --primary: orangered;
-  --secondary: #f34201;
+  --secondary: #ee4203;
   --font-color-dark: #000;
   --font-color-light: #fff;
 }
@@ -16,7 +16,6 @@ body {
   font-family: "Poppins", serif;
   background: #f2f2f2;
   word-break: keep-all;
-  min-height: 100vh;
 }
 
 a {
@@ -28,7 +27,7 @@ a:hover {
   color: var(--secondary);
 }
 
-a:not(nav ul li a):hover {
+a:not(:is(nav ul li a, .room-link, .button-large, button, .button)):hover {
   text-decoration: underline;
   transition: all 0.3s ease-in-out;
 }
@@ -47,14 +46,16 @@ h1 {
 }
 
 h2 {
-  font-size: calc(0.9rem + 2.6vw);
+  /* font-size: calc(0.9rem + 2.6vw); */
+  font-size: calc(0.9rem + 2.2vw);
   line-height: 1.15;
   font-weight: 600;
   color: var(--font-color-dark);
 }
 
 h3 {
-  font-size: calc(0.4rem + 2.6vw);
+  /* font-size: calc(0.4rem + 2.6vw); */
+  font-size: calc(0.4rem + 2.2vw);
   line-height: 1.2;
   font-weight: 600;
   color: var(--font-color-dark);

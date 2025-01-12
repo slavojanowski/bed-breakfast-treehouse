@@ -6,6 +6,8 @@ const roomsData = [
     title: "Luksusowy pokój 2-osobowy",
     subtitle:
       "Luksusowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: "/slider-images/luksusowy-pokoj-dwuosobowy-cover.jpg",
     price: 299,
     beds_size: "1 podwójne",
@@ -13,6 +15,11 @@ const roomsData = [
     tv_access: true,
     pets_allowed: false,
     free_parking: true,
+    room_gallery: [
+      "/single-room-gallery/room-1.jpg",
+      "/single-room-gallery/room-2.jpg",
+      "/single-room-gallery/room-3.jpg",
+    ],
   },
   {
     id: 2,
@@ -21,6 +28,8 @@ const roomsData = [
     title: "Nowoczesny pokój 3-osobowy",
     subtitle:
       "Nowoczesne wnętrze, wygodne łóżka i wszystkie udogodnienia, których potrzebujesz",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: "/slider-images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
     beds_size: "1 podwójne + 1 pojedyncze",
@@ -28,6 +37,11 @@ const roomsData = [
     tv_access: true,
     pets_allowed: true,
     free_parking: true,
+    room_gallery: [
+      "/single-room-gallery/room-4.jpg",
+      "/single-room-gallery/room-5.jpg",
+      "/single-room-gallery/room-6.jpg",
+    ],
   },
   {
     id: 3,
@@ -36,6 +50,8 @@ const roomsData = [
     title: "Słoneczny pokój 4-osobowy",
     subtitle:
       "Słoneczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: "/slider-images/sloneczny-pokoj-jednoosobowy-cover.jpg",
     price: 259,
     beds_size: "1 podwójne + 2 pojedyncze",
@@ -43,6 +59,11 @@ const roomsData = [
     tv_access: true,
     pets_allowed: true,
     free_parking: false,
+    room_gallery: [
+      "/single-room-gallery/room-1.jpg",
+      "/single-room-gallery/room-2.jpg",
+      "/single-room-gallery/room-3.jpg",
+    ],
   },
   {
     id: 4,
@@ -51,6 +72,8 @@ const roomsData = [
     title: "Stylowy pokój 2-osobowy",
     subtitle:
       "Stylowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: "/slider-images/stylowy-pokoj-dwuosobowy-cover.jpg",
     price: 349,
     beds_size: "2 pojedyncze",
@@ -58,6 +81,11 @@ const roomsData = [
     tv_access: true,
     pets_allowed: false,
     free_parking: true,
+    room_gallery: [
+      "/single-room-gallery/room-4.jpg",
+      "/single-room-gallery/room-5.jpg",
+      "/single-room-gallery/room-6.jpg",
+    ],
   },
   {
     id: 5,
@@ -66,6 +94,8 @@ const roomsData = [
     title: "Profesjonalny pokój 1-osobowy",
     subtitle:
       "Profesjonalne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: "/slider-images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
     price: 299,
     beds_size: "1 podwójne",
@@ -73,6 +103,11 @@ const roomsData = [
     tv_access: true,
     pets_allowed: false,
     free_parking: true,
+    room_gallery: [
+      "/single-room-gallery/room-1.jpg",
+      "/single-room-gallery/room-2.jpg",
+      "/single-room-gallery/room-3.jpg",
+    ],
   },
   {
     id: 6,
@@ -81,6 +116,8 @@ const roomsData = [
     title: "Klasyczny pokój 2-osobowy",
     subtitle:
       "Klasyczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: "/slider-images/klasyczny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
     beds_size: "1 podwójne",
@@ -88,6 +125,11 @@ const roomsData = [
     tv_access: true,
     pets_allowed: true,
     free_parking: true,
+    room_gallery: [
+      "/single-room-gallery/room-4.jpg",
+      "/single-room-gallery/room-5.jpg",
+      "/single-room-gallery/room-6.jpg",
+    ],
   },
 ];
 
