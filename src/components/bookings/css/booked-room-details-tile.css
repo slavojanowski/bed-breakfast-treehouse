@@ -15,6 +15,7 @@
 .booked-room-details .sr-form-head {
   display: flex;
   flex-direction: column;
+  align-items: start;
   margin-bottom: 0;
 }
 

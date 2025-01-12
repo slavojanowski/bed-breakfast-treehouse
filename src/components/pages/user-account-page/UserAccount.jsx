@@ -7,10 +7,12 @@ import PageBanner from "../../global/PageCover/PageBanner";
 import ButtonLarge from "../../global/ButtonLarge";
 import "../../bookings/css/booked-room-details-tile.css";
 import "./css/user-account-page.css";
+import { useNavigate } from "react-router";
 
 const UserAccount = () => {
   const [fetchError, setFetchError] = useState(null);
   const [bookings, setBookings] = useState(null);
+  const navigate = useNavigate();
 
   const handleDelete = (id) => {
     setBookings((prevBookings) => {
@@ -38,6 +40,15 @@ const UserAccount = () => {
     fetchBookings();
   }, []);
 
+  {
+    /* --------- Wylogogowywanie się ---------------- */
+  }
+  const signOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) throw error;
+    navigate("/logowanie");
+  };
+
   return (
     <>
       <PageCover
@@ -47,14 +58,18 @@ const UserAccount = () => {
         coverClass={"our-rooms-page-cover"}
       >
         <PageBanner
-          title="Panel gościa"
-          subtitle="Tutaj jest Twoje centrum dowodzenia"
+          title="Twój wirtualny pokój"
+          subtitle="Tutaj znajdziesz ważne dla Ciebie informacje"
         >
           <ButtonLarge buttonText="Wróć do strony głównej" buttonLink="/" />
         </PageBanner>
       </PageCover>
 
       <div className="page user-account-page">
+        <h3>Hello, you are logged in</h3>
+        <button onClick={signOut}>Wyloguj się</button>
+
+        {/* --------------------------- */}
         {fetchError && <p>{fetchError}</p>}
         {bookings && (
           <div className="bookings">
