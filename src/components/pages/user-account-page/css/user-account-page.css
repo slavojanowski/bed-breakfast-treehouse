@@ -1,17 +1,78 @@
 /* ----- user-account-page.css ----- */
 
 .user-account-page {
-  margin-top: 3rem;
+  margin-top: 4rem;
+  min-height: 200vh;
 }
 
-.user-account-page .heading {
+.acc-container {
+  margin-top: 3.5rem;
+}
+
+.user-account-page .acc-heading {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem 0;
+}
+
+.user-account-page .acc-heading h4 {
+  font-weight: 700;
+}
+
+.user-account-page .acc-heading .column {
+  padding: 1rem 1.5rem;
+  background-color: #fff;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
-  margin-bottom: 2rem;
-  align-items: end;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 1px 19px 1px rgba(0, 0, 0, 0.12);
 }
 
-.user-account-page .heading button {
+.user-account-page .log-info {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.user-account-page .acc-heading .column:not(:last-child):hover h4 {
+  color: orangered;
+}
+
+.user-account-page .acc-heading .log-info {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+.user-account-page .acc-heading button {
   margin-top: 0.5rem;
 }
+
+/* ----- React transition group CSS */
+.css-transition-enter {
+  opacity: 0.01;
+}
+
+.css-transition-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.css-transition-enter-done {
+  opacity: 1;
+}
+
+.css-transition-exit {
+  opacity: 1;
+}
+
+.css-transition-exit-done {
+  opacity: 0;
+}
+
+.css-transition-appear {
+  opacity: 0.01;
+}
+/* ----------------------------------- */

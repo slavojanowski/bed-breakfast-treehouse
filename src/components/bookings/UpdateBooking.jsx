@@ -11,6 +11,7 @@ const Update = () => {
   const navigate = useNavigate();
   const allRoomsData = roomsData;
 
+  // ----- Konstruktor new Set tworzy nowy zbiór, który automatycznie usuwa duplikaty wartości danego klucza obiektów
   const uniqueRoomTypes = [
     ...new Set(allRoomsData.map((room) => room.room_type)),
   ].sort();
