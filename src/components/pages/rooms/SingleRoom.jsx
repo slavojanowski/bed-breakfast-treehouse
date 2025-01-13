@@ -64,7 +64,7 @@ const SingleRoom = () => {
                 <h3>Informacje</h3>
                 <h6>
                   <span>Cena: </span>
-                  {currentRoom.price}PLN
+                  {currentRoom.price} PLN
                 </h6>
                 <h6>
                   <span>Typ pokoju: </span>

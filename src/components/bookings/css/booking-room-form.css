@@ -9,7 +9,7 @@
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all 1.5s ease-in-out;
 }
 
 .sr-form.active-form .show-hide {
@@ -31,6 +31,10 @@
   justify-content: space-between;
 }
 
+.sr-form-head:hover {
+  cursor: pointer;
+}
+
 .sr-form-head h5 {
   color: #fff;
 }
@@ -42,7 +46,7 @@
   margin-left: 0.5rem;
 }
 
-.sr-form-head svg:hover {
+.sr-form-head:hover svg {
   color: orangered;
 }
 

@@ -28,7 +28,7 @@ const RoomsFilter = ({ onFilterChange }) => {
   const [filteredRooms, setFilteredRooms] = useState([]);
 
   useEffect(() => {
-    console.log("aaaaZaktualizwany stan filtrowania:", filteredRooms);
+    // console.log("aaaaZaktualizwany stan filtrowania:", filteredRooms);
   }, [filteredRooms]);
 
   const handleChange = (event) => {
