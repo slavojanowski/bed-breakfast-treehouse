@@ -4,28 +4,27 @@
   margin-top: 5rem;
 }
 
-.single-room-images {
+.single-room .single-room-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 2rem;
   padding: 2rem 0;
 }
 
-.single-room-images img {
+.single-room .single-room-images img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.single-room-info {
-  width: 80vw;
+.single-room .single-room-info {
   display: grid;
   grid-template-columns: 1fr;
   margin: 2rem auto;
 }
 
-.desc,
-.info {
+.single-room .desc,
+.single-room .info {
   margin: 1rem 0;
 }
 
@@ -33,21 +32,29 @@
   text-transform: capitalize;
 }
 
-.info h6 {
+.single-room .info h6 {
   font-weight: 600;
 }
-.info h6 span {
+
+.single-room .info h6 svg {
+  margin: 0 0.25rem;
+}
+
+.single-room .info h6 span {
   font-weight: 300;
 }
 
 @media screen and (min-width: 992px) {
-  .single-room-info {
+  .single-room .single-room-info {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2rem;
+    grid-template-columns: 5fr 3fr;
   }
 
-  .info {
-    padding-left: 3rem;
+  .single-room .info {
+    padding-left: 1.5rem;
+  }
+
+  .single-room .desc {
+    padding-right: 1.5rem;
   }
 }

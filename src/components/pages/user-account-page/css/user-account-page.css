@@ -2,7 +2,6 @@
 
 .user-account-page {
   margin-top: 4rem;
-  min-height: 200vh;
 }
 
 .acc-container {
@@ -37,6 +36,10 @@
 }
 
 .user-account-page .acc-heading .column:not(:last-child):hover h4 {
+  color: orangered;
+}
+
+.user-account-page .acc-heading .column.active-elem h4 {
   color: orangered;
 }
 
