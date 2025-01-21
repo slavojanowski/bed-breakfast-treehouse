@@ -352,7 +352,7 @@ const Update = () => {
               </div>
             </div>
           </div>
-          <button className="sr-book-button">ZAREZERWUJ POKÓJ</button>
+          <button className="sr-book-button">ZAPISZ ZMIANY</button>
           {formError && <p className="error">{formError}</p>}
         </div>
       </form>

@@ -1,0 +1,65 @@
+/* ----- plan-your-stay ----- */
+
+.plans-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem 0;
+}
+
+.single-plan {
+  border: 1px solid #000;
+  color: #000;
+  padding: 1rem;
+  min-height: 11rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  word-wrap: break-word;
+}
+.single-plan-btn-editing {
+  margin: 0 auto;
+}
+.plans-form {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.single-plan-body h5 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.single-plan-body h5 svg {
+  margin-top: 4px;
+  margin-right: 0.75rem;
+}
+
+.single-plan-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.single-plan-btn {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1;
+  background-color: #000;
+  color: #fff;
+}
+
+.single-plan-btn:hover {
+  background-color: #000000c8;
+}
+
+.add-new-plan-btn {
+  margin: 0;
+}
+
+.add-new-plan-input {
+  padding: 0.74rem;
+}

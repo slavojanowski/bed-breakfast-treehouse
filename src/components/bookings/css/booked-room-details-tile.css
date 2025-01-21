@@ -21,7 +21,7 @@
 
 .booking-details-buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 2rem 1rem;
 }
 

@@ -1,10 +1,46 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import supabase from "../../config/supabaseClient";
-// import getCurrentDate from "./getCurrentDate";
-// import roomsData from "../pages/rooms/RoomsData";
+import { useEffect, useState } from "react";
 
 const BookingCard = ({ booking, onDelete }) => {
+  const [stayDuration, setStayDuration] = useState(0);
+
+  // Wyliczanie liczby dób hotelowych w oparciu o datę zameldowania i wymeldowania
+  const calculateStayDuration = (checkin, checkout) => {
+    try {
+      const checkinDate = new Date(checkin);
+      const checkoutDate = new Date(checkout);
+
+      if (isNaN(checkinDate.getTime()) || isNaN(checkoutDate.getTime())) {
+        console.error("Nieprawidłowy format daty");
+        return 0;
+      }
+
+      const differenceInTime = checkoutDate.getTime() - checkinDate.getTime();
+      const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
+      return Math.max(0, differenceInDays);
+    } catch (error) {
+      console.error("Błąd podczas obliczania długości pobytu:", error);
+      return 0;
+    }
+  };
+
+  const bookedRoomPrice = booking.booked_room_price; // Wyliczanie ceny pokoju
+
+  const totalBookedPrice = bookedRoomPrice * stayDuration; // Wyliczanie całkowitej ceny rezerwacji
+
+  useEffect(() => {
+    if (booking?.checkin_date && booking?.checkout_date) {
+      const duration = calculateStayDuration(
+        booking.checkin_date,
+        booking.checkout_date
+      );
+      setStayDuration(duration);
+    }
+  }, [booking?.checkin_date, booking?.checkout_date]);
+
+  // komunikat kiedy nie ma w panelu żadnych
   if (!booking) {
     return <div>Brak danych rezerwacji</div>;
   }
@@ -24,8 +60,6 @@ const BookingCard = ({ booking, onDelete }) => {
       onDelete(booking.id);
     }
   };
-
-  // const { currentDay, currentMonth, currentYear } = getCurrentDate();
 
   return (
     <div className="booked-room-details">
@@ -86,7 +120,6 @@ const BookingCard = ({ booking, onDelete }) => {
                     <br /> {booking.address_extra_line}
                   </h6>
                 </div>
-                {/* </div> */}
 
                 <div className="sr-form-group">
                   <h6>
@@ -156,12 +189,27 @@ const BookingCard = ({ booking, onDelete }) => {
             </div>
           </div>
           <div className="booking-details-buttons">
-            <Link to={"/konto-uzytkownika/" + booking.id}>
-              <i className="material-icons edit-booking">edit</i>
-            </Link>
-            <i className="material-icons delete-booking" onClick={handleDelete}>
-              delete
-            </i>
+            <div className="sr-booking-total-price">
+              <h4>Liczba dób hotelowych: {stayDuration}</h4>
+              <h4>
+                Cena pokoju za dobę: {booking.booked_room_price} {"PLN"}
+              </h4>
+              <h4>
+                Łączna cena: {stayDuration} * {bookedRoomPrice} PLN ={" "}
+                {totalBookedPrice} PLN
+              </h4>
+            </div>
+            <div className="sr-form-buttons">
+              <Link to={"/konto-uzytkownika/" + booking.id}>
+                <i className="material-icons edit-booking">edit</i>
+              </Link>
+              <i
+                className="material-icons delete-booking"
+                onClick={handleDelete}
+              >
+                delete
+              </i>
+            </div>
           </div>
         </div>
       </section>
@@ -176,6 +224,7 @@ BookingCard.propTypes = {
     checkin_date: PropTypes.string.isRequired,
     checkout_date: PropTypes.string.isRequired,
     booked_room_name: PropTypes.node.isRequired,
+    booked_room_price: PropTypes.number,
     adults_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
       .isRequired,
     kids_number: PropTypes.oneOfType([PropTypes.string, PropTypes.number])

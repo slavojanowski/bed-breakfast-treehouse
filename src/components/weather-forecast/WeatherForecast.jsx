@@ -17,11 +17,13 @@ const WeatherForecast = () => {
 
   const API_KEY = "add2852ec067e64922026db2f029112f";
 
-  const fetchWeatherData = async (cityName) => {
+  const fetchWeatherData = async (city) => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
       );
+
+      // console.log(response);
 
       const allIcons = {
         "01d": clearIcon,
@@ -54,7 +56,7 @@ const WeatherForecast = () => {
 
   useEffect(() => {
     fetchWeatherData(city);
-  }, []);
+  }, [city]);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -83,7 +85,7 @@ const WeatherForecast = () => {
             </form>
           </div>
 
-          {error && <p className="error">{error}</p>}
+          {error && <p className="weather-error">{error}</p>}
 
           {weatherData && weatherData.main ? (
             <>
@@ -92,8 +94,10 @@ const WeatherForecast = () => {
                 alt="weather icon"
                 className="weather-icon"
               />
-              <p className="temperature">{weatherData.main.temp}℃</p>
-              <p className="location">{weatherData.name}</p>
+              <p className="temperature">{weatherData.main.temp.toFixed()}℃</p>
+              <p className="location">
+                {weatherData.name}, {weatherData.sys.country}
+              </p>
               <div className="weather-data">
                 <div className="col">
                   <img src={humidityIcon} alt="humidity icon" />
@@ -113,7 +117,7 @@ const WeatherForecast = () => {
               </div>
             </>
           ) : (
-            <p>Loading...</p>
+            ""
           )}
         </div>
       </div>
