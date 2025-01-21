@@ -70,6 +70,7 @@ const BookingRoomForm = ({ roomData }) => {
       .insert([
         {
           booked_room_name: roomData.title,
+          booked_room_price: roomData.price,
           checkin_date: checkinDate,
           checkout_date: checkoutDate,
           adults_number: adultsNumber,
@@ -133,6 +134,9 @@ const BookingRoomForm = ({ roomData }) => {
         <div className="sr-form-head" onClick={handleToogle}>
           <h5>
             <b>Formularz rezerwacji dla:</b> {roomData.title}
+          </h5>
+          <h5>
+            <b>Cena pokoju za dobę:</b> {roomData.price} PLN
           </h5>
           <h5>
             Zarezerwuj pokój <FaCircleArrowDown />
@@ -371,6 +375,7 @@ BookingRoomForm.propTypes = {
   roomData: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
   }).isRequired,
 };
 
