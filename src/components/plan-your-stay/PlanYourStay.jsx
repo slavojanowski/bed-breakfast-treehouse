@@ -7,6 +7,7 @@ const PlanYourStay = () => {
   const [plans, setPlans] = useState([]);
   const [planName, setPlanName] = useState("");
   const [editingPlan, setEditingPlan] = useState(null);
+  const [completedTodos, setCompletedTodos] = useState([]);
 
   const nameInputHandler = (e) => {
     setPlanName(e.target.value);
@@ -16,7 +17,7 @@ const PlanYourStay = () => {
     if (planName.trim() !== "") {
       const updatedPlans = [...plans, planName];
       setPlans(updatedPlans);
-      localStorage.setItem("planName", JSON.stringify(updatedPlans));
+      localStorage.setItem("plansTodo", JSON.stringify(updatedPlans));
       setPlanName("");
     }
     // console.log("zzzzz Updated plans:", plans);
@@ -25,7 +26,7 @@ const PlanYourStay = () => {
   const deletePlanHandler = (planToRemove) => {
     const updatedPlansArray = plans.filter((plan) => plan !== planToRemove);
     setPlans(updatedPlansArray);
-    localStorage.setItem("planName", JSON.stringify(updatedPlansArray));
+    localStorage.setItem("plansTodo", JSON.stringify(updatedPlansArray));
   };
 
   const editPlanHandler = (planToEdit) => {
@@ -37,14 +38,42 @@ const PlanYourStay = () => {
       plan === oldPlan ? newPlan : plan
     );
     setPlans(updatedPlans);
-    localStorage.setItem("planName", JSON.stringify(updatedPlans));
+    localStorage.setItem("plansTodo", JSON.stringify(updatedPlans));
     setEditingPlan(null);
   };
 
+  const handleComplete = (index) => {
+    const completedPlan = plans[index];
+    const updatedCompletedTodos = [...completedTodos, completedPlan];
+    setCompletedTodos(updatedCompletedTodos);
+    const reducedPlans = plans.filter((plan) => plan !== completedPlan);
+    setPlans(reducedPlans);
+    localStorage.setItem("plansTodo", JSON.stringify(reducedPlans));
+    localStorage.setItem(
+      "completedTodos",
+      JSON.stringify(updatedCompletedTodos)
+    );
+  };
+
+  const deleteCompletedPlanHandler = (completedPlanToDelete) => {
+    const updatedCompletedTodos = completedTodos.filter(
+      (completedPlan) => completedPlan !== completedPlanToDelete
+    );
+    setCompletedTodos(updatedCompletedTodos);
+    localStorage.setItem(
+      "completedTodos",
+      JSON.stringify(updatedCompletedTodos)
+    );
+  };
+
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("planName"));
-    if (data) {
-      setPlans(data);
+    const dataToComplete = JSON.parse(localStorage.getItem("plansTodo"));
+    if (dataToComplete) {
+      setPlans(dataToComplete);
+    }
+    const dataCompleted = JSON.parse(localStorage.getItem("completedTodos"));
+    if (dataCompleted) {
+      setCompletedTodos(dataCompleted);
     }
   }, []);
 
@@ -63,6 +92,9 @@ const PlanYourStay = () => {
           editPlanHandler={editPlanHandler}
           saveEditedPlan={saveEditedPlan}
           editingPlan={editingPlan}
+          completedTodos={completedTodos}
+          handleComplete={handleComplete}
+          deleteCompletedPlanHandler={deleteCompletedPlanHandler}
         />
       </main>
     </>

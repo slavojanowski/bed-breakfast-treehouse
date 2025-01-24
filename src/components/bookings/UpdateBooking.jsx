@@ -2,23 +2,23 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
-import roomsData from "../pages/rooms/RoomsData";
+// import roomsData from "../pages/rooms/RoomsData";
 import "./css/booking-room-form.css";
 import supabase from "../../config/supabaseClient";
 
 const Update = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const allRoomsData = roomsData;
+  // const allRoomsData = roomsData;
 
   // ----- Konstruktor new Set tworzy nowy zbiór, który automatycznie usuwa duplikaty wartości danego klucza obiektów
-  const uniqueRoomTypes = [
-    ...new Set(allRoomsData.map((room) => room.room_type)),
-  ].sort();
+  // const uniqueRoomTypes = [
+  //   ...new Set(allRoomsData.map((room) => room.room_type)),
+  // ].sort();
 
-  const uniqueBedsSizes = [
-    ...new Set(allRoomsData.map((room) => room.beds_size)),
-  ].sort();
+  // const uniqueBedsSizes = [
+  //   ...new Set(allRoomsData.map((room) => room.beds_size)),
+  // ].sort();
 
   // ----- column left
   const [firstName, setFirstName] = useState("");
@@ -59,8 +59,8 @@ const Update = () => {
         checkout_date: checkoutDate,
         adults_number: adultsNumber,
         kids_number: kidsNumber,
-        room_type_supa: roomType,
-        bed_size_config: selectedBedConfig,
+        // room_type_supa: allRoomsData.room_type,
+        // bed_size_config: allRoomsData.beds_size,
         book_message: bookMessage,
       })
       .eq("id", id)
@@ -70,10 +70,8 @@ const Update = () => {
       error ||
       !checkinDate ||
       !checkoutDate ||
-      roomType === "choose" ||
-      selectedBedConfig === "choose" ||
-      roomType === "choose" ||
-      selectedBedConfig === "choose" ||
+      // roomType === "choose" ||
+      // selectedBedConfig === "choose" ||
       !adultsNumber ||
       !kidsNumber ||
       !firstName.trim() ||
@@ -131,7 +129,7 @@ const Update = () => {
     <div className="page update-booking-page">
       <form className="sr-form" onSubmit={handleSubmit}>
         <div className="sr-form-head">
-          <h5>Zaktualizuj swoją rezerwację</h5>
+          <h4>Zaktualizuj swoją rezerwację</h4>
         </div>
 
         <div className="sr-all-groups-button">
@@ -185,7 +183,7 @@ const Update = () => {
                 />
               </div>
 
-              <div className="sr-special address-rows">
+              <div className="sr-extra address-rows">
                 <div className="sr-form-group">
                   <label htmlFor="street_address">
                     Nazwa ulicy, nr budynku/lokalu
@@ -200,7 +198,7 @@ const Update = () => {
                   />
                 </div>
 
-                <div className="sr-form-group sr-special">
+                <div className="sr-form-group sr-extra">
                   <input
                     className="form-control"
                     type="text"
@@ -305,16 +303,17 @@ const Update = () => {
                     className="form-control"
                     id="room_type_supa"
                     value={roomType}
-                    onChange={(e) => setRoomType(e.target.value)}
+                    disabled
+                    // onChange={(e) => setRoomType(e.target.value)}
                   >
-                    <option value="choose">Wybierz</option>
-                    {uniqueRoomTypes.map((uniqueType, index) => (
-                      <option key={index} value={uniqueType}>
-                        {uniqueType}
-                      </option>
-                    ))}
+                    <option value="choose">{roomType}</option>
+                    {/* {uniqueRoomTypes.map((uniqueType, index) => (
+                        <option key={index} value={uniqueType}>
+                          {uniqueType}
+                        </option>
+                      ))} */}
                   </select>
-                  <FaAngleDown className="sr-select-icon" />
+                  {/* <FaAngleDown className="sr-select-icon" /> */}
                 </div>
               </div>
 
@@ -325,20 +324,21 @@ const Update = () => {
                     className="form-control"
                     id="bed_size_config"
                     value={selectedBedConfig}
-                    onChange={(e) => setSelectedBedConfig(e.target.value)}
+                    disabled
+                    // onChange={(e) => setSelectedBedConfig(e.target.value)}
                   >
-                    <option value="choose">Wybierz</option>
-                    {uniqueBedsSizes.map((uniqueSize, index) => (
-                      <option key={index} value={uniqueSize}>
-                        {uniqueSize}
-                      </option>
-                    ))}
+                    <option value="choose">{selectedBedConfig}</option>
+                    {/* {uniqueBedsSizes.map((uniqueSize, index) => (
+                        <option key={index} value={uniqueSize}>
+                          {uniqueSize}
+                        </option>
+                      ))} */}
                   </select>
-                  <FaAngleDown className="sr-select-icon" />
+                  {/* <FaAngleDown className="sr-select-icon" /> */}
                 </div>
               </div>
 
-              <div className="sr-form-group sr-special">
+              <div className="sr-form-group sr-extra">
                 <label htmlFor="book_message">Uwagi do rezerwacji</label>
                 <textarea
                   className="form-control"

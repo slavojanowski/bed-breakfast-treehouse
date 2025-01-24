@@ -8,6 +8,7 @@ const YourSinglePlan = ({
   editPlanHandler,
   saveEditedPlan,
   isEditing,
+  handleComplete,
 }) => {
   const [editedText, setEditedText] = useState(planName);
 
@@ -17,53 +18,59 @@ const YourSinglePlan = ({
 
   return (
     <>
-      <div>
-        <div className="single-plan">
-          {isEditing ? (
-            <>
-              <input
-                type="text"
-                className="form-control add-new-plan-input"
-                value={editedText}
-                onChange={handleEditChange}
-              />
+      <div className="single-plan">
+        {isEditing ? (
+          <>
+            <input
+              type="text"
+              className="form-control add-new-plan-input"
+              value={editedText}
+              onChange={handleEditChange}
+            />
+            <button
+              className="single-plan-btn single-plan-btn-editing"
+              type="button"
+              onClick={() => saveEditedPlan(planName, editedText)}
+            >
+              Zapisz zmiany
+            </button>
+          </>
+        ) : (
+          <>
+            <div className="single-plan-body">
+              <h5>
+                <FaAnglesRight /> <span>{planName}</span>
+              </h5>
+            </div>
+            <div className="single-plan-footer">
               <button
-                className="single-plan-btn single-plan-btn-editing"
+                className="single-plan-btn"
                 type="button"
-                onClick={() => saveEditedPlan(planName, editedText)}
+                onClick={() => {
+                  editPlanHandler(planName);
+                  setEditedText(planName);
+                }}
               >
-                Zapisz zmiany
+                Edytuj
               </button>
-            </>
-          ) : (
-            <>
-              <div className="single-plan-body">
-                <h5>
-                  <FaAnglesRight /> <span>{planName}</span>
-                </h5>
-              </div>
-              <div className="single-plan-footer">
-                <button
-                  className="single-plan-btn"
-                  type="button"
-                  onClick={() => {
-                    editPlanHandler(planName);
-                    setEditedText(planName);
-                  }}
-                >
-                  Edytuj plan
-                </button>
-                <button
-                  className="single-plan-btn"
-                  type="button"
-                  onClick={() => deletePlanHandler(planName)}
-                >
-                  Usuń plan
-                </button>
-              </div>
-            </>
-          )}
-        </div>
+              <button
+                className="single-plan-btn"
+                type="button"
+                onClick={() => deletePlanHandler(planName)}
+              >
+                Usuń
+              </button>
+
+              <button
+                className="single-plan-btn"
+                type="button"
+                onClick={() => handleComplete(planName)}
+              >
+                Zakończ
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
@@ -75,6 +82,7 @@ YourSinglePlan.propTypes = {
   editPlanHandler: PropTypes.func.isRequired,
   saveEditedPlan: PropTypes.func.isRequired,
   isEditing: PropTypes.bool.isRequired,
+  handleComplete: PropTypes.func.isRequired,
 };
 
 export default YourSinglePlan;

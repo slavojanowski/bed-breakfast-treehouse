@@ -15,6 +15,9 @@
   margin: 2rem 0;
 }
 
+.user-account-page .acc-heading .active h4 {
+  color: orangered;
+}
 .user-account-page .acc-heading h4 {
   font-weight: 700;
 }
@@ -51,6 +54,10 @@
 }
 .user-account-page .acc-heading button {
   margin-top: 0.5rem;
+}
+
+.user-account-page .bookings-info {
+  text-align: center;
 }
 
 /* ----- React transition group CSS */

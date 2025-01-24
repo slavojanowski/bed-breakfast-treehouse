@@ -9,7 +9,7 @@
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 1.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .sr-form.active-form .show-hide {
@@ -24,17 +24,18 @@
 
 .sr-form-head {
   background-color: #000000f1;
-  /* margin-bottom: 1.8rem; */
-  padding: 1rem 4rem 0.5rem 2rem;
+  padding: 1rem 2rem 0.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
 }
 
 .sr-form-head:hover {
   cursor: pointer;
 }
 
+.sr-form-head h4,
 .sr-form-head h5 {
   color: #fff;
 }
@@ -43,7 +44,7 @@
   color: #fff;
   width: 2rem;
   height: 2rem;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 
 .sr-form-head:hover svg {
@@ -58,6 +59,10 @@
   align-items: start;
 }
 
+.sr-form label {
+  margin-bottom: 0.5rem;
+}
+
 .sr-column {
   display: flex;
   flex-direction: column;
@@ -68,8 +73,9 @@
   text-transform: none;
 }
 
-.sr-special {
+.sr-extra {
   grid-column: 1/3;
+  margin-top: 0.75rem;
 }
 
 .sr-form-group label {
@@ -87,7 +93,7 @@
 .sr-select-icon {
   position: absolute;
   right: 10px;
-  top: 60%;
+  top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -115,7 +121,7 @@
     grid-column-gap: 1.5rem;
   }
   .sr-form-group textarea.form-control {
-    min-height: 5.5rem;
+    min-height: 5.7rem;
   }
 }
 
