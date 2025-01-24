@@ -179,7 +179,7 @@ const BookingCard = ({ booking, onDelete }) => {
                   </h6>
                 </div>
 
-                <div className="sr-form-group sr-special">
+                <div className="sr-form-group sr-extra">
                   <h6>
                     <span>Uwagi do rezerwacji:</span>
                     <br /> {booking.book_message}

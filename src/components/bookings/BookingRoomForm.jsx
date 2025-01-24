@@ -1,22 +1,27 @@
 import supabase from "../../config/supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import roomsData from "../pages/rooms/RoomsData";
+// import roomsData from "../pages/rooms/RoomsData";
 import "./css/booking-room-form.css";
-import { FaAngleDown, FaCircleArrowDown } from "react-icons/fa6";
+import {
+  FaAngleDown,
+  FaCircleArrowDown,
+  FaCircleArrowUp,
+} from "react-icons/fa6";
 import PropTypes from "prop-types";
 
 const BookingRoomForm = ({ roomData }) => {
   const navigate = useNavigate();
-  const allRoomsData = roomsData;
+  // const allRoomsData = roomsData;
 
-  const uniqueRoomTypes = [
-    ...new Set(allRoomsData.map((room) => room.room_type)),
-  ].sort();
+  // ----- Konstruktor new Set tworzy nowy zbiór, który automatycznie usuwa duplikaty wartości danego klucza obiektów
+  // const uniqueRoomTypes = [
+  //   ...new Set(allRoomsData.map((room) => room.room_type)),
+  // ].sort();
 
-  const uniqueBedsSizes = [
-    ...new Set(allRoomsData.map((room) => room.beds_size)),
-  ].sort();
+  // const uniqueBedsSizes = [
+  //   ...new Set(allRoomsData.map((room) => room.beds_size)),
+  // ].sort();
 
   const [formDisplay, setFormDisplay] = useState(false);
 
@@ -36,8 +41,8 @@ const BookingRoomForm = ({ roomData }) => {
   const [kidsNumber, setKidsNumber] = useState("");
   const [checkinDate, setCheckinDate] = useState("");
   const [checkoutDate, setCheckoutDate] = useState("");
-  const [roomType, setRoomType] = useState("");
-  const [selectedBedConfig, setSelectedBedConfig] = useState("");
+  // const [roomType, setRoomType] = useState("");
+  // const [selectedBedConfig, setSelectedBedConfig] = useState("");
   const [formError, setFormError] = useState(null);
 
   // Fetching dropdown fields data when component mounts
@@ -53,8 +58,8 @@ const BookingRoomForm = ({ roomData }) => {
         return;
       }
 
-      setRoomType(data);
-      setSelectedBedConfig(data);
+      // setRoomType(data);
+      // setSelectedBedConfig(data);
       setAdultsNumber(data);
       setKidsNumber(data);
     };
@@ -75,8 +80,8 @@ const BookingRoomForm = ({ roomData }) => {
           checkout_date: checkoutDate,
           adults_number: adultsNumber,
           kids_number: kidsNumber,
-          room_type_supa: roomType,
-          bed_size_config: selectedBedConfig,
+          room_type_supa: roomData.room_type,
+          bed_size_config: roomData.beds_size,
           book_message: bookMessage,
 
           first_name: firstName,
@@ -95,10 +100,8 @@ const BookingRoomForm = ({ roomData }) => {
       error ||
       !checkinDate ||
       !checkoutDate ||
-      roomType === "choose" ||
-      selectedBedConfig === "choose" ||
-      roomType === "choose" ||
-      selectedBedConfig === "choose" ||
+      // roomType === "choose" ||
+      // selectedBedConfig === "choose" ||
       !adultsNumber ||
       !kidsNumber ||
       !firstName.trim() ||
@@ -117,7 +120,7 @@ const BookingRoomForm = ({ roomData }) => {
     if (data) {
       // console.log(data);
       setFormError(null);
-      navigate("/konto-uzytkownika");
+      navigate("/konto-uzytkownika/historia-rezerwacji");
     }
   };
 
@@ -139,7 +142,8 @@ const BookingRoomForm = ({ roomData }) => {
             <b>Cena pokoju za dobę:</b> {roomData.price} PLN
           </h5>
           <h5>
-            Zarezerwuj pokój <FaCircleArrowDown />
+            Zarezerwuj pokój{" "}
+            {formDisplay ? <FaCircleArrowUp /> : <FaCircleArrowDown />}
           </h5>
         </div>
 
@@ -195,7 +199,7 @@ const BookingRoomForm = ({ roomData }) => {
                   />
                 </div>
 
-                <div className="sr-special address-rows">
+                <div className="sr-extra address-rows">
                   <div className="sr-form-group">
                     <label htmlFor="street_address">
                       Nazwa ulicy, nr budynku/lokalu
@@ -210,7 +214,7 @@ const BookingRoomForm = ({ roomData }) => {
                     />
                   </div>
 
-                  <div className="sr-form-group sr-special">
+                  <div className="sr-form-group sr-extra">
                     <input
                       className="form-control"
                       type="text"
@@ -314,17 +318,18 @@ const BookingRoomForm = ({ roomData }) => {
                     <select
                       className="form-control"
                       id="room_type_supa"
-                      value={roomType}
-                      onChange={(e) => setRoomType(e.target.value)}
+                      // value={roomData.room_type}
+                      disabled
+                      // onChange={() => setRoomType(roomData.room_type)}
                     >
-                      <option value="choose">Wybierz</option>
-                      {uniqueRoomTypes.map((uniqueType, index) => (
+                      <option value="choose">{roomData.room_type}</option>
+                      {/* {uniqueRoomTypes.map((uniqueType, index) => (
                         <option key={index} value={uniqueType}>
                           {uniqueType}
                         </option>
-                      ))}
+                      ))} */}
                     </select>
-                    <FaAngleDown className="sr-select-icon" />
+                    {/* <FaAngleDown className="sr-select-icon" /> */}
                   </div>
                 </div>
 
@@ -334,21 +339,22 @@ const BookingRoomForm = ({ roomData }) => {
                     <select
                       className="form-control"
                       id="bed_size_config"
-                      value={selectedBedConfig}
-                      onChange={(e) => setSelectedBedConfig(e.target.value)}
+                      // value={roomData.beds_size}
+                      disabled
+                      // onChange={() => setSelectedBedConfig(roomData.beds_size)}
                     >
-                      <option value="choose">Wybierz</option>
-                      {uniqueBedsSizes.map((uniqueSize, index) => (
+                      <option value="choose">{roomData.beds_size}</option>
+                      {/* {uniqueBedsSizes.map((uniqueSize, index) => (
                         <option key={index} value={uniqueSize}>
                           {uniqueSize}
                         </option>
-                      ))}
+                      ))} */}
                     </select>
-                    <FaAngleDown className="sr-select-icon" />
+                    {/* <FaAngleDown className="sr-select-icon" /> */}
                   </div>
                 </div>
 
-                <div className="sr-form-group sr-special">
+                <div className="sr-form-group sr-extra">
                   <label htmlFor="book_message">Uwagi do rezerwacji</label>
                   <textarea
                     className="form-control"
@@ -376,6 +382,8 @@ BookingRoomForm.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    room_type: PropTypes.string.isRequired,
+    beds_size: PropTypes.string.isRequired,
   }).isRequired,
 };
 

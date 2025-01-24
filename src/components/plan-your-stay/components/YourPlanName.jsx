@@ -7,7 +7,7 @@ const YourPlanName = ({ planName, nameInputHandler }) => {
         <input
           type="text"
           name="plan"
-          placeholder="Nazwij swój kolejny plan"
+          placeholder="Wpisz nowy plan do zrealizowania"
           className="form-control add-new-plan-input"
           value={planName}
           onChange={nameInputHandler}

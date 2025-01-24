@@ -1,10 +1,26 @@
 /* ----- plan-your-stay ----- */
+.plans-buttons-section {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.plans-buttons-section button {
+  background-color: rgba(255, 68, 0, 0.757);
+}
+
+.plans-buttons-section button.active {
+  background-color: orangered;
+}
 
 .plans-list {
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
   grid-gap: 2rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+.plans-list-info {
+  margin: 3rem 0 2rem;
 }
 
 .single-plan {
@@ -17,14 +33,16 @@
   justify-content: space-between;
   word-wrap: break-word;
 }
+
 .single-plan-btn-editing {
   margin: 0 auto;
 }
+
 .plans-form {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
@@ -62,4 +80,17 @@
 
 .add-new-plan-input {
   padding: 0.74rem;
+}
+
+/* ----- MEDIA QUERIES ----- */
+@media screen and (max-width: 1199px) {
+  .plans-list {
+    grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .plans-list {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
 }
