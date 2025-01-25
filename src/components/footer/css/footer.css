@@ -1,0 +1,13 @@
+/* ----- footer.css ----- */
+
+.footer {
+  display: flex;
+  align-items: center;
+  min-height: 18rem;
+  justify-content: center;
+  background-color: #000;
+}
+
+.footer h3 {
+  color: #fff;
+}

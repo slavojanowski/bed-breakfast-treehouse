@@ -89,7 +89,7 @@ const Update = () => {
     if (data) {
       // console.log(data);
       setFormError(null);
-      navigate("/konto-uzytkownika");
+      navigate("/konto-uzytkownika/historia-rezerwacji");
     }
   };
 
