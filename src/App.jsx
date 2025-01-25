@@ -19,6 +19,7 @@ import LoginAfterSignup from "./components/login-signup/LoginAfterSignup";
 import WeatherTab from "./components/pages/user-account-page/outletSections/WeatherTab";
 import TodoTab from "./components/pages/user-account-page/outletSections/TodoTab";
 import BookingsTab from "./components/pages/user-account-page/outletSections/BookingsTab";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
           <Route path="/konto-uzytkownika/:id" element={<UpdateBooking />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </>
   );
