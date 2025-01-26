@@ -47,6 +47,10 @@
   margin-bottom: 0.5rem;
 }
 
+.custom-checkbox svg {
+  margin-top: -0.5rem;
+}
+
 .form-control {
   border-radius: 0;
 }

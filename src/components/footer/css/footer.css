@@ -1,13 +1,119 @@
 /* ----- footer.css ----- */
 
 .footer {
-  display: flex;
-  align-items: center;
   min-height: 18rem;
-  justify-content: center;
   background-color: #000;
+  margin-top: auto;
 }
 
-.footer h3 {
+.footer .footer-container {
+  max-width: 90vw;
+  margin: 2rem auto 0;
+  padding: 2rem;
+}
+.footer .footer-container .footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+.footer h3,
+.footer h4,
+.footer h5,
+.footer p {
   color: #fff;
+}
+
+.footer p {
+  font-size: 0.98rem;
+  line-height: 1.5rem;
+}
+
+.footer-column-title {
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #ffffff32;
+}
+
+/* ----- footer-column-first ----- */
+.footer-column-first {
+  padding: 2rem 2.5rem 3rem 0;
+}
+
+.footer-column-first .footer-about-head {
+  display: flex;
+  align-items: center;
+}
+
+.footer-column-first .footer-about-head h4 {
+  margin-left: 2rem;
+}
+
+.footer-column-first .about-us {
+  margin-top: 2rem;
+}
+
+.footer-column-first .heading-title h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-align: left;
+}
+
+/* --- footer-column-second ----- */
+.footer-column-second {
+  padding: 2rem 2.5rem;
+  border-right: 1px solid #ffffff32;
+  border-left: 1px solid #ffffff32;
+}
+
+.footer-column-second .footer-links p {
+  line-height: 1rem;
+}
+
+.footer-column-second .footer-links .link-icon {
+  margin-right: 0.5rem;
+  color: #fff;
+}
+.footer-column-second .rooms-list-menu {
+  padding-left: 1.5rem;
+}
+
+/* ----- footer-column-third ----- */
+.footer-column-third {
+  padding: 2rem 0 2rem 2.5rem;
+}
+
+/* ----- Copyrights Privacy Policy ----- */
+.copyrights-privacy-policy {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0 0 0;
+  border-top: 1px solid #ffffff32;
+  /* background-color: #252525d6; */
+}
+
+.copyrights-privacy-policy a,
+.copyrights-privacy-policy h5 {
+  font-weight: 300;
+  font-size: 1rem;
+  color: #e6e6e6;
+}
+
+.footer-copy-separator {
+  color: #e6e6e6;
+  margin: 0 1rem;
+}
+
+/* ----- MEDIA QUERIES ----- */
+@media screen and (max-width: 1199px) {
+  .footer .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .footer .footer-container {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
 }

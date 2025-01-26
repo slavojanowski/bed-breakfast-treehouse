@@ -127,7 +127,8 @@
 
 /* ----- Update booking page ----- */
 .update-booking-page {
-  margin-top: 5rem;
+  margin: 5rem auto;
+  width: 100%;
 }
 
 .update-booking-page .sr-all-groups-button {

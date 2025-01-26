@@ -1,9 +1,16 @@
 /* ----- App.css ----- */
+
 :root {
   --primary: orangered;
   --secondary: #ee4203;
   --font-color-dark: #000;
   --font-color-light: #fff;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -137,8 +144,8 @@ button:focus-visible {
 
 .page {
   max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
 }
 
 .error-page {

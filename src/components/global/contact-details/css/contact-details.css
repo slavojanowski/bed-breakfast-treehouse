@@ -1,0 +1,39 @@
+/* ----- contact-details.css ----- */
+
+.contact-details-head {
+  margin-bottom: 2rem;
+}
+
+.contact-details-head h5 {
+  font-weight: 300;
+  letter-spacing: 4.75px;
+}
+
+.contact-details-location,
+.contact-details-phone,
+.contact-details-email {
+  display: flex;
+}
+
+.contact-details-icon {
+  fill: #7e942f;
+  margin: 0.2rem 0.75rem 0 0;
+}
+
+.contact-details-legal {
+  margin: 1rem 0 0 1.9rem;
+}
+
+.contact-details-social {
+  margin-left: 1.9rem;
+}
+.contact-details-social-icon {
+  fill: #fff;
+  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.contact-details-social-icon:hover {
+  opacity: 0.75;
+}

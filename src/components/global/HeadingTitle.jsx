@@ -19,8 +19,4 @@ HeadingTitle.propTypes = {
   headingTitleStyle: PropTypes.string,
 };
 
-// HeadingTitle.defaultProps = {
-//   headingTitleStyle: "heading-title",
-// };
-
 export default HeadingTitle;

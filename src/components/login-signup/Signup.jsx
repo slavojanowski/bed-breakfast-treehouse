@@ -52,50 +52,54 @@ const Signup = () => {
 
   return (
     <main className="page login-signup-page">
-      <section className="heading">
-        <h3>Utwórz konto</h3>
-      </section>
+      <div className="container">
+        <section className="heading">
+          <h3>Utwórz konto</h3>
+        </section>
 
-      <section className="form">
-        <form onSubmit={handleSubmit}>
-          <span className="error-message">{message && <h6>{message}</h6>}</span>
-          <input
-            onChange={(e) => setName(e.target.value.trim())}
-            type="text"
-            name="name"
-            className="form-control"
-            value={name}
-            placeholder="Your name"
-            required
-          />
+        <section className="form">
+          <form onSubmit={handleSubmit}>
+            <span className="error-message">
+              {message && <h6>{message}</h6>}
+            </span>
+            <input
+              onChange={(e) => setName(e.target.value.trim())}
+              type="text"
+              name="name"
+              className="form-control"
+              value={name}
+              placeholder="Your name"
+              required
+            />
 
-          <input
-            onChange={(e) => setEmail(e.target.value.trim())}
-            type="email"
-            name="email"
-            className="form-control"
-            value={email}
-            placeholder="E-mail"
-            required
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            name="password"
-            className="form-control"
-            value={password}
-            placeholder="Password"
-            required
-          />
-          <button type="submit">Utwórz konto</button>
-        </form>
-        <h6>
-          Masz już konto?{" "}
-          <Link to="/logowanie">
-            Zaloguj się tutaj <FaArrowRight />
-          </Link>
-        </h6>
-      </section>
+            <input
+              onChange={(e) => setEmail(e.target.value.trim())}
+              type="email"
+              name="email"
+              className="form-control"
+              value={email}
+              placeholder="E-mail"
+              required
+            />
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              name="password"
+              className="form-control"
+              value={password}
+              placeholder="Password"
+              required
+            />
+            <button type="submit">Utwórz konto</button>
+          </form>
+          <h6>
+            Masz już konto?{" "}
+            <Link to="/logowanie">
+              Zaloguj się tutaj <FaArrowRight />
+            </Link>
+          </h6>
+        </section>
+      </div>
     </main>
   );
 };
