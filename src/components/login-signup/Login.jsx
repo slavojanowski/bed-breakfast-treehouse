@@ -36,40 +36,42 @@ const Login = () => {
 
   return (
     <main className="page login-signup-page">
-      <section className="heading">
-        <h3>Zaloguj się</h3>
-      </section>
+      <div className="container">
+        <section className="heading">
+          <h3>Zaloguj się</h3>
+        </section>
 
-      <section className="form">
-        {message && <h5>{message}</h5>}
-        <form onSubmit={handleSubmit}>
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            name="email"
-            className="form-control"
-            value={email}
-            placeholder="E-mail"
-            required
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            name="password"
-            className="form-control"
-            value={password}
-            placeholder="Password"
-            required
-          />
-          <button type="submit">Zaloguj się</button>
-        </form>
-        <h6>
-          <span>Nie masz jeszcze konta?</span>{" "}
-          <Link to="/rejestracja">
-            Zarejestruj się tutaj <FaArrowRight />
-          </Link>
-        </h6>
-      </section>
+        <section className="form">
+          {message && <h5>{message}</h5>}
+          <form onSubmit={handleSubmit}>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              name="email"
+              className="form-control"
+              value={email}
+              placeholder="E-mail"
+              required
+            />
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              name="password"
+              className="form-control"
+              value={password}
+              placeholder="Password"
+              required
+            />
+            <button type="submit">Zaloguj się</button>
+          </form>
+          <h6>
+            <span>Nie masz jeszcze konta?</span>{" "}
+            <Link to="/rejestracja">
+              Zarejestruj się tutaj <FaArrowRight />
+            </Link>
+          </h6>
+        </section>
+      </div>
     </main>
   );
 };

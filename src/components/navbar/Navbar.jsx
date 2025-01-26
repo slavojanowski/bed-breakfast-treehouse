@@ -5,7 +5,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 // import { RiLoginCircleLine } from "react-icons/ri";
 import Logo from "/logo.png";
 
-export const Navbar = () => {
+const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Funkcja do zamykania mbile menu po kliknięciu w menu list item
@@ -50,18 +50,10 @@ export const Navbar = () => {
               <FaRegCircleUser />
             </NavLink>
           </li>
-          {/* <li className="menu-register">
-            <NavLink to="/rejestracja" onClick={handleMobileMenuClose}>
-              Utwórz konto
-            </NavLink>
-          </li>
-          <li className="menu-login">
-            <NavLink to="/logowanie" onClick={handleMobileMenuClose}>
-              Zaloguj się <RiLoginCircleLine />
-            </NavLink>
-          </li> */}
         </ul>
       </div>
     </nav>
   );
 };
+
+export default Navbar;
