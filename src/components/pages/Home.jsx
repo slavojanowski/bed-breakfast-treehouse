@@ -4,6 +4,7 @@ import MainSlider from "../main-slider/MainSlider";
 import HotelSpecials from "../specials/HotelSpecials";
 import HomeRoomsFilter from "../room-filter/HomeRoomsFilter";
 import "./rooms/css/homepage.css";
+import FrequentlyAskedQuestions from "../FAQ/FrequentlyAskedQuestions";
 
 const Home = () => {
   const [filteredRooms, setFilteredRooms] = useState(roomsData);
@@ -28,6 +29,11 @@ const Home = () => {
         <HomeRoomsFilter onFilterChange={handleFilterChange} />
 
         <HotelSpecials />
+      </div>
+      <div className="home-faq">
+        <div className="page">
+          <FrequentlyAskedQuestions />
+        </div>
       </div>
     </>
   );

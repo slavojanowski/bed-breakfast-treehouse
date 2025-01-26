@@ -56,7 +56,7 @@ h1 {
 
 h2 {
   /* font-size: calc(0.9rem + 2.6vw); */
-  font-size: calc(0.9rem + 2.2vw);
+  font-size: calc(0.9rem + 2vw);
   line-height: 1.15;
   font-weight: 600;
   color: var(--font-color-dark);
@@ -164,6 +164,13 @@ button:focus-visible {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
+}
+
+.home-faq {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 4rem 0;
 }
 
 /* ----- Media Queries ----- */
