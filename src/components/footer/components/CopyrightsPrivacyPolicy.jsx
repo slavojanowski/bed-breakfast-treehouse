@@ -14,7 +14,7 @@ const CopyrightsPrivacyPolicy = () => {
       <span className="footer-copy-separator">
         <FaEllipsisVertical />
       </span>
-      <Link to="/kontakt" onClick={handleLinkClick}>
+      <Link to="/" onClick={handleLinkClick}>
         <FaLink className="link-icon" /> Polityka prywatności
       </Link>
     </>
