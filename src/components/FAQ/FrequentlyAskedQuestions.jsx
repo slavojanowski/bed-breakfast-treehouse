@@ -1,16 +1,15 @@
 import { useState } from "react";
 import "./css/frequently-asked-questions.css";
+import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
+import { FaCircleQuestion } from "react-icons/fa6";
 import faqData from "./FrequentlyAskedQuestionsData";
 import HeadingTitle from "../global/HeadingTitle";
 
 const FrequentlyAskedQuestions = () => {
   const [faqSelected, setFaqSelected] = useState(0);
 
-  const toggle = (i) => {
-    if (faqSelected === i) {
-      return setFaqSelected(null);
-    }
-    setFaqSelected(i);
+  const handleToggle = (index) => {
+    setFaqSelected(index === faqSelected ? null : index);
   };
 
   return (
@@ -26,9 +25,11 @@ const FrequentlyAskedQuestions = () => {
               className={`faq-row ${faqSelected === i ? "active-row" : ""}`}
               key={i}
             >
-              <div className="faq-row-title" onClick={() => toggle(i)}>
+              <div className="faq-row-title" onClick={() => handleToggle(i)}>
                 <h3>{faq.faq_title}</h3>
-                <span>{faqSelected === i ? "-" : "+"}</span>
+                <span>
+                  {faqSelected === i ? <FaCircleMinus /> : <FaCirclePlus />}
+                </span>
               </div>
 
               <div className="show-hide">
@@ -36,7 +37,12 @@ const FrequentlyAskedQuestions = () => {
                   {faq.rows.map((row) => {
                     return (
                       <li key={row.id}>
-                        <h4>{row.question}</h4>
+                        <div className="question">
+                          <span>
+                            <FaCircleQuestion />
+                          </span>
+                          <h4>{row.question}</h4>
+                        </div>
                         <p>{row.answer}</p>
                       </li>
                     );
