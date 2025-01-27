@@ -1,4 +1,4 @@
-import ContactDetails from "../../global/contact-details/ContactDetails";
+import ContactDetails from "./contact-details/ContactDetails";
 
 const FooterColumnThird = () => {
   return (

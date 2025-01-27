@@ -1,0 +1,78 @@
+/* ----- FAQ Page CSS ----- */
+
+.faq-page {
+  margin-top: 5rem;
+}
+
+.faq-page-container {
+  margin: 4rem 0 0 0;
+  padding: 6rem 0;
+  background-color: #7e942f;
+}
+
+.faq-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff10;
+  width: 100%;
+}
+
+.contact-column:hover .faq-column-icon svg {
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.faq-column-icon {
+  color: #000;
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 2rem;
+  background: #7e942f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-column-icon svg {
+  transition: all 0.5s ease-in-out;
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.faq-column-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+.contact-column h4 {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: calc(1rem + 0.6vw);
+}
+.contact-column a,
+.contact-column p {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+/* ----- MEDIA QUERIES ----- */
+@media screen and (max-width: 960px) {
+  .faq-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

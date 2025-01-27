@@ -7,6 +7,9 @@ import {
   FaSquareXTwitter,
 } from "react-icons/fa6";
 import "./css/contact-details.css";
+import EmailAddress from "../../../../global/EmailAddress";
+import PhoneNumber from "../../../../global/PhoneNumber";
+import HotelAddress from "../../../../global/HotelAddress";
 const ContactDetails = () => {
   return (
     <>
@@ -18,17 +21,15 @@ const ContactDetails = () => {
 
         <div className="contact-details-location">
           <FaLocationDot className="contact-details-icon" />
-          <p>
-            ul. Leśna 128/4A<br></br> 30-000 Ełk
-          </p>
+          <HotelAddress />
         </div>
         <div className="contact-details-phone">
           <FaPhoneVolume className="contact-details-icon" />
-          <a href="tel:+48123456789">+48 123 456 789</a>
+          <PhoneNumber />
         </div>
         <div className="contact-details-email">
           <FaEnvelope className="contact-details-icon" />
-          <a href="mailto:info@treehousehotel.com">info@treehousehotel.com</a>
+          <EmailAddress />
         </div>
         <div className="contact-details-legal">
           <p>

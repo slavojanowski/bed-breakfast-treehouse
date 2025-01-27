@@ -19,7 +19,7 @@ import LoginAfterSignup from "./components/login-signup/LoginAfterSignup";
 import WeatherTab from "./components/pages/user-account-page/outletSections/WeatherTab";
 import TodoTab from "./components/pages/user-account-page/outletSections/TodoTab";
 import BookingsTab from "./components/pages/user-account-page/outletSections/BookingsTab";
-import ScrollToTop from "./components/global/ScrollToTop";
+import FAQ from "./components/pages/faq/FAQ";
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/pokoje" element={<Rooms />} />
         <Route path="/pokoje/:slug" element={<SingleRoom />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route
           path="/konto-uzytkownika"
           element={

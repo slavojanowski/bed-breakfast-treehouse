@@ -15,7 +15,7 @@ const FrequentlyAskedQuestions = () => {
   return (
     <>
       <HeadingTitle
-        headingTitle="Cieszymy się, że już niebawem będziemy mogli gościć Cię w TreeHouse Hotel"
+        headingTitle="Cieszymy się, że już niebawem będziemy mogli gościć Cię w Tree House Hotel"
         headingTagline="Poniżej znajdziesz odpowiedzi na najczęściej zadawane pytania. Jeśli nie znalazłeś odpowiedzi na swoje pytanie, skontaktuj się z nami."
       />
       <div className="faq-section">

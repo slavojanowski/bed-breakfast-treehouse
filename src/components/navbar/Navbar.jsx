@@ -41,6 +41,11 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/faq" onClick={handleMobileMenuClose}>
+              FAQ
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/kontakt" onClick={handleMobileMenuClose}>
               KONTAKT
             </NavLink>
