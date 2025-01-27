@@ -68,8 +68,7 @@ const faqData = [
       {
         id: 4,
         question: "Czy w obiekcie można skorzystać z Restauracji?",
-        answer:
-          "Restauracja czynna jest w godzinach 13:00 – 22:00. Menu dostępne jest na stronie internetowej.",
+        answer: "Restauracja czynna jest w godzinach 13:00 – 22:00.",
       },
 
       {
