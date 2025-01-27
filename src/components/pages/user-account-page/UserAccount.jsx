@@ -1,6 +1,6 @@
 import supabase from "../../../config/supabaseClient";
 import { useState, useEffect } from "react";
-import SinglePageCover from "/various-images/mountains.jpg";
+import SinglePageCover from "/various-images/jezioro.jpg";
 import PageCover from "../../global/PageCover/PageCover";
 import PageBanner from "../../global/PageCover/PageBanner";
 import ButtonLarge from "../../global/ButtonLarge";
