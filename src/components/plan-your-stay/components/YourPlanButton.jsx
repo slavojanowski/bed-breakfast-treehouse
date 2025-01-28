@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
-const YourPlanButton = ({ plansPropHandler }) => {
+const YourPlanButton = ({ addNewPlanButtonHandler }) => {
   return (
     <button
       className="add-new-plan-btn"
       type="button"
-      onClick={plansPropHandler}
+      onClick={addNewPlanButtonHandler}
     >
       Dodaj nowy plan
     </button>
@@ -13,7 +13,7 @@ const YourPlanButton = ({ plansPropHandler }) => {
 };
 
 YourPlanButton.propTypes = {
-  plansPropHandler: PropTypes.func.isRequired,
+  addNewPlanButtonHandler: PropTypes.func.isRequired,
 };
 
 export default YourPlanButton;

@@ -13,7 +13,16 @@ const PlanYourStay = () => {
     setPlanName(e.target.value);
   };
 
-  const plansPropHandler = () => {
+  const addNewPlanOnEnterHandler = (e) => {
+    if (e.key === "Enter" && planName.trim() !== "") {
+      const updatedPlans = [...plans, planName];
+      setPlans(updatedPlans);
+      localStorage.setItem("plansTodo", JSON.stringify(updatedPlans));
+      setPlanName("");
+    }
+  };
+
+  const addNewPlanButtonHandler = () => {
     if (planName.trim() !== "") {
       const updatedPlans = [...plans, planName];
       setPlans(updatedPlans);
@@ -24,7 +33,9 @@ const PlanYourStay = () => {
   };
 
   const deletePlanHandler = (planToRemove) => {
-    const updatedPlansArray = plans.filter((plan) => plan !== planToRemove);
+    // const updatedPlansArray = plans.filter((plan) => plan !== planToRemove);
+    const updatedPlansArray = plans.splice(planToRemove);
+
     setPlans(updatedPlansArray);
     localStorage.setItem("plansTodo", JSON.stringify(updatedPlansArray));
   };
@@ -33,9 +44,9 @@ const PlanYourStay = () => {
     setEditingPlan(planToEdit);
   };
 
-  const saveEditedPlan = (oldPlan, newPlan) => {
+  const saveEditedPlan = (planInEdition, editedPlan) => {
     const updatedPlans = plans.map((plan) =>
-      plan === oldPlan ? newPlan : plan
+      plan === planInEdition ? editedPlan : plan
     );
     setPlans(updatedPlans);
     localStorage.setItem("plansTodo", JSON.stringify(updatedPlans));
@@ -84,7 +95,8 @@ const PlanYourStay = () => {
         <AddNewPlanHeader
           planName={planName}
           nameInputHandler={nameInputHandler}
-          plansPropHandler={plansPropHandler}
+          addNewPlanOnEnterHandler={addNewPlanOnEnterHandler}
+          addNewPlanButtonHandler={addNewPlanButtonHandler}
         />
         <YourPlansList
           plansProp={plans}

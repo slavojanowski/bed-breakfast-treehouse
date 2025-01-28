@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
 
-const YourPlanName = ({ planName, nameInputHandler }) => {
+const YourPlanName = ({
+  planName,
+  nameInputHandler,
+  addNewPlanOnEnterHandler,
+}) => {
   return (
     <>
       <div className="plan-name">
@@ -11,6 +15,7 @@ const YourPlanName = ({ planName, nameInputHandler }) => {
           className="form-control add-new-plan-input"
           value={planName}
           onChange={nameInputHandler}
+          onKeyDown={addNewPlanOnEnterHandler}
         />
       </div>
     </>
@@ -20,6 +25,7 @@ const YourPlanName = ({ planName, nameInputHandler }) => {
 YourPlanName.propTypes = {
   planName: PropTypes.string.isRequired,
   nameInputHandler: PropTypes.func.isRequired,
+  addNewPlanOnEnterHandler: PropTypes.func.isRequired,
 };
 
 export default YourPlanName;

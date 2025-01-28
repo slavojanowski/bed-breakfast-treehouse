@@ -20,7 +20,7 @@ const faqData = [
       {
         id: 3,
         question:
-          "Co muszę przygotować, by móc szybko i sprawnie zameldować się w Obiekcie?",
+          "Co muszę przygotować, by móc szybko i sprawnie zameldować się w Hotelu?",
         answer:
           "Prosimy przygotować dowód osobisty do wglądu pracownika recepcji, usprawni to proces Państwa zameldowania.",
       },
