@@ -7,9 +7,12 @@ import ButtonLarge from "../../global/ButtonLarge";
 import "../../bookings/css/booked-room-details-tile.css";
 import "./css/user-account-page.css";
 import { useNavigate, NavLink, Outlet } from "react-router-dom";
+import ContactBoxesInfoRow from "../../global/ContactBoxesInfoRow";
+// import { useLocation } from "react-router-dom";
 
 const UserAccount = () => {
   const [userName, setUserName] = useState(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,12 +26,39 @@ const UserAccount = () => {
   }, []);
 
   {
-    /* --------- Wylogowywanie się ---------------- */
+    // --------- Wylogowywanie się ----------------
   }
   const signOut = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) throw error;
     navigate("/logowanie");
+  };
+
+  //--------- Scrolluj do początku sekcji ----------------
+  const handleClick = () => {
+    setTimeout(() => {
+      const element = document.querySelector(".page");
+      const navHeight = document.querySelector("nav")?.offsetHeight || 0;
+
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const currentScroll = window.scrollY;
+        console.log(currentScroll);
+
+        const isAlreadyInPosition = Math.abs(elementPosition - navHeight) < 10;
+
+        if (!isAlreadyInPosition) {
+          const offsetPosition = elementPosition + currentScroll - navHeight;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+          setHasScrolled(true);
+        }
+      }
+    }, 100);
+
+    if (hasScrolled) return;
   };
 
   return (
@@ -49,13 +79,25 @@ const UserAccount = () => {
 
       <div className="page user-account-page">
         <section className="acc-heading">
-          <NavLink to="historia-rezerwacji" className="column bookings-info">
+          <NavLink
+            to="historia-rezerwacji"
+            className="column bookings-info"
+            onClick={handleClick}
+          >
             <h4>Historia Twoich rezerwacji</h4>
           </NavLink>
-          <NavLink to="zaplanuj-pobyt" className="column todo-info">
+          <NavLink
+            to="zaplanuj-pobyt"
+            className="column todo-info"
+            onClick={handleClick}
+          >
             <h4>Zaplanuj swój pobyt</h4>
           </NavLink>
-          <NavLink to="prognoza-pogody" className="column weather-info">
+          <NavLink
+            to="prognoza-pogody"
+            className="column weather-info"
+            onClick={handleClick}
+          >
             <h4>Sprawdź lokalną pogodę</h4>
           </NavLink>
           <div className="column log-info">
@@ -70,6 +112,7 @@ const UserAccount = () => {
           <Outlet />
         </div>
       </div>
+      <ContactBoxesInfoRow customClassName="user-account-page-contact-info" />
     </>
   );
 };

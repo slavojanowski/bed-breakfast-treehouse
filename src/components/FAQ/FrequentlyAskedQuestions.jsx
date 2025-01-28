@@ -8,9 +8,16 @@ import HeadingTitle from "../global/HeadingTitle";
 const FrequentlyAskedQuestions = () => {
   const [faqSelected, setFaqSelected] = useState(0);
 
-  const handleToggle = (index) => {
-    setFaqSelected(index === faqSelected ? null : index);
+  const handleToggle = (faqToBeSelected) => {
+    setFaqSelected(faqToBeSelected === faqSelected ? null : faqToBeSelected);
   };
+
+  // const handleToggle = (faqToBeSelected) => {
+  //   if (faqToBeSelected === faqSelected) {
+  //     setFaqSelected(null);
+  //   }
+  //   setFaqSelected(faqToBeSelected);
+  // };
 
   return (
     <>
@@ -19,16 +26,19 @@ const FrequentlyAskedQuestions = () => {
         headingTagline="Poniżej znajdziesz odpowiedzi na najczęściej zadawane pytania. Jeśli nie znalazłeś odpowiedzi na swoje pytanie, skontaktuj się z nami."
       />
       <div className="faq-section">
-        {faqData.map((faq, i) => {
+        {faqData.map((faq, index) => {
           return (
             <div
-              className={`faq-row ${faqSelected === i ? "active-row" : ""}`}
-              key={i}
+              className={`faq-row ${faqSelected === index ? "active-row" : ""}`}
+              key={index}
             >
-              <div className="faq-row-title" onClick={() => handleToggle(i)}>
+              <div
+                className="faq-row-title"
+                onClick={() => handleToggle(index)}
+              >
                 <h3>{faq.faq_title}</h3>
                 <span>
-                  {faqSelected === i ? <FaCircleMinus /> : <FaCirclePlus />}
+                  {faqSelected === index ? <FaCircleMinus /> : <FaCirclePlus />}
                 </span>
               </div>
 

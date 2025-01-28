@@ -85,4 +85,33 @@
 .css-transition-appear {
   opacity: 0.01;
 }
-/* ----------------------------------- */
+
+/* ----- user-account-page-contact-info custom styling ----- */
+.user-account-page-contact-info {
+  margin-top: 100px;
+}
+
+.user-account-page-contact-info .faq-page-container {
+  margin: 0;
+  padding: 2rem 0 6rem 0;
+  background-color: transparent;
+}
+
+.user-account-page-contact-info .contact-column {
+  background-color: #7e942f;
+  box-shadow: 0px 1px 19px 1px rgba(0, 0, 0, 0.12);
+  justify-content: flex-start;
+}
+.user-account-page-contact-info .contact-column .faq-column-title {
+  color: #ffffffa3;
+}
+.user-account-page-contact-info .contact-column a,
+.user-account-page-contact-info .contact-column p {
+  color: #fff;
+}
+
+.user-account-page-contact-info .faq-column-icon {
+  color: #fff;
+  margin-top: -7.2rem;
+  background-color: orangered;
+}
