@@ -11,7 +11,7 @@ const ButtonLarge = ({ buttonText, buttonLink }) => {
 
 ButtonLarge.propTypes = {
   buttonText: PropTypes.string.isRequired,
-  buttonLink: PropTypes.string.isRequired,
+  buttonLink: PropTypes.string,
 };
 
 export default ButtonLarge;

@@ -20,8 +20,14 @@ import WeatherTab from "./components/pages/user-account-page/outletSections/Weat
 import TodoTab from "./components/pages/user-account-page/outletSections/TodoTab";
 import BookingsTab from "./components/pages/user-account-page/outletSections/BookingsTab";
 import FAQ from "./components/pages/faq/FAQ";
+import { useEffect } from "react";
+import RatingForm from "./components/rating-form/RatingForm";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Przewiń do góry po załadowaniu komponentu
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -42,6 +48,7 @@ function App() {
           <Route path="historia-rezerwacji" element={<BookingsTab />} />
           <Route path="zaplanuj-pobyt" element={<TodoTab />} />
           <Route path="prognoza-pogody" element={<WeatherTab />} />
+          <Route path="napisz-opinie" element={<RatingForm />} />
         </Route>
 
         <Route path="/rejestracja" element={<Signup />} />

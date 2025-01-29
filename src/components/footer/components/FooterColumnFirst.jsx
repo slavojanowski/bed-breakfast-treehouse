@@ -4,10 +4,6 @@ import "../css/footer.css";
 import ButtonLarge from "../../global/ButtonLarge";
 
 const FooterColumnFirst = () => {
-  const handleLinkClick = () => {
-    window.scrollTo(0, 0);
-  };
-
   return (
     <>
       <div className="footer-column footer-column-first">
@@ -31,11 +27,7 @@ const FooterColumnFirst = () => {
             pobyt będzie wyjątkowy. Zapraszamy do oderwania się od codzienności
             i doświadczenia prawdziwego relaksu.
           </p>
-          <ButtonLarge
-            buttonText="Sprawdź nasze pokoje"
-            buttonLink="/pokoje"
-            onClick={handleLinkClick}
-          />
+          <ButtonLarge buttonText="Sprawdź nasze pokoje" buttonLink="/pokoje" />
         </div>
       </div>
     </>

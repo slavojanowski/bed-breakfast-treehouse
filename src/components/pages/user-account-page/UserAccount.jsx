@@ -106,6 +106,17 @@ const UserAccount = () => {
             </h5>
             <button onClick={signOut}>Wyloguj się</button>
           </div>
+
+          <NavLink
+            to="napisz-opinie"
+            className="column rating-form"
+            onClick={handleClick}
+          >
+            <h4>
+              Oceń swój pobyt
+              <br /> w hotelu
+            </h4>
+          </NavLink>
         </section>
 
         <div className="acc-container">
