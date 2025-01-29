@@ -40,7 +40,7 @@ const BookingCard = ({ booking, onDelete }) => {
     }
   }, [booking?.checkin_date, booking?.checkout_date]);
 
-  // komunikat kiedy nie ma w panelu żadnych
+  // komunikat kiedy nie ma w panelu żadnych rezerwacji
   if (!booking) {
     return <div>Brak danych rezerwacji</div>;
   }

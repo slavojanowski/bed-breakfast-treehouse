@@ -1,8 +1,6 @@
-// import PropTypes from "prop-types";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
-// import roomsData from "../pages/rooms/RoomsData";
 import "./css/booking-room-form.css";
 import supabase from "../../config/supabaseClient";
 
@@ -59,8 +57,6 @@ const Update = () => {
         checkout_date: checkoutDate,
         adults_number: adultsNumber,
         kids_number: kidsNumber,
-        // room_type_supa: allRoomsData.room_type,
-        // bed_size_config: allRoomsData.beds_size,
         book_message: bookMessage,
       })
       .eq("id", id)
@@ -70,8 +66,6 @@ const Update = () => {
       error ||
       !checkinDate ||
       !checkoutDate ||
-      // roomType === "choose" ||
-      // selectedBedConfig === "choose" ||
       !adultsNumber ||
       !kidsNumber ||
       !firstName.trim() ||
@@ -304,16 +298,9 @@ const Update = () => {
                     id="room_type_supa"
                     value={roomType}
                     disabled
-                    // onChange={(e) => setRoomType(e.target.value)}
                   >
                     <option value="choose">{roomType}</option>
-                    {/* {uniqueRoomTypes.map((uniqueType, index) => (
-                        <option key={index} value={uniqueType}>
-                          {uniqueType}
-                        </option>
-                      ))} */}
                   </select>
-                  {/* <FaAngleDown className="sr-select-icon" /> */}
                 </div>
               </div>
 
@@ -325,16 +312,9 @@ const Update = () => {
                     id="bed_size_config"
                     value={selectedBedConfig}
                     disabled
-                    // onChange={(e) => setSelectedBedConfig(e.target.value)}
                   >
                     <option value="choose">{selectedBedConfig}</option>
-                    {/* {uniqueBedsSizes.map((uniqueSize, index) => (
-                        <option key={index} value={uniqueSize}>
-                          {uniqueSize}
-                        </option>
-                      ))} */}
                   </select>
-                  {/* <FaAngleDown className="sr-select-icon" /> */}
                 </div>
               </div>
 

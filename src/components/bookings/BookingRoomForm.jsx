@@ -1,7 +1,6 @@
 import supabase from "../../config/supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import roomsData from "../pages/rooms/RoomsData";
 import "./css/booking-room-form.css";
 import {
   FaAngleDown,
@@ -12,16 +11,6 @@ import PropTypes from "prop-types";
 
 const BookingRoomForm = ({ roomData }) => {
   const navigate = useNavigate();
-  // const allRoomsData = roomsData;
-
-  // ----- Konstruktor new Set tworzy nowy zbiór, który automatycznie usuwa duplikaty wartości danego klucza obiektów
-  // const uniqueRoomTypes = [
-  //   ...new Set(allRoomsData.map((room) => room.room_type)),
-  // ].sort();
-
-  // const uniqueBedsSizes = [
-  //   ...new Set(allRoomsData.map((room) => room.beds_size)),
-  // ].sort();
 
   const [formDisplay, setFormDisplay] = useState(false);
 
@@ -41,8 +30,6 @@ const BookingRoomForm = ({ roomData }) => {
   const [kidsNumber, setKidsNumber] = useState("");
   const [checkinDate, setCheckinDate] = useState("");
   const [checkoutDate, setCheckoutDate] = useState("");
-  // const [roomType, setRoomType] = useState("");
-  // const [selectedBedConfig, setSelectedBedConfig] = useState("");
   const [formError, setFormError] = useState(null);
 
   // Fetching dropdown fields data when component mounts
@@ -58,8 +45,6 @@ const BookingRoomForm = ({ roomData }) => {
         return;
       }
 
-      // setRoomType(data);
-      // setSelectedBedConfig(data);
       setAdultsNumber(data);
       setKidsNumber(data);
     };
@@ -100,8 +85,6 @@ const BookingRoomForm = ({ roomData }) => {
       error ||
       !checkinDate ||
       !checkoutDate ||
-      // roomType === "choose" ||
-      // selectedBedConfig === "choose" ||
       !adultsNumber ||
       !kidsNumber ||
       !firstName.trim() ||
@@ -318,18 +301,10 @@ const BookingRoomForm = ({ roomData }) => {
                     <select
                       className="form-control"
                       id="room_type_supa"
-                      // value={roomData.room_type}
                       disabled
-                      // onChange={() => setRoomType(roomData.room_type)}
                     >
                       <option value="choose">{roomData.room_type}</option>
-                      {/* {uniqueRoomTypes.map((uniqueType, index) => (
-                        <option key={index} value={uniqueType}>
-                          {uniqueType}
-                        </option>
-                      ))} */}
                     </select>
-                    {/* <FaAngleDown className="sr-select-icon" /> */}
                   </div>
                 </div>
 
@@ -339,18 +314,10 @@ const BookingRoomForm = ({ roomData }) => {
                     <select
                       className="form-control"
                       id="bed_size_config"
-                      // value={roomData.beds_size}
                       disabled
-                      // onChange={() => setSelectedBedConfig(roomData.beds_size)}
                     >
                       <option value="choose">{roomData.beds_size}</option>
-                      {/* {uniqueBedsSizes.map((uniqueSize, index) => (
-                        <option key={index} value={uniqueSize}>
-                          {uniqueSize}
-                        </option>
-                      ))} */}
                     </select>
-                    {/* <FaAngleDown className="sr-select-icon" /> */}
                   </div>
                 </div>
 
