@@ -1,14 +1,13 @@
-import Login from "./Login";
+import Login from "./LoginPage";
 
 const LoginAfterSignup = () => {
   return (
     <main className="page login-signup-page">
-      <h4>Twoje konto zostało utworzone</h4>
-      <h5>Teraz możesz zalogować się do swojego konta.</h5>
       <section className="heading">
         <h4>Twoje konto zostało utworzone</h4>
+        <h5>Teraz możesz zalogować się do swojego konta.</h5>
       </section>
-      <br></br>
+
       <Login />
     </main>
   );

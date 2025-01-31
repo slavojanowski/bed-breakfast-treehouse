@@ -38,6 +38,7 @@ const RatingStars = ({ selectedStars, setSelectedStars }) => {
 RatingStars.propTypes = {
   selectedStars: PropTypes.number.isRequired,
   setSelectedStars: PropTypes.func.isRequired,
+  isEditable: PropTypes.bool.isRequired,
 };
 
 export default RatingStars;

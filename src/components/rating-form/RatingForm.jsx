@@ -11,6 +11,7 @@ const RatingForm = () => {
   const [selectedStars, setSelectedStars] = useState(1);
   const [formError, setFormError] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+  const [userEmail, setUserEmail] = useState(null);
 
   const handleRatingSubmit = async (event) => {
     event.preventDefault();
@@ -26,12 +27,13 @@ const RatingForm = () => {
       .insert([
         {
           unique_id: newUniqueId,
+          user_email: userEmail,
           rating_stars: selectedStars,
           rating_description: descriptionValue,
           is_submitted: true,
         },
       ])
-      .select(); // select() misi buć wywoływane
+      .select();
 
     if (error) {
       console.log(error);
@@ -49,33 +51,39 @@ const RatingForm = () => {
     setSelectedStars(0);
   };
 
-  // Sprawdzenie, czy użytkownik już przesłał opinię
   useEffect(() => {
     const checkIfSubmitted = async () => {
+      if (!userEmail) return;
+
       const { data, error } = await supabase
         .from("ratings")
-        .select("is_submitted")
-        .eq("is_submitted", true)
+        .select("user_email")
+        .eq("user_email", userEmail)
         .single();
 
-      if (data.is_submitted === null) {
-        console.log(error);
-        setFormError("");
-        return;
-      }
-
-      if (error) {
+      if (error && error.code !== "PGRST116") {
+        // PGRST116 is the code for no rows found
         console.log(error);
         setFormError("Wystąpił błąd podczas sprawdzania statusu opinii");
         return;
       }
 
       if (data) {
-        setSubmitted(data.is_submitted);
+        setSubmitted(true);
       }
     };
 
     checkIfSubmitted();
+  }, [userEmail]);
+
+  useEffect(() => {
+    const getUserName = async () => {
+      const { data } = await supabase.auth.getUser();
+      const displayEmail = data.user.email;
+      setUserEmail(displayEmail);
+    };
+
+    getUserName();
   }, []);
 
   return (

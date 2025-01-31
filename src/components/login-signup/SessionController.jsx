@@ -12,8 +12,6 @@ const SessionController = ({ children }) => {
       const {
         data: { session },
       } = await supabase.auth.getSession();
-      // !!null -> false
-      // !!{} -> true
       setAuthenticated(!!session);
       setLoading(false);
     };

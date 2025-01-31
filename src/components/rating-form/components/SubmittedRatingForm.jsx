@@ -8,40 +8,52 @@ const SubmittedRatingForm = () => {
   const [selectedStars, setSelectedStars] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
-  const [uniqueId, setUniqueId] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
 
   useEffect(() => {
+    const fetchUserEmail = async () => {
+      const { data } = await supabase.auth.getUser();
+      const displayEmail = data.user.email;
+      setUserEmail(displayEmail);
+    };
+
     const fetchRating = async () => {
-      const { data, error } = await supabase.from("ratings").select().single();
+      if (!userEmail) return;
+
+      const { data, error } = await supabase
+        .from("ratings")
+        .select()
+        .eq("user_email", userEmail)
+        .single();
 
       if (error) {
         setFetchError("Nie można było pobrać danych");
         setDescriptionValue(null);
         setSelectedStars(null);
       }
+
       if (data) {
         setDescriptionValue(data.rating_description);
         setSelectedStars(data.rating_stars);
-        setUniqueId(data.unique_id);
       }
       setIsLoading(false);
     };
-    fetchRating();
-  }, []);
+
+    fetchUserEmail().then(fetchRating);
+  }, [userEmail]);
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
   };
 
   const handleSave = async () => {
-    console.log("Zapisz dane:", { descriptionValue, selectedStars });
     const { error } = await supabase
       .from("ratings")
       .update({
         rating_description: descriptionValue,
         rating_stars: selectedStars,
       })
-      .match({ unique_id: uniqueId });
+      .eq("user_email", userEmail);
 
     if (error) {
       console.error("Błąd aktualizacji:", error);
@@ -58,12 +70,13 @@ const SubmittedRatingForm = () => {
       {isLoading ? (
         <p className="bookings-info">Ładowanie historii rezerwacji...</p>
       ) : (
-        <div className="ratings-form">
+        <div className="ratings-form disable-hover">
           {isEditing ? (
             <>
               <RatingStars
                 selectedStars={selectedStars}
                 setSelectedStars={setSelectedStars}
+                isEditable={isEditing}
               />
               <textarea
                 className="form-control"
@@ -81,7 +94,7 @@ const SubmittedRatingForm = () => {
             <>
               <RatingStars
                 selectedStars={selectedStars}
-                setSelectedStars={() => {}}
+                setSelectedStars={() => null}
               />
 
               <p>{descriptionValue}</p>
