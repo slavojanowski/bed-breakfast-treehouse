@@ -12,8 +12,6 @@ import SingleRoom from "./components/pages/rooms/SingleRoom";
 // --- User Acccount/page related components
 import SessionController from "./components/login-signup/SessionController";
 import UserAccount from "./components/pages/user-account-page/UserAccount";
-import Signup from "./components/login-signup/Signup";
-import Login from "./components/login-signup/Login";
 import Error404 from "./components/pages/Error404";
 import LoginAfterSignup from "./components/login-signup/LoginAfterSignup";
 import WeatherTab from "./components/pages/user-account-page/outletSections/WeatherTab";
@@ -22,10 +20,12 @@ import BookingsTab from "./components/pages/user-account-page/outletSections/Boo
 import FAQ from "./components/pages/faq/FAQ";
 import { useEffect } from "react";
 import RatingForm from "./components/rating-form/RatingForm";
+import LoginPage from "./components/login-signup/LoginPage";
+import SignupForm from "./components/login-signup/SignupForm";
 
 function App() {
   useEffect(() => {
-    window.scrollTo(0, 0); // Przewiń do góry po załadowaniu komponentu
+    window.scrollTo(0, 0); // Przewiń do góry po załadowaniu komponentu / nowej podstrony
   }, []);
 
   return (
@@ -51,9 +51,9 @@ function App() {
           <Route path="napisz-opinie" element={<RatingForm />} />
         </Route>
 
-        <Route path="/rejestracja" element={<Signup />} />
+        <Route path="/rejestracja" element={<SignupForm />} />
         <Route path="/zaloguj-sie" element={<LoginAfterSignup />} />
-        <Route path="/logowanie" element={<Login />} />
+        <Route path="/logowanie" element={<LoginPage />} />
         <Route path="/konto-uzytkownika/:id" element={<UpdateBooking />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

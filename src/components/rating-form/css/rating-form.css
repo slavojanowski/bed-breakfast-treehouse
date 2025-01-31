@@ -58,3 +58,15 @@
 .rating-quote {
   position: relative;
 }
+
+.disable-hover svg:hover {
+  color: green;
+}
+
+.selected-star {
+  color: orangered;
+}
+
+.hovered-star {
+  color: orange;
+}

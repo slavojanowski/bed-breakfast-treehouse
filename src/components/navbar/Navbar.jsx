@@ -2,7 +2,6 @@ import { useState } from "react";
 import "../navbar/css/navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import { FaRegCircleUser } from "react-icons/fa6";
-// import { RiLoginCircleLine } from "react-icons/ri";
 import Logo from "/logo.png";
 
 const Navbar = () => {

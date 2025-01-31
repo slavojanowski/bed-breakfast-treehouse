@@ -1,12 +1,17 @@
 /* ----- login-signup.css ----- */
 
 .login-signup-page {
-  min-height: 56vh;
+  min-height: 66vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.login-signup-page .container {
+.login-signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 3rem;
   background: #fff;
 }
@@ -16,19 +21,19 @@
   color: red;
 }
 
-.login-signup-page .heading {
+.login-signup-heading {
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-.login-signup-page form input {
   margin-bottom: 1rem;
 }
 
-.login-signup-page h6 {
+.login-signup-form input {
+  margin-bottom: 1rem;
+}
+
+.login-signup-form h6 {
   margin-top: 1rem;
 }
 
-.login-signup-page button {
+.login-signup-form button {
   width: 100%;
 }

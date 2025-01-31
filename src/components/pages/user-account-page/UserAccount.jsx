@@ -8,7 +8,6 @@ import "../../bookings/css/booked-room-details-tile.css";
 import "./css/user-account-page.css";
 import { useNavigate, NavLink, Outlet } from "react-router-dom";
 import ContactBoxesInfoRow from "../../global/ContactBoxesInfoRow";
-// import { useLocation } from "react-router-dom";
 
 const UserAccount = () => {
   const [userName, setUserName] = useState(null);
