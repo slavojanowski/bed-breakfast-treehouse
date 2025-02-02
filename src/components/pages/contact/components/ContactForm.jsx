@@ -67,8 +67,6 @@ const ContactForm = ({ onSubmit }) => {
     const data = await response.json();
 
     if (data.success) {
-      // setResult("Twoja wiadomość została wysłana, Dziękujemy.");
-      // e.target.reset();
       Swal.fire({
         title: "Dziękujemy!",
         text: "Twoja wiadomość została wysłana",
