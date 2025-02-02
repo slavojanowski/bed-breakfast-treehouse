@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import supabase from "../../../config/supabaseClient";
-import RatingStars from "./RatingStars";
+import supabase from "../../../../config/supabaseClient";
+import RatingStars from "../../../rating-form/components/RatingStars";
 
-const SubmittedRatingForm = () => {
+const SubmittedRatingFormTab = () => {
   const [fetchError, setFetchError] = useState(null);
   const [descriptionValue, setDescriptionValue] = useState("");
   const [selectedStars, setSelectedStars] = useState(1);
@@ -94,7 +94,7 @@ const SubmittedRatingForm = () => {
             <>
               <RatingStars
                 selectedStars={selectedStars}
-                setSelectedStars={() => null}
+                // setSelectedStars={() => null}
               />
 
               <p>{descriptionValue}</p>
@@ -108,4 +108,4 @@ const SubmittedRatingForm = () => {
   );
 };
 
-export default SubmittedRatingForm;
+export default SubmittedRatingFormTab;

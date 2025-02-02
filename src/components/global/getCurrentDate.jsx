@@ -16,7 +16,28 @@ const getCurrentDate = () => {
     year: "numeric",
   });
 
-  return { currentDay, currentMonth, currentYear };
+  const getCurrentHour = String(
+    currentDate.toLocaleString("pl-PL", {
+      timeZone: "Europe/Warsaw",
+      hour: "2-digit",
+      hour12: false,
+    })
+  ).padStart(2, "0");
+
+  const getCurrentMinute = String(
+    currentDate.toLocaleString("pl-PL", {
+      timeZone: "Europe/Warsaw",
+      minute: "2-digit",
+    })
+  ).padStart(2, "0");
+
+  return {
+    currentDay,
+    currentMonth,
+    currentYear,
+    getCurrentHour,
+    getCurrentMinute,
+  };
 };
 
 export default getCurrentDate;

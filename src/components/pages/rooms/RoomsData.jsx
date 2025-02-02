@@ -7,7 +7,7 @@ const roomsData = [
     subtitle:
       "Luksusowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Luksusowy pokój 2-osobowy to propozycja dla najbardziej wymagających gości, którzy cenią sobie komfort i elegancję. Ten przestronny pokój został urządzony z najwyższą dbałością o detale, tworząc niepowtarzalną atmosferę relaksu i luksusu. W pokoju znajduje się wygodne łóżko małżeńskie z baldachimem, a także stylowe meble i wysokiej jakości tkaniny. Goście mogą podziwiać panoramiczne widoki na okoliczne lasy i jeziora, a jednocześnie w kilka minut dojechać do miast z bogatą historią i zabytkową architekturą. W pokoju znajduje się również telewizor z płaskim ekranem, bezprzewodowy dostęp do internetu, klimatyzacja oraz luksusowa łazienka z wanną i prysznicem. Dodatkowo, goście mogą skorzystać z room service'u oraz innych udogodnień oferowanych przez hotel.",
     image: "/slider-images/luksusowy-pokoj-dwuosobowy-cover.jpg",
     price: 299,
     beds_size: "1 podwójne",
@@ -29,7 +29,7 @@ const roomsData = [
     subtitle:
       "Nowoczesne wnętrze, wygodne łóżka i wszystkie udogodnienia, których potrzebujesz",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Nowoczesny pokój 3-osobowy to idealne rozwiązanie dla rodzin lub grupy przyjaciół, którzy pragną cieszyć się bliskością natury, nie rezygnując z komfortu i nowoczesnego designu. Pokój ten charakteryzuje się przestronnością i funkcjonalnością, oferując trzy wygodne łóżka oraz stylowe meble. Goście mogą podziwiać piękne widoki na okoliczne lasy i jeziora, a jednocześnie w kilka minut dojechać do miast z bogatą historią i zabytkową architekturą. W pokoju znajduje się również telewizor z płaskim ekranem, bezprzewodowy dostęp do internetu, klimatyzacja oraz nowoczesna łazienka z prysznicem. Dodatkowo, goście mogą skorzystać z balkonu lub tarasu, aby jeszcze lepiej cieszyć się otaczającą przyrodą.",
     image: "/slider-images/nowoczesny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
     beds_size: "1 podwójne + 1 pojedyncze",
@@ -51,7 +51,7 @@ const roomsData = [
     subtitle:
       "Słoneczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Słoneczny pokój 4-osobowy to doskonały wybór dla rodzin lub grup przyjaciół, którzy planują wypoczynek w otoczeniu przyrody, a jednocześnie chcą mieć łatwy dostęp do atrakcji pobliskich miast. Ten przestronny pokój został zaprojektowany z myślą o komforcie i funkcjonalności, oferując cztery wygodne łóżka oraz stylowe meble. Goście mogą podziwiać malownicze widoki na okoliczne lasy i jeziora, a jednocześnie w kilka minut dojechać do miast z bogatą historią i zabytkową architekturą. W pokoju znajduje się również telewizor z płaskim ekranem, bezprzewodowy dostęp do internetu, klimatyzacja oraz nowoczesna łazienka z prysznicem. Dodatkowo, goście mogą skorzystać z balkonu lub tarasu, aby jeszcze lepiej cieszyć się otaczającą przyrodą.",
     image: "/slider-images/sloneczny-pokoj-jednoosobowy-cover.jpg",
     price: 259,
     beds_size: "1 podwójne + 2 pojedyncze",
@@ -73,7 +73,7 @@ const roomsData = [
     subtitle:
       "Stylowe wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Stylowy pokój 2-osobowy to idealne miejsce dla par pragnących wypocząć w otoczeniu natury, nie rezygnując jednocześnie z atrakcji pobliskich miast. Pokój został urządzony ze szczególną dbałością o detale, tworząc przytulną i romantyczną atmosferę. Znajduje się w nim wygodne łóżko małżeńskie, a także stylowe meble i dekoracje. Goście mogą podziwiać piękne widoki na okoliczne lasy i jeziora, a jednocześnie w kilka minut dojechać do miast z bogatą historią i zabytkową architekturą. W pokoju znajduje się również telewizor, bezprzewodowy dostęp do internetu oraz łazienka z prysznicem.",
     image: "/slider-images/stylowy-pokoj-dwuosobowy-cover.jpg",
     price: 349,
     beds_size: "2 pojedyncze",
@@ -95,7 +95,7 @@ const roomsData = [
     subtitle:
       "Profesjonalne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Profesjonalny pokój 1-osobowy to idealne miejsce dla osób podróżujących służbowo lub poszukujących komfortowego miejsca do wypoczynku w pojedynkę. Pokój ten został zaprojektowany z myślą o funkcjonalności i wygodzie, oferując wszystko, co niezbędne do udanego pobytu. W pokoju znajduje się wygodne łóżko jednoosobowe, biurko do pracy, a także stylowe meble i telewizor z płaskim ekranem. Goście mogą korzystać z bezprzewodowego dostępu do internetu oraz nowoczesnej łazienki z prysznicem. Dodatkowym atutem jest lokalizacja hotelu, która umożliwia zarówno relaks w otoczeniu przyrody, jak i szybki dojazd do centrów miast z bogatą ofertą kulturalną i historyczną.",
     image: "/slider-images/profesjonalny-pokoj-jednoosobowy-cover.jpg",
     price: 299,
     beds_size: "1 podwójne",
@@ -117,7 +117,7 @@ const roomsData = [
     subtitle:
       "Klasyczne wnętrze, wygodne łóżko i wszystkie udogodnienia, których potrzebujesz",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Klasyczny pokój 2-osobowy to propozycja dla gości ceniących tradycyjny wystrój i komfortowy wypoczynek. Ten przytulny pokój został urządzony w klasycznym stylu, z dbałością o detale i wygodę gości. W pokoju znajduje się wygodne łóżko małżeńskie, idealne dla par, a także stylowe meble, które tworzą ciepłą i relaksującą atmosferę. Goście mogą podziwiać widoki na okoliczną przyrodę, a jednocześnie w kilka minut dojechać do miast z bogatą historią i zabytkową architekturą. W pokoju znajduje się również telewizor, bezprzewodowy dostęp do internetu oraz łazienka z prysznicem. Klasyczny pokój 2-osobowy to doskonały wybór dla tych, którzy szukają spokoju i relaksu w otoczeniu natury.",
     image: "/slider-images/klasyczny-pokoj-dwuosobowy-cover.jpg",
     price: 399,
     beds_size: "1 podwójne",

@@ -1,10 +1,9 @@
 import RatingDescription from "./components/RatingDescription";
 import RatingStars from "./components/RatingStars";
 import "./css/rating-form.css";
-import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 import supabase from "../../config/supabaseClient";
-import SubmittedRatingForm from "./components/SubmittedRatingForm";
+import SubmittedRatingForm from "../pages/user-account-page/outletSections/SubmittedRatingFormTab";
 
 const RatingForm = () => {
   const [descriptionValue, setDescriptionValue] = useState("");
@@ -12,10 +11,10 @@ const RatingForm = () => {
   const [formError, setFormError] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [userEmail, setUserEmail] = useState(null);
+  const [userName, setUserName] = useState(null);
 
   const handleRatingSubmit = async (event) => {
     event.preventDefault();
-    const newUniqueId = uuidv4();
 
     if (!descriptionValue.trim() || selectedStars <= 0) {
       setFormError("Wypełnij wszystkie pola i wybierz liczbę gwiazdek");
@@ -26,7 +25,7 @@ const RatingForm = () => {
       .from("ratings")
       .insert([
         {
-          unique_id: newUniqueId,
+          user_name: userName,
           user_email: userEmail,
           rating_stars: selectedStars,
           rating_description: descriptionValue,
@@ -77,13 +76,15 @@ const RatingForm = () => {
   }, [userEmail]);
 
   useEffect(() => {
-    const getUserName = async () => {
+    const getUserData = async () => {
       const { data } = await supabase.auth.getUser();
       const displayEmail = data.user.email;
+      const displayName = data.user.user_metadata.display_name;
       setUserEmail(displayEmail);
+      setUserName(displayName);
     };
 
-    getUserName();
+    getUserData();
   }, []);
 
   return (
@@ -99,7 +100,10 @@ const RatingForm = () => {
           {submitted ? (
             <SubmittedRatingForm />
           ) : (
-            <form className="ratings-form" onSubmit={handleRatingSubmit}>
+            <form
+              className="ratings-form initial-submit-form"
+              onSubmit={handleRatingSubmit}
+            >
               <RatingStars
                 selectedStars={selectedStars}
                 setSelectedStars={setSelectedStars}

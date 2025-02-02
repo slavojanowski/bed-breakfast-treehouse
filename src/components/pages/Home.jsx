@@ -5,6 +5,7 @@ import HotelSpecials from "../specials/HotelSpecials";
 import HomeRoomsFilter from "../room-filter/HomeRoomsFilter";
 import "./rooms/css/homepage.css";
 import FrequentlyAskedQuestions from "../FAQ/FrequentlyAskedQuestions";
+import RatingsSwiper from "../rating-form/RatingsSwiper";
 
 const Home = () => {
   const [filteredRooms, setFilteredRooms] = useState(roomsData);
@@ -30,6 +31,13 @@ const Home = () => {
 
         <HotelSpecials />
       </div>
+
+      <div className="home-ratings">
+        <div className="page">
+          <RatingsSwiper />
+        </div>
+      </div>
+
       <div className="home-faq">
         <div className="page">
           <FrequentlyAskedQuestions />

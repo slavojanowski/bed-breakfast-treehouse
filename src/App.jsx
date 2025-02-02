@@ -22,6 +22,8 @@ import { useEffect } from "react";
 import RatingForm from "./components/rating-form/RatingForm";
 import LoginPage from "./components/login-signup/LoginPage";
 import SignupForm from "./components/login-signup/SignupForm";
+import ContactPage from "./components/pages/contact/ContactPage";
+import SentMessagesDataTab from "./components/pages/user-account-page/outletSections/SentMessagesDataTab";
 
 function App() {
   useEffect(() => {
@@ -37,6 +39,7 @@ function App() {
         <Route path="/pokoje" element={<Rooms />} />
         <Route path="/pokoje/:slug" element={<SingleRoom />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/kontakt" element={<ContactPage />} />
         <Route
           path="/konto-uzytkownika"
           element={
@@ -49,6 +52,7 @@ function App() {
           <Route path="zaplanuj-pobyt" element={<TodoTab />} />
           <Route path="prognoza-pogody" element={<WeatherTab />} />
           <Route path="napisz-opinie" element={<RatingForm />} />
+          <Route path="wyslane-wiadomosci" element={<SentMessagesDataTab />} />
         </Route>
 
         <Route path="/rejestracja" element={<SignupForm />} />
