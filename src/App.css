@@ -55,7 +55,6 @@ h1 {
 }
 
 h2 {
-  /* font-size: calc(0.9rem + 2.6vw); */
   font-size: calc(0.9rem + 2vw);
   line-height: 1.15;
   font-weight: 600;
@@ -63,8 +62,7 @@ h2 {
 }
 
 h3 {
-  /* font-size: calc(0.4rem + 2.6vw); */
-  font-size: calc(0.4rem + 2vw);
+  font-size: calc(1.2rem + 1.8vw);
   line-height: 1.2;
   font-weight: 600;
   color: var(--font-color-dark);
@@ -175,11 +173,65 @@ button:focus-visible {
   font-weight: 400;
 }
 /* ----- Homepage content ----- */
+/* FAQ */
 .home-faq {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   background-color: #fff;
   padding: 4rem 0;
+}
+
+/* Ratings swiper */
+.home-ratings {
+  display: flex;
+  background-color: #849b31;
+  padding: 4rem 0;
+}
+
+.home-ratings .slick-slider {
+  padding: 3rem 6rem;
+  text-align: center;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.home-ratings .slick-list {
+  background-color: #ffffff2e;
+}
+
+.rating-card {
+  padding: 2.5rem 4rem 2.5rem 4rem;
+}
+.home-ratings .heading-title h2 {
+  color: #fff;
+}
+
+.rating-user-name {
+  padding: 1rem 2rem;
+  background-color: #849b31;
+  border-radius: 50px;
+  width: auto;
+  display: inline-flex;
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.home-ratings .slick-dots {
+  width: auto;
+  position: relative;
+}
+
+.home-ratings .slick-prev::before,
+.home-ratings .slick-next::before {
+  font-size: 3rem;
+}
+
+.home-ratings .slick-prev,
+.home-ratings .slick-next {
+  width: 3rem;
+  height: 3rem;
 }
 
 /* ----- Media Queries ----- */

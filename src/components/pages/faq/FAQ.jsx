@@ -4,7 +4,7 @@ import FaqPageCover from "/various-images/las.jpg";
 import ButtonLarge from "../../global/ButtonLarge";
 import PageBanner from "../../global/PageCover/PageBanner";
 import PageCover from "../../global/PageCover/PageCover";
-import GoogleMap from "../../global/GoogleMap";
+// import GoogleMap from "../../global/GoogleMap";
 import ContactBoxesInfoRow from "../../global/ContactBoxesInfoRow";
 
 const FAQ = () => {
@@ -27,9 +27,9 @@ const FAQ = () => {
         <FrequentlyAskedQuestions />
       </div>
       <ContactBoxesInfoRow />
-      <div className="faq-page-google-map">
+      {/* <div className="faq-page-google-map">
         <GoogleMap />
-      </div>
+      </div> */}
     </>
   );
 };

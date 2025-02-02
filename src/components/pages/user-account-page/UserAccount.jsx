@@ -99,6 +99,7 @@ const UserAccount = () => {
           >
             <h4>Sprawdź lokalną pogodę</h4>
           </NavLink>
+
           <div className="column log-info">
             <h5>
               Witaj <b>{userName ? userName : "User"}</b>, jesteś zalogowany.
@@ -114,6 +115,17 @@ const UserAccount = () => {
             <h4>
               Oceń swój pobyt
               <br /> w hotelu
+            </h4>
+          </NavLink>
+
+          <NavLink
+            to="wyslane-wiadomosci"
+            className="column sent-messages-archive"
+            onClick={handleClick}
+          >
+            <h4>
+              Historia wysłanych
+              <br /> wiadomości
             </h4>
           </NavLink>
         </section>

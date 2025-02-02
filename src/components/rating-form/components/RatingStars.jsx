@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import PropTypes from "prop-types";
-const RatingStars = ({ selectedStars, setSelectedStars }) => {
+const RatingStars = ({ selectedStars, setSelectedStars, isEditable }) => {
   const [hoveredStars, setHoveredStars] = useState(0);
 
-  console.log(selectedStars);
+  // console.log(selectedStars);
 
   return (
     <>
@@ -20,13 +20,8 @@ const RatingStars = ({ selectedStars, setSelectedStars }) => {
               onClick={() => setSelectedStars(index + 1)}
               onMouseEnter={() => setHoveredStars(index + 1)}
               onMouseLeave={() => setHoveredStars(0)}
-              style={{
-                color: isSelected
-                  ? "orangered"
-                  : isHovered
-                  ? "orange"
-                  : "black",
-              }}
+              className={`${isSelected ? "selected-star" : ""} 
+               ${isEditable && isHovered ? "hovered-star" : ""}`}
             />
           );
         })}

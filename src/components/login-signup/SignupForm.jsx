@@ -99,8 +99,8 @@ const SignupForm = ({ onSignupSuccess, onLoginRedirect }) => {
 };
 
 SignupForm.propTypes = {
-  onSignupSuccess: PropTypes.func.isRequired,
-  onLoginRedirect: PropTypes.func.isRequired,
+  onSignupSuccess: PropTypes.func,
+  onLoginRedirect: PropTypes.func,
 };
 
 export default SignupForm;
